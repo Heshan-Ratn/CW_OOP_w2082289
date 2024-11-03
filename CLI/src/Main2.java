@@ -1,10 +1,13 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
         checkConfiguration();
         editConfiguration();
         checkConfiguration();
+        TicketPool ticketPool = new TicketPool();
+        System.out.println(ticketPool.getMaxCapacity());
+        System.out.println(ticketPool.getTotalTicketsFromFile());
     }
 
     public static void checkConfiguration() {
@@ -17,11 +20,15 @@ public class Main {
         }
     }
 
+
+
+
+
     public static void editConfiguration() {
         if (promptYesOrNo("Do you want to edit the configuration (y/n)? : ")) {
             Configuration config = new Configuration();
 
-            config.setTotalTickets(promptForInt("Enter total tickets (must be > 0): ", value -> value > 0));
+//            config.setTotalTickets(promptForInt("Enter total tickets (must be > 0): ", value -> value > 0));
             config.setTicketReleaseRate(promptForInt("Enter ticket release rate (must be > 0): ", value -> value > 0));
             config.setCustomerRetrievalRate(promptForInt("Enter customer retrieval rate (must be > 0): ", value -> value > 0));
             config.setMaxTicketCapacity(promptForInt("Enter max ticket capacity (must be >= total tickets): ", value -> value >= config.getTotalTickets()));
@@ -35,6 +42,18 @@ public class Main {
             System.out.println("Exiting edit configuration.");
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     private static int promptForInt(String message, java.util.function.IntPredicate condition) {
         Scanner input = new Scanner(System.in);
@@ -64,6 +83,5 @@ public class Main {
         }
         return answer.equals("y");
     }
-
 }
 

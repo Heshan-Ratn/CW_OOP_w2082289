@@ -1,0 +1,22 @@
+[
+  {
+    "ticketId": "Ticket1",
+    "eventDetails": "Event Details",
+    "price": 50.0
+  },
+  {
+    "ticketId": "Ticket2",
+    "eventDetails": "Event Details",
+    "price": 50.0
+  },
+  {
+    "ticketId": "Ticket3",
+    "eventDetails": "Event Details",
+    "price": 50.0
+  },
+  {
+    "ticketId": "Ticket4",
+    "eventDetails": "Event Details",
+    "price": 50.0
+  }
+]
