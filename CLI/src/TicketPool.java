@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -51,24 +52,58 @@ public class TicketPool {
     }
 
     // Adds tickets to the pool and updates the JSON file
-    public synchronized boolean addTickets(int quantity) {
+    public synchronized boolean addTickets(String vendorId,String eventDetails, double price, int quantity, Vendor vendor) {
+//        try {
+//            for (int i = 0; i < quantity; i++) {
+//                // Check capacity before adding each ticket
+//                while (tickets.size() >= maxCapacity) {
+//                    System.out.println("Waiting to add tickets, pool at max capacity.");
+//                    wait(); // Wait until enough space is available
+//                }
+//
+//                // Add a single ticket
+//                tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
+//                saveTicketsToFile(); // Save after each ticket is added
+//                notifyAll(); // Notify waiting threads after adding each ticket
+//            }
+//            return true;
+//
+//        } catch (InterruptedException e) {
+//            System.out.println("Thread interrupted during addTickets.");
+//            Thread.currentThread().interrupt();
+//            return false;
+
         try {
-            while (getTotalTicketsFromFile() + quantity > maxCapacity) {
-                System.out.println("Waiting to add tickets, pool at max capacity.");
-                wait();
-            }
             for (int i = 0; i < quantity; i++) {
-                tickets.add(new Ticket("Ticket" + (tickets.size() + i + 1), "Event Details", 50.0));
+                // Check if the vendor has stopped the session
+                if (!vendor.isActive) {
+                    System.out.println("Ticket addition stopped mid-batch for vendor: " + vendorId);
+                    return false;  // Exit if stopSession is triggered
+                }
+
+                synchronized (this) {
+                    // Check capacity before adding each ticket
+                    while (tickets.size() >= maxCapacity) {
+                        System.out.println("Waiting to add tickets, pool at max capacity.");
+                        wait(); // Wait until enough space is available
+                    }
+
+                    // Add a single ticket
+                    tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
+                    saveTicketsToFile(); // Save after each ticket is added
+                    notifyAll(); // Notify waiting threads after adding each ticket
+                }
             }
-            saveTicketsToFile();
-            notifyAll();  // Notify consumers that tickets are available
             return true;
+
         } catch (InterruptedException e) {
             System.out.println("Thread interrupted during addTickets.");
             Thread.currentThread().interrupt();
             return false;
         }
     }
+
+
 
     // Removes a ticket from the pool and updates the JSON file
     public synchronized Ticket removeTicket() {
@@ -94,15 +129,6 @@ public class TicketPool {
         return tickets.size();
     }
 
-    // Checks if the pool is full
-    public boolean isFull() {
-        return getTotalTicketsFromFile() >= maxCapacity;
-    }
-
-    // Checks if the pool is empty
-    public boolean isEmpty() {
-        return getTotalTicketsFromFile() == 0;
-    }
 
     // Loads tickets from JSON file into the shared list
     private synchronized void loadTicketsFromFile() {
@@ -123,7 +149,8 @@ public class TicketPool {
 
     // Saves the current list of tickets to JSON file
     private synchronized void saveTicketsToFile() {
-        Gson gson = new Gson();
+//        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(ticketFilePath)) {
             gson.toJson(tickets, writer);
         } catch (IOException e) {

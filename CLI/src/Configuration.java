@@ -29,6 +29,11 @@ public class Configuration {
 //        this.totalTickets = totalTickets;
 //    }
 
+
+    public void setTotalTickets() {
+        this.totalTickets =  countTicketsFromFile("Tickets.json");
+    }
+
     public int getTicketReleaseRate() {
         return ticketReleaseRate;
     }

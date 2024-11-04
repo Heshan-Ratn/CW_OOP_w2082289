@@ -62,9 +62,10 @@ public class VendorSignUp {
     private void saveVendorData(String vendorId, String password) {
         List<VendorData> vendors = new ArrayList<>(getExistingVendors());
         vendors.add(new VendorData(vendorId, password));
-
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();//
         try (Writer writer = Files.newBufferedWriter(Paths.get(VENDOR_FILE))) {
-            new Gson().toJson(vendors, writer);
+//            new Gson().toJson(vendors, writer);
+            gson.toJson(vendors, writer);
         } catch (IOException e) {
             System.out.println("Error writing vendor data: " + e.getMessage());
         }

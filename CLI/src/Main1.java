@@ -67,6 +67,7 @@ public class Main1 {
             config = ConfigControl.checkConfiguration();
         } else {
             System.out.println("Viewing Configuration Setting...\n");
+            config = ConfigControl.checkConfiguration();
             ConfigControl.viewConfiguration(config);
         }
     }
@@ -105,10 +106,10 @@ public class Main1 {
             System.out.println("Vendor with ID: "+ vendorSignedIn.getVendorId()+" found!\n");
             while (!exit) {
                 System.out.println("Vendor Actions:");
-                System.out.println("1. Add Tickets");
+                System.out.println("1. Add Tickets to the Ticket pool");
                 System.out.println("2. View Added Tickets");
                 System.out.println("3. View Other Tickets");
-                System.out.println("4. Start/Stop Tickets Added");
+                System.out.println("4. Stop/Start for Tickets release to the Ticket pool");
                 System.out.println("5. View Real-time Tickets Being Sold and Added");
                 System.out.println("6. Exit");
                 System.out.println(); // Extra space for readability
@@ -119,32 +120,37 @@ public class Main1 {
         }
     }
 
+
     private static boolean handleVendorChoice(int choice, Vendor vendor) {
-        return switch (choice) {
-            case 1 -> {
-                System.out.println("Adding Tickets...\n");
-                yield false;
-            }
-            case 2 -> {
+        switch (choice) {
+            case 1: // Add Tickets
+                System.out.println("Ticket addition process initiated...\n");
+                if (vendor.CheckReleaseStatus()){
+                    vendor.setTicketReleaseParameters(); // Set parameters before starting
+                    Thread vendorThread = new Thread(vendor);
+                    vendorThread.start(); // Start the vendor's ticket release thread
+                }
+                return false; // Return false to keep in the menu
+
+            case 2:
                 System.out.println("Viewing Added Tickets...\n");
-                yield false;
-            }
-            case 3 -> {
+                return false;
+            case 3:
                 System.out.println("Viewing Other Tickets...\n");
-                yield false;
-            }
-            case 4 -> {
-                System.out.println("Starting/Stopping Tickets...\n");
-                yield false;
-            }
-            case 5 -> {
+                return false;
+            case 4: // Stop Tickets Added
+                vendor.stopSession(); // Call the stop method to halt ticket release
+                return false;
+            case 5:
                 System.out.println("Viewing Real-time Tickets...\n");
-                yield false;
-            }
-            case 6 -> true;
-            default -> false;
-        };
+                return false;
+            case 6: // Exit
+                return true;
+            default:
+                return false;
+        }
     }
+
 
     private static void handleConsumerLogin() {
         System.out.println("Consumer Login:");

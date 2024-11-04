@@ -4,11 +4,11 @@ public class Ticket {
     private double price;
     private String vendorId;
 
-    public Ticket(String ticketId, String eventDetails, double price) {
+    public Ticket(String ticketId, String eventDetails, double price, String vendorId) {
         this.ticketId = ticketId;
         this.eventDetails = eventDetails;
         this.price = price;
-        this.vendorId = "";
+        this.vendorId = vendorId;
     }
 
     public String getTicketId() { return ticketId; }

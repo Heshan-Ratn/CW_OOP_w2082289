@@ -4,6 +4,7 @@ class ConfigControl {
     public static Configuration checkConfiguration() {
         // Load the configuration from a JSON file
         Configuration loadedConfig = Configuration.loadConfigFromFile("config.json");
+        loadedConfig.setTotalTickets();
         if (loadedConfig != null && loadedConfig.validateConfig()) {
             System.out.println("Configuration loaded successfully!");
         } else {
