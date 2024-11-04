@@ -24,19 +24,58 @@ public class Vendor implements Runnable {
     }
 
 
-    public void setTicketReleaseParameters() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter ticket price: ");
-        this.ticketPrice = input.nextDouble();
-        input.nextLine(); // Consume the newline
-        System.out.print("Enter quantity of tickets to be released: ");
-        this.quantity = input.nextInt();
-        System.out.print("Enter interval between releases (ms): ");
-        this.releaseInterval = input.nextInt();
-        input.nextLine(); // Consume the newline
-        System.out.println("Enter the Name of the event for which tickets are released: ");
-        this.eventDetails = input.nextLine();
+public void setTicketReleaseParameters() {
+    Scanner input = new Scanner(System.in);
+    // Validate ticket price
+    this.ticketPrice = getValidDoubleInput(input, "Enter ticket price (must be positive): ");
+    // Validate quantity
+    this.quantity = getValidIntInput(input, "Enter quantity of tickets to be released (must be positive): ");
+    // Validate release interval (allow zero)
+    this.releaseInterval = getValidIntInput(input, "Enter interval between releases (ms, must be non-negative): ");
+    // Get event details
+    System.out.print("Enter the Name of the event for which tickets are released: ");
+    this.eventDetails = input.nextLine();
+}
+
+    private double getValidDoubleInput(Scanner input, String message) {
+        double value;
+        while (true) {
+            System.out.print(message);
+            if (input.hasNextDouble()) {
+                value = input.nextDouble();
+                if (value > 0) {  // Check for positive values
+                    input.nextLine(); // Consume the newline
+                    return value; // Valid input
+                } else {
+                    System.out.println("Error: Value must be positive.");
+                }
+            } else {
+                System.out.println("Error: Please enter a valid number.");
+                input.next(); // Clear invalid input
+            }
+        }
     }
+
+    private int getValidIntInput(Scanner input, String message) {
+        int value;
+        while (true) {
+            System.out.print(message);
+            if (input.hasNextInt()) {
+                value = input.nextInt();
+                if (value >= 0) {  // Check for non-negative values
+                    input.nextLine(); // Consume the newline
+                    return value; // Valid input
+                } else {
+                    System.out.println("Error: Value must be non-negative.");
+                }
+            } else {
+                System.out.println("Error: Please enter a valid integer.");
+                input.next(); // Clear invalid input
+            }
+        }
+    }
+
+
 
     public void run() {
         int remainingQuantity = quantity;

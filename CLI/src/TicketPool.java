@@ -52,46 +52,32 @@ public class TicketPool {
     }
 
     // Adds tickets to the pool and updates the JSON file
-    public synchronized boolean addTickets(String vendorId,String eventDetails, double price, int quantity, Vendor vendor) {
-//        try {
-//            for (int i = 0; i < quantity; i++) {
-//                // Check capacity before adding each ticket
-//                while (tickets.size() >= maxCapacity) {
-//                    System.out.println("Waiting to add tickets, pool at max capacity.");
-//                    wait(); // Wait until enough space is available
-//                }
-//
-//                // Add a single ticket
-//                tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
-//                saveTicketsToFile(); // Save after each ticket is added
-//                notifyAll(); // Notify waiting threads after adding each ticket
-//            }
-//            return true;
-//
-//        } catch (InterruptedException e) {
-//            System.out.println("Thread interrupted during addTickets.");
-//            Thread.currentThread().interrupt();
-//            return false;
-
+    public boolean addTickets(String vendorId, String eventDetails, double price, int quantity, Vendor vendor) {
         try {
             for (int i = 0; i < quantity; i++) {
-                // Check if the vendor has stopped the session
                 if (!vendor.isActive) {
                     System.out.println("Ticket addition stopped mid-batch for vendor: " + vendorId);
                     return false;  // Exit if stopSession is triggered
                 }
 
-                synchronized (this) {
-                    // Check capacity before adding each ticket
-                    while (tickets.size() >= maxCapacity) {
-                        System.out.println("Waiting to add tickets, pool at max capacity.");
-                        wait(); // Wait until enough space is available
+                synchronized (tickets) {
+                    // Check again after acquiring the lock to avoid race conditions
+                    if (!vendor.isActive) {
+                        System.out.println("Ticket addition stopped after acquiring lock for vendor: " + vendorId);
+                        return false; // Exit if stopSession is triggered
                     }
 
-                    // Add a single ticket
+                    while (tickets.size() >= maxCapacity) {
+                        System.out.println("Waiting to add tickets, pool at max capacity.");
+                        tickets.wait(); // Wait until enough space is available
+                    }
+
+                    // Simulate processing time before adding the ticket
+                    Thread.sleep(100);
+
                     tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
                     saveTicketsToFile(); // Save after each ticket is added
-                    notifyAll(); // Notify waiting threads after adding each ticket
+                    tickets.notifyAll(); // Notify waiting threads after adding each ticket
                 }
             }
             return true;
@@ -104,22 +90,23 @@ public class TicketPool {
     }
 
 
-
     // Removes a ticket from the pool and updates the JSON file
-    public synchronized Ticket removeTicket() {
-        try {
-            while (tickets.isEmpty()) {
-                System.out.println("Waiting to remove ticket, no tickets available.");
-                wait();
+    public Ticket removeTicket() {
+        synchronized (tickets) {
+            try {
+                while (tickets.isEmpty()) {
+                    System.out.println("Waiting to remove ticket, no tickets available.");
+                    tickets.wait();
+                }
+                Ticket removedTicket = tickets.remove(0);
+                saveTicketsToFile();
+                tickets.notifyAll();  // Notify producers that a ticket has been removed
+                return removedTicket;
+            } catch (InterruptedException e) {
+                System.out.println("Thread interrupted during removeTicket.");
+                Thread.currentThread().interrupt();
+                return null;
             }
-            Ticket removedTicket = tickets.remove(0);
-            saveTicketsToFile();
-            notifyAll();  // Notify producers that a ticket has been removed
-            return removedTicket;
-        } catch (InterruptedException e) {
-            System.out.println("Thread interrupted during removeTicket.");
-            Thread.currentThread().interrupt();
-            return null;
         }
     }
 
