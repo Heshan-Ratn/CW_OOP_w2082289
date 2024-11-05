@@ -35,6 +35,7 @@ public void setTicketReleaseParameters() {
     // Get event details
     System.out.print("Enter the Name of the event for which tickets are released: ");
     this.eventDetails = input.nextLine();
+    System.out.println();
 }
 
     private double getValidDoubleInput(Scanner input, String message) {

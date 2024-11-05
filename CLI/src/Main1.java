@@ -45,6 +45,8 @@ public class Main1 {
             case 2 -> handleLogin();
             case 3 -> {
                 System.out.println("Viewing Available Tickets...\n");
+                TicketPool ticketPool = new TicketPool();
+                ticketPool.viewAllTickets();
             }
             case 4 -> {
                 System.out.println("Viewing Real-time Tickets Being Sold and Added...\n");
@@ -137,6 +139,8 @@ public class Main1 {
                 return false;
             case 3:
                 System.out.println("Viewing Other Tickets...\n");
+                TicketPool ticketPool = new TicketPool();
+                ticketPool.viewAllTickets();
                 return false;
             case 4: // Stop Tickets Added
                 vendor.stopSession(); // Call the stop method to halt ticket release

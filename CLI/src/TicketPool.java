@@ -1,33 +1,31 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class TicketPool {
-    private static int maxCapacity; // Shared max capacity across all instances
-    private static boolean maxCapacityLoaded = false; // Flag to check if max capacity is already loaded
-    private static final List<Ticket> tickets = Collections.synchronizedList(new ArrayList<>());
-    private static boolean ticketsLoaded = false; // Flag to check if tickets are already loaded
-    private static final String ticketFilePath ="Tickets.json";
-    private static final String configFilePath ="config.json";
+    private static int maxCapacity;
+    private static boolean maxCapacityLoaded = false;
+    private static final List<Ticket> tickets = new ArrayList<>();
+    private static boolean ticketsLoaded = false;
+    private static final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+    private static final String ticketFilePath = "Tickets.json";
+    private static final String configFilePath = "config.json";
 
     public TicketPool() {
-//        this.ticketFilePath = "Tickets.json";
-//        this.configFilePath = "config.json";
-
-        // Load max capacity only once
         if (!maxCapacityLoaded) {
             loadMaxCapacityFromConfig();
             maxCapacityLoaded = true;
         }
-
-        // Load tickets only once
         if (!ticketsLoaded) {
             loadTicketsFromFile();
             ticketsLoaded = true;
@@ -38,7 +36,6 @@ public class TicketPool {
         return maxCapacity;
     }
 
-    // Load max capacity from config.json
     private static void loadMaxCapacityFromConfig() {
         Gson gson = new Gson();
         try (FileReader reader = new FileReader(configFilePath)) {
@@ -47,66 +44,56 @@ public class TicketPool {
         } catch (IOException e) {
             System.out.println("Could not load max capacity from config file.");
             e.printStackTrace();
-            maxCapacity = 100;  // Default to 100 if config load fails
+            maxCapacity = 100;
         }
     }
 
-    // Adds tickets to the pool and updates the JSON file
     public boolean addTickets(String vendorId, String eventDetails, double price, int quantity, Vendor vendor) {
+        lock.writeLock().lock();  // Acquire write lock for adding
         try {
             for (int i = 0; i < quantity; i++) {
                 if (!vendor.isActive) {
-                    System.out.println("Ticket addition stopped mid-batch for vendor: " + vendorId);
-                    return false;  // Exit if stopSession is triggered
+//                    System.out.println("Ticket addition stopped for vendor: " + vendorId);
+                    return false;
                 }
 
-                synchronized (tickets) {
-                    // Check again after acquiring the lock to avoid race conditions
-                    if (!vendor.isActive) {
-                        System.out.println("Ticket addition stopped after acquiring lock for vendor: " + vendorId);
-                        return false; // Exit if stopSession is triggered
-                    }
-
-                    while (tickets.size() >= maxCapacity) {
-                        System.out.println("Waiting to add tickets, pool at max capacity.");
-                        tickets.wait(); // Wait until enough space is available
-                    }
-
-                    // Simulate processing time before adding the ticket
-                    Thread.sleep(100);
-
-                    tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
-                    saveTicketsToFile(); // Save after each ticket is added
-                    tickets.notifyAll(); // Notify waiting threads after adding each ticket
+                while (tickets.size() >= maxCapacity) {
+                    System.out.println("Pool at max capacity, waiting to add tickets.");
+                    lock.writeLock().newCondition().await();
                 }
+
+                // Simulate processing time before adding the ticket
+                Thread.sleep(1000);
+
+                tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
+                saveTicketsToFile();  // Save after each ticket is added
+                lock.writeLock().newCondition().signalAll();  // Notify waiting threads
             }
             return true;
-
         } catch (InterruptedException e) {
-            System.out.println("Thread interrupted during addTickets.");
             Thread.currentThread().interrupt();
             return false;
+        } finally {
+            lock.writeLock().unlock();  // Release write lock
         }
     }
 
-
-    // Removes a ticket from the pool and updates the JSON file
     public Ticket removeTicket() {
-        synchronized (tickets) {
-            try {
-                while (tickets.isEmpty()) {
-                    System.out.println("Waiting to remove ticket, no tickets available.");
-                    tickets.wait();
-                }
-                Ticket removedTicket = tickets.remove(0);
-                saveTicketsToFile();
-                tickets.notifyAll();  // Notify producers that a ticket has been removed
-                return removedTicket;
-            } catch (InterruptedException e) {
-                System.out.println("Thread interrupted during removeTicket.");
-                Thread.currentThread().interrupt();
-                return null;
+        lock.writeLock().lock();  // Acquire write lock for removing
+        try {
+            while (tickets.isEmpty()) {
+                System.out.println("Waiting to remove ticket, no tickets available.");
+                lock.writeLock().newCondition().await();
             }
+            Ticket removedTicket = tickets.remove(0);
+            saveTicketsToFile();
+            lock.writeLock().newCondition().signalAll();  // Notify waiting threads
+            return removedTicket;
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return null;
+        } finally {
+            lock.writeLock().unlock();  // Release write lock
         }
     }
 
@@ -116,10 +103,30 @@ public class TicketPool {
         return tickets.size();
     }
 
+    public void viewAllTickets() {
+        lock.readLock().lock();  // Acquire read lock for viewing
+        try {
+            Map<String, Integer> ticketCountMap = new HashMap<>();
+            for (Ticket ticket : tickets) {
+                ticketCountMap.put(ticket.getEventDetails(), ticketCountMap.getOrDefault(ticket.getEventDetails(), 0) + 1);
+            }
 
-    // Loads tickets from JSON file into the shared list
-    private synchronized void loadTicketsFromFile() {
-        if (ticketsLoaded) return; // Prevent redundant loading
+            if (ticketCountMap.isEmpty()) {
+                System.out.println("No tickets available in the pool.\n");
+            } else {
+                System.out.println("Tickets in the pool:");
+                for (Map.Entry<String, Integer> entry : ticketCountMap.entrySet()) {
+                    System.out.println("Ticket Name: " + entry.getKey() + ", Count: " + entry.getValue());
+                }
+                System.out.println();
+            }
+        } finally {
+            lock.readLock().unlock();  // Release read lock
+        }
+    }
+
+    private void loadTicketsFromFile() {
+        lock.writeLock().lock();  // Load should be treated as a write operation
         Gson gson = new Gson();
         try (FileReader reader = new FileReader(ticketFilePath)) {
             Type ticketListType = new TypeToken<ArrayList<Ticket>>() {}.getType();
@@ -131,18 +138,22 @@ public class TicketPool {
         } catch (IOException e) {
             System.out.println("Could not load tickets from file.");
             e.printStackTrace();
+        } finally {
+            lock.writeLock().unlock();
         }
     }
 
-    // Saves the current list of tickets to JSON file
-    private synchronized void saveTicketsToFile() {
-//        Gson gson = new Gson();
+    private void saveTicketsToFile() {
+        lock.writeLock().lock();  // Save should be treated as a write operation
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(ticketFilePath)) {
             gson.toJson(tickets, writer);
         } catch (IOException e) {
             System.out.println("Could not save tickets to file.");
             e.printStackTrace();
+        } finally {
+            lock.writeLock().unlock();
         }
     }
 }
+
