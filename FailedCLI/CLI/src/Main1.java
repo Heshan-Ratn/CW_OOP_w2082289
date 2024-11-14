@@ -143,7 +143,7 @@ public class Main1 {
                 ticketPool.viewAllTickets();
                 return false;
             case 4: // Stop Tickets Added
-                vendor.stopSession(); // Call the stop method to halt ticket release
+                //vendor.stopSession(); // Call the stop method to halt ticket release
                 return false;
             case 5:
                 System.out.println("Viewing Real-time Tickets...\n");

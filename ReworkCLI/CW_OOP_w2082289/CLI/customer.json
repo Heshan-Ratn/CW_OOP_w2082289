@@ -1,0 +1,18 @@
+[
+  {
+    "customerId": "customer1",
+    "password": "password123"
+  },
+  {
+    "customerId": "customer2",
+    "password": "password456"
+  },
+  {
+    "customerId": "customer3",
+    "password": "password3"
+  },
+  {
+    "customerId": "customer4",
+    "password": "password4"
+  }
+]

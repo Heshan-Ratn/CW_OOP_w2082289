@@ -6,16 +6,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class TicketPool {
     private static int maxCapacity;
     private static boolean maxCapacityLoaded = false;
-    private static final List<Ticket> tickets = new ArrayList<>();
+    private static final List<Ticket> tickets = Collections.synchronizedList(new ArrayList<>());
     private static boolean ticketsLoaded = false;
     private static final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
     private static final String ticketFilePath = "Tickets.json";
@@ -51,9 +48,11 @@ public class TicketPool {
     public boolean addTickets(String vendorId, String eventDetails, double price, int quantity, Vendor vendor) {
         lock.writeLock().lock();  // Acquire write lock for adding
         try {
+            List<Ticket> batch = new ArrayList<>();  // Temporary list to store the batch of tickets//
             for (int i = 0; i < quantity; i++) {
                 if (!vendor.isActive) {
 //                    System.out.println("Ticket addition stopped for vendor: " + vendorId);
+                    //Thread.currentThread().interrupt();//
                     return false;
                 }
 
@@ -65,18 +64,62 @@ public class TicketPool {
                 // Simulate processing time before adding the ticket
                 Thread.sleep(1000);
 
-                tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
-                saveTicketsToFile();  // Save after each ticket is added
-                lock.writeLock().newCondition().signalAll();  // Notify waiting threads
+                Ticket ticket = new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId);//
+                //tickets.add(new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId));
+                batch.add(ticket);  // Add ticket to the batch//
+                //saveTicketsToFile();  // Save after each ticket is added
+                //lock.writeLock().newCondition().signalAll();  // Notify waiting threads
             }
+            // Add the batch to the main ticket list after the loop completes//
+            tickets.addAll(batch);//
+            saveTicketsToFile();  // Save the batch to the file once all tickets are added//
+
+            // Signal all waiting threads that tickets have been added and saved//
+            lock.writeLock().newCondition().signalAll();//
+
             return true;
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
+            System.out.println("Thread interrupted! "+vendor.getVendorId());//
             return false;
         } finally {
             lock.writeLock().unlock();  // Release write lock
         }
     }
+
+//    public boolean addTickets(String vendorId, String eventDetails, double price, int quantity, Vendor vendor) {
+//        synchronized (TicketPool.class) {  // Lock on the class object to synchronize access to tickets
+//            try {
+//                List<Ticket> batch = new ArrayList<>();  // Temporary list to store the batch of tickets
+//                for (int i = 0; i < quantity; i++) {
+//                    if (!vendor.isActive) {
+//                        return false; // Stop adding if vendor is inactive
+//                    }
+//
+//                    while (tickets.size() >= maxCapacity) {
+//                        // Wait if the ticket pool has reached its max capacity
+//                        lock.writeLock().newCondition().await();
+//                    }
+//
+//                    // Simulate ticket processing time
+//                    Thread.sleep(1000);
+//
+//                    Ticket ticket = new Ticket("Ticket" + (tickets.size() + 1), eventDetails, price, vendorId);
+//                    batch.add(ticket); // Add ticket to batch
+//                }
+//                // Add the batch to the tickets list
+//                tickets.addAll(batch);
+//                saveTicketsToFile();  // Save the tickets once all are added
+//                lock.writeLock().newCondition().signalAll();  // Notify waiting threads
+//
+//                return true;
+//            } catch (InterruptedException e) {
+//                Thread.currentThread().interrupt();
+//                return false;
+//            }
+//        }
+//    }
+
 
     public Ticket removeTicket() {
         lock.writeLock().lock();  // Acquire write lock for removing

@@ -1,0 +1,302 @@
+[
+  {
+    "ticketId": "TICKET001",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor1",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET002",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor2",
+    "ticketStatus": "Booked",
+    "customerId": "customer2"
+  },
+  {
+    "ticketId": "TICKET003",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor3",
+    "ticketStatus": "Booked",
+    "customerId": "customer2"
+  },
+  {
+    "ticketId": "TICKET004",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET005",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor1",
+    "ticketStatus": "Booked",
+    "customerId": "customer2"
+  },
+  {
+    "ticketId": "TICKET006",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor2",
+    "ticketStatus": "Booked",
+    "customerId": "customer3"
+  },
+  {
+    "ticketId": "TICKET007",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor3",
+    "ticketStatus": "Booked",
+    "customerId": "customer3"
+  },
+  {
+    "ticketId": "TICKET008",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET009",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor1",
+    "ticketStatus": "Booked",
+    "customerId": "customer2"
+  },
+  {
+    "ticketId": "TICKET010",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor2",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET011",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor3",
+    "ticketStatus": "Booked",
+    "customerId": "customer2"
+  },
+  {
+    "ticketId": "TICKET012",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer2"
+  },
+  {
+    "ticketId": "TICKET013",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor1",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET014",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor2",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET015",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor3",
+    "ticketStatus": "Booked",
+    "customerId": "customer3"
+  },
+  {
+    "ticketId": "TICKET016",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET017",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor1",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET018",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor2",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET019",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor3",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET020",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET021",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor1",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET022",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor2",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET023",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor3",
+    "ticketStatus": "Booked",
+    "customerId": "customer3"
+  },
+  {
+    "ticketId": "TICKET024",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET025",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET026",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET027",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor4",
+    "ticketStatus": "Booked",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET028",
+    "eventName": "TheaterEvent",
+    "price": 60.0,
+    "timeDuration": "3 hours",
+    "Date": "2024-12-02",
+    "vendorId": "vendor4",
+    "ticketStatus": "Available",
+    "customerId": "customer4"
+  },
+  {
+    "ticketId": "TICKET029",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor2",
+    "ticketStatus": "Booked",
+    "customerId": "customer1"
+  },
+  {
+    "ticketId": "TICKET030",
+    "eventName": "ConcertEvent",
+    "price": 50.0,
+    "timeDuration": "2 hours",
+    "Date": "2024-12-01",
+    "vendorId": "vendor2",
+    "ticketStatus": "Available",
+    "customerId": "customer1"
+  }
+]

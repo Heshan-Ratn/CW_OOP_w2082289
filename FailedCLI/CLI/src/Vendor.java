@@ -10,6 +10,7 @@ public class Vendor implements Runnable {
     private int quantity;
     private double ticketPrice;
     private String eventDetails;
+    private final Object pauseLock = new Object(); // Lock for pausing
 
     public Vendor (String vendorId, String vendorPassword, int ticketsPerRelease){
         this.vendorId = vendorId;
@@ -78,10 +79,56 @@ public void setTicketReleaseParameters() {
 
 
 
+//    public void run() {
+//        int remainingQuantity = quantity;
+//
+//        while (isActive && remainingQuantity > 0) {
+//            int ticketsToRelease = Math.min(ticketsPerRelease, remainingQuantity);
+//
+//            // Try adding tickets to TicketPool, ensuring thread safety
+//            boolean added = ticketPool.addTickets(vendorId, eventDetails, ticketPrice, ticketsToRelease, this);
+//            if (added) {
+//                remainingQuantity -= ticketsToRelease;
+//            }
+//
+//            // Pause the thread between sub-batch releases
+//            try {
+//                Thread.sleep(releaseInterval);
+//            } catch (InterruptedException e) {
+//                System.out.println("Vendor " + vendorId + " interrupted.");
+//                Thread.currentThread().interrupt();
+//            }
+//        }
+//    }
+//
+//    public void ControlSession() {
+//        isActive = !isActive; // Toggle the value of isActive
+//        if (isActive) {
+//            System.out.println("Resuming ticket release for vendor: " + vendorId+"\n");
+//        } else {
+//            System.out.println("Pausing ticket release for vendor: " + vendorId +"\n");
+//        }
+//    }
+
+
     public void run() {
         int remainingQuantity = quantity;
+        while (true) {
+            synchronized (pauseLock) {
+                while (!isActive) {
+                    try {
+                        pauseLock.wait(); // Wait if the vendor is inactive
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        return; // Exit if interrupted
+                    }
+                }
+            }
 
-        while (isActive && remainingQuantity > 0) {
+            if (remainingQuantity <= 0) {
+                break; // Exit if there are no tickets left to release
+            }
+
             int ticketsToRelease = Math.min(ticketsPerRelease, remainingQuantity);
 
             // Try adding tickets to TicketPool, ensuring thread safety
@@ -100,14 +147,51 @@ public void setTicketReleaseParameters() {
         }
     }
 
-    public void stopSession() {
-        isActive = !isActive; // Toggle the value of isActive
-        if (isActive) {
-            System.out.println("Resuming ticket release for vendor: " + vendorId+"\n");
-        } else {
-            System.out.println("Pausing ticket release for vendor: " + vendorId +"\n");
+//    public void run() {
+//        int remainingQuantity = quantity;
+//        while (remainingQuantity > 0) {
+//            synchronized (pauseLock) {
+//                while (!isActive) {
+//                    try {
+//                        pauseLock.wait(); // Wait if the vendor is inactive
+//                    } catch (InterruptedException e) {
+//                        Thread.currentThread().interrupt();
+//                        return; // Exit if interrupted
+//                    }
+//                }
+//            }
+//
+//            // Logic to release tickets
+//            int ticketsToRelease = Math.min(ticketsPerRelease, remainingQuantity);
+//            boolean added = ticketPool.addTickets(vendorId, eventDetails, ticketPrice, ticketsToRelease, this);
+//            if (added) {
+//                remainingQuantity -= ticketsToRelease;
+//            }
+//
+//            // Pause the thread between sub-batch releases
+//            try {
+//                Thread.sleep(releaseInterval); // Wait before releasing more tickets
+//            } catch (InterruptedException e) {
+//                System.out.println("Vendor " + vendorId + " interrupted.");
+//                Thread.currentThread().interrupt();
+//            }
+//        }
+//    }
+
+
+    public void ControlSession() {
+        synchronized (pauseLock) {
+            isActive = !isActive; // Toggle the value of isActive
+            if (isActive) {
+                pauseLock.notify(); // Notify the waiting thread to continue
+                System.out.println("Resuming ticket release for vendor: " + vendorId + "\n");
+            } else {
+                System.out.println("Pausing ticket release for vendor: " + vendorId + "\n");
+            }
         }
     }
+
+
     public boolean CheckReleaseStatus() {
         if (isActive) {
             System.out.println("Ticket release for vendor: " + vendorId+ " is Active.\n");

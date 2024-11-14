@@ -1,0 +1,8 @@
+{
+  "totalAvailableTickets": 2,
+  "ticketReleaseRate": 2600.0,
+  "customerRetrievalRate": 2700.0,
+  "maxTicketCapacity": 260,
+  "configAdminUser": "Oregon",
+  "configAdminPassword": "gen23"
+}
