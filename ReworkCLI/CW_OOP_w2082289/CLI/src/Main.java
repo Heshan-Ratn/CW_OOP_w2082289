@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     private static final Scanner input = new Scanner(System.in);
@@ -50,7 +51,11 @@ public class Main {
         switch (option) {
             case 1 -> handleConfigurationSettings();
             case 2 -> handleLogin();
-            case 3 -> System.out.println("Viewing Available Tickets...\n");
+            case 3 -> {
+                System.out.println("Viewing Available Tickets...\n");
+                ticketPool.countAvailableTicketsByEvent();
+                System.out.println();
+            }
             case 4 -> System.out.println("Viewing Real-time Tickets Being Sold and Added...\n");
             case 5 -> System.out.println("Stimulating ticket operations in the ticket pool...\n");
             case 6 -> System.out.println("Starting System if Stopped...\n");
@@ -130,7 +135,7 @@ public class Main {
             System.out.println("2. View Added Tickets of the Vendor");
             System.out.println("3. View Other Tickets");
             System.out.println("4. Stop Ticket Release for the Vendor");
-            System.out.println("5. Stop Ticket Release for the Vendor");
+            System.out.println("5. Activating Ticket Release for the Vendor");
             System.out.println("6. View Real-time Tickets Being Sold and Added");
             System.out.println("7. Exit");
             int choice = getUserChoice(1, 7);
@@ -152,10 +157,21 @@ public class Main {
             case 2 -> {
                 System.out.println("Viewing Vendor's Added Tickets...\n");
                 ticketPool.viewAvailableTicketCountsByVendor(vendor.getVendorId());
+                System.out.println();
             }
-            case 3 -> System.out.println("Viewing Other Tickets...\n");
-            case 4 -> System.out.println("Stopping Ticket Release...\n");
-            case 5 -> System.out.println("Activating Ticket Release...\n");
+            case 3 -> {
+                System.out.println("Viewing Other Tickets...\n");
+                ticketPool.countAvailableTicketsByEvent();
+                System.out.println();
+            }
+            case 4 -> {
+                System.out.println("Stopping Ticket Release...\n");
+                vendor.stopReleasingTickets();
+            }
+            case 5 -> {
+                System.out.println("Activating Ticket Release...\n");
+                vendor.resumeReleasingTickets();
+            }
             case 6 -> System.out.println("Viewing Real-time Tickets Being Sold and Added...\n");
             case 7 -> {
                 System.out.println("Exiting Vendor Actions...\n");
@@ -173,13 +189,27 @@ public class Main {
         System.out.println("3. Exit");
         int choice = getUserChoice(1, 3);
         switch (choice) {
-            case 1 -> System.out.println("Signing up Customer and Saving...\n");
-            case 2 -> handleCustomerActions();
+            case 1 -> {
+                System.out.println("Signing up Customer and Saving...\n");
+                boolean signup = Customer.signUp();
+                if(signup){
+                    System.out.println("Sign up was successful!\n");
+                }else{
+                    System.out.println("Customer Sign up was unsuccessful!\n");
+                }
+            }
+            case 2 -> {
+                Customer customer = Customer.signIn();
+                if(customer != null){
+                handleCustomerActions(customer);}
+            }
             case 3 -> System.out.println("Exiting Customer Login...\n");
         }
     }
 
-    private static void handleCustomerActions() {
+    private static void handleCustomerActions(Customer customer) {
+        customer.setCustomerRetrievalRate();
+        customer.setTicketPool(ticketPool);
         boolean exit = false;
         while (!exit) {
             System.out.println("Customer Options:");
@@ -191,13 +221,19 @@ public class Main {
             System.out.println("6. View Real-time Tickets Being Sold and Added");
             System.out.println("7. Exit");
             int choice = getUserChoice(1, 7);
-            exit = handleCustomerChoice(choice);
+            exit = handleCustomerChoice(choice, customer);
         }
     }
 
-    private static boolean handleCustomerChoice(int choice) {
+    private static boolean handleCustomerChoice(int choice, Customer customer) {
         switch (choice) {
-            case 1 -> System.out.println("Removing/Purchasing Tickets...\n");
+            case 1 -> {
+                System.out.println("Removing/Purchasing Tickets...\n");
+                Set<String> eventDetails = ticketPool.getEventDetails();  // Fetch valid event names
+                customer.requestTickets(eventDetails);
+                Thread customerThread = new Thread(customer);
+                customerThread.start();
+            }
             case 2 -> System.out.println("Viewing Tickets Bought...\n");
             case 3 -> System.out.println("Viewing Other Tickets...\n");
             case 4 -> System.out.println("Stopping purchase of Tickets for the vendor...\n");

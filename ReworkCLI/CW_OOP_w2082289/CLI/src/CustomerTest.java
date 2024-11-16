@@ -283,16 +283,16 @@
 //}
 
 
-public class CustomerTest {
-    public static void main(String[] args) {
-        // Step 1: Initialize shared TicketPool
-        TicketPool ticketPool = TicketPool.getInstance(100);  // Ensure this is initialized
-
-        // Step 2: Create Customer instances with ticketPool passed as a parameter
-        Customer customer1 = new Customer("customer1", "password1", ticketPool);
-        Customer customer2 = new Customer("customer2", "password2", ticketPool);
-        Customer customer3 = new Customer("customer3", "password3", ticketPool);
-        Customer customer4 = new Customer("customer4", "password4", ticketPool);
+//public class CustomerTest {
+//    public static void main(String[] args) {
+//        // Step 1: Initialize shared TicketPool
+//        TicketPool ticketPool = TicketPool.getInstance(100);  // Ensure this is initialized
+//
+//        // Step 2: Create Customer instances with ticketPool passed as a parameter
+//        Customer customer1 = new Customer("customer1", "password1", ticketPool);
+//        Customer customer2 = new Customer("customer2", "password2", ticketPool);
+//        Customer customer3 = new Customer("customer3", "password3", ticketPool);
+//        Customer customer4 = new Customer("customer4", "password4", ticketPool);
 
 //        // Step 3: Sign-up and sign-in logic for customers
 //        System.out.println("Signing up customers...");
@@ -308,62 +308,62 @@ public class CustomerTest {
 //        customer3.signIn();
 //        customer4.signIn();
 
-        // Step 4: Request tickets for events
-        System.out.println("Customers requesting tickets...");
-        customer1.requestTickets("ConcertEvent", 5);
-        customer2.requestTickets("ConcertEvent", 3);
-        customer3.requestTickets("TheaterEvent", 2);
-        customer4.requestTickets("TheaterEvent", 4);
-
-        // Step 5: Create threads to simulate customer actions (multiple threads per customer)
-        Thread customerThread1 = new Thread(customer1);
-        Thread customerThread2 = new Thread(customer2);
-        Thread customerThread3 = new Thread(customer3);
-        Thread customerThread4 = new Thread(customer4);
-
-        // Running multiple threads per customer (simulating multiple actions)
-        Thread customerThread1a = new Thread(customer1);
-        Thread customerThread2a = new Thread(customer2);
-        Thread customerThread3a = new Thread(customer3);
-        Thread customerThread4a = new Thread(customer4);
-
-        // Start threads
-        System.out.println("Starting customer threads...");
-        customerThread1.start();
-        customerThread2.start();
-        customerThread2a.start();
-        customerThread3.start();
-
-        try {
-            Thread.sleep(5000);  // Simulate wait time for ticket booking
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        customerThread1a.start();
-        customerThread4.start();
-        customerThread3a.start();
-        customerThread4a.start();
-
-        // Step 6: Add appropriate wait time to allow customers to process purchases
-        try {
-            Thread.sleep(10000);  // Simulate wait time for ticket booking
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Step 7: Admin stops all customer purchases
-        System.out.println("\nAdmin is stopping all customer purchases...");
-        Customer.stopAllPurchases();  // Admin stop functionality
-
-        // Step 8: Wait for threads to stop
-        try {
-            Thread.sleep(2000);  // Allow time for all threads to stop
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Show available tickets by event after stopping
-        ticketPool.countAvailableTicketsByEvent();
+//        // Step 4: Request tickets for events
+//        System.out.println("Customers requesting tickets...");
+//        customer1.requestTickets("ConcertEvent", 5);
+//        customer2.requestTickets("ConcertEvent", 3);
+//        customer3.requestTickets("TheaterEvent", 2);
+//        customer4.requestTickets("TheaterEvent", 4);
+//
+//        // Step 5: Create threads to simulate customer actions (multiple threads per customer)
+//        Thread customerThread1 = new Thread(customer1);
+//        Thread customerThread2 = new Thread(customer2);
+//        Thread customerThread3 = new Thread(customer3);
+//        Thread customerThread4 = new Thread(customer4);
+//
+//        // Running multiple threads per customer (simulating multiple actions)
+//        Thread customerThread1a = new Thread(customer1);
+//        Thread customerThread2a = new Thread(customer2);
+//        Thread customerThread3a = new Thread(customer3);
+//        Thread customerThread4a = new Thread(customer4);
+//
+//        // Start threads
+//        System.out.println("Starting customer threads...");
+//        customerThread1.start();
+//        customerThread2.start();
+//        customerThread2a.start();
+//        customerThread3.start();
+//
+//        try {
+//            Thread.sleep(5000);  // Simulate wait time for ticket booking
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        customerThread1a.start();
+//        customerThread4.start();
+//        customerThread3a.start();
+//        customerThread4a.start();
+//
+//        // Step 6: Add appropriate wait time to allow customers to process purchases
+//        try {
+//            Thread.sleep(10000);  // Simulate wait time for ticket booking
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        // Step 7: Admin stops all customer purchases
+//        System.out.println("\nAdmin is stopping all customer purchases...");
+//        Customer.stopAllPurchases();  // Admin stop functionality
+//
+//        // Step 8: Wait for threads to stop
+//        try {
+//            Thread.sleep(2000);  // Allow time for all threads to stop
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        // Show available tickets by event after stopping
+//        ticketPool.countAvailableTicketsByEvent();
 
 //        // Step 9: Admin resumes all customer purchases
 //        System.out.println("\nAdmin is resuming all customer purchases...");
@@ -413,10 +413,10 @@ public class CustomerTest {
 //        ticketPool.countAvailableTicketsByEvent();
 //
 //        System.out.println("Customer test complete.");
-        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer1"));
-        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer2"));
-        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer3"));
-        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer4"));
-    }
-}
+//        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer1"));
+//        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer2"));
+//        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer3"));
+//        System.out.println(ticketPool.countBookedTicketsByCustomerId("customer4"));
+//    }
+//}
 
