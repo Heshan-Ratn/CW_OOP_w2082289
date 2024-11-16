@@ -86,12 +86,12 @@ public class Ticket {
             tickets.add(new Ticket(ticketId, eventName, price, timeDuration, date, vendorId, "Available", "Not Set"));
         }
 
-        // Optionally print out the tickets created
-        System.out.println("Generated " + tickets.size() + " tickets for vendor " + vendorId + ":");
-        for (Ticket ticket : tickets) {
-            System.out.println(ticket.getTicketId() + " for event: " + eventName);
-        }
-
+//        // Optionally print out the tickets created
+//        System.out.println("Generated " + tickets.size() + " tickets for vendor " + vendorId + ":");
+//        for (Ticket ticket : tickets) {
+//            System.out.println(ticket.getTicketId() + " for event: " + eventName);
+//        }
+        System.out.println();
         return tickets;
     }
 

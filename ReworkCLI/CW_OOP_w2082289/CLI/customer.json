@@ -1,18 +1,10 @@
 [
   {
-    "customerId": "customer1",
-    "password": "password123"
+    "customerId": "john202",
+    "password": "23gn45nn"
   },
   {
-    "customerId": "customer2",
-    "password": "password456"
-  },
-  {
-    "customerId": "customer3",
-    "password": "password3"
-  },
-  {
-    "customerId": "customer4",
-    "password": "password4"
+    "customerId": "ehsn432",
+    "password": "fhgnfh23"
   }
 ]

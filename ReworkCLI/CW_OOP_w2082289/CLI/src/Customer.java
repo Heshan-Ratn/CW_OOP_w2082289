@@ -1,180 +1,8 @@
-//import com.google.gson.Gson;
-//import com.google.gson.reflect.TypeToken;
-//
-//import java.io.FileReader;
-//import java.io.FileWriter;
-//import java.io.IOException;
-//import java.lang.reflect.Type;
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.concurrent.TimeUnit;
-//import java.util.concurrent.atomic.AtomicBoolean;
-//
-//public class Customer implements Runnable {
-//    private String customerId;
-//    private String password;
-//    private TicketPool ticketPool; // Shared ticket pool
-//    private AtomicBoolean purchasingTickets = new AtomicBoolean(true); // Consumer-level stop flag
-//    private static AtomicBoolean adminStopAllPurchases = new AtomicBoolean(false); // Admin-level stop flag
-//    private int customerRetrievalRate; // in milliseconds
-//
-//    // Instance variables for event name and ticket quantity to be booked
-//    private String eventName;
-//    private int ticketsToBook;
-//
-//    // Constructor for sign-up and sign-in purposes
-//    public Customer(String customerId, String password) {
-//        this.customerId = customerId;
-//        this.password = password;
-//    }
-//
-//    // Constructor for initializing consumer with TicketPool and retrieval rate
-//    public Customer(String customerId, String password, TicketPool ticketPool) {
-//        this.customerId = customerId;
-//        this.password = password;
-//        this.ticketPool = ticketPool;
-//        this.customerRetrievalRate = loadRetrievalRateFromConfig();
-//    }
-//
-//    // Static method for admin-level stop
-//    public static void stopAllPurchases() {
-//        adminStopAllPurchases.set(true);
-//    }
-//
-//    public static void resumeAllPurchases() {
-//        adminStopAllPurchases.set(false);
-//    }
-//
-//    // Load retrieval rate from config
-//    private int loadRetrievalRateFromConfig() {
-//        try (FileReader reader = new FileReader("config.json")) {
-//            Gson gson = new Gson();
-//            Configuration config = gson.fromJson(reader, Configuration.class);
-//            return (int) config.getCustomerRetrievalRate();  // Get the release rate from config
-//        } catch (IOException e) {
-//            System.out.println("Error reading config.json, using default rate.");
-//            return 1000;  // Default value if config.json is not found or read error occurs
-//        }
-//    }
-//
-//    // Method for signing up a new consumer
-//    public static synchronized boolean signUp(String customerId, String password) {
-//        List<Customer> consumers = loadCustomers();
-//        if (consumers == null) {
-//            consumers = new ArrayList<>();
-//        }
-//
-//        // Check if customerId is already taken
-//        for (Customer c : consumers) {
-//            if (c.customerId.equals(customerId)) {
-//                System.out.println("Consumer ID already taken.");
-//                return false;
-//            }
-//        }
-//
-//        consumers.add(new Customer(customerId, password));
-//
-//        // Save updated consumer list to file
-//        return saveCustomers(consumers);
-//    }
-//
-//    // Method for signing in an existing consumer
-//    public static synchronized Customer signIn(String customerId, String password) {
-//        List<Customer> consumers = loadCustomers();
-//        if (consumers == null) return null;
-//
-//        for (Customer c : consumers) {
-//            if (c.customerId.equals(customerId) && c.password.equals(password)) {
-//                System.out.println("Consumer signed in successfully.");
-//                return new Customer(customerId, password);
-//            }
-//        }
-//        System.out.println("Sign in failed: Incorrect ID or password.");
-//        return null;
-//    }
-//
-//    // Method to store event name and ticket quantity requested by the consumer
-//    public void requestTickets(String eventName, int ticketsToBook) {
-//        this.eventName = eventName;
-//        this.ticketsToBook = ticketsToBook;
-//    }
-//
-//    // Runnable method to purchase tickets based on requested event and quantity
-//    @Override
-//    public void run() {
-//        for (int i = 0; i < ticketsToBook; i++) {
-//            if (!purchasingTickets.get() || adminStopAllPurchases.get()) {
-//                System.out.println("Ticket purchasing stopped for consumer: " + customerId);
-//                return;
-//            }
-//
-//            boolean purchased = ticketPool.removeTicket(eventName, customerId);
-//            if (purchased) {
-//                System.out.println("Ticket purchased by " + customerId);
-//            } else {
-//                System.out.println("No tickets available for purchase.");
-//                break;
-//            }
-//
-//            try {
-//                TimeUnit.MILLISECONDS.sleep(customerRetrievalRate);
-//
-//                // Check the stop condition again after the sleep
-//                if (!purchasingTickets.get() || adminStopAllPurchases.get()) {
-//                    System.out.println("Ticket purchasing stopped after sleep for consumer: " + customerId);
-//                    return;
-//                }
-//            } catch (InterruptedException e) {
-//                Thread.currentThread().interrupt();
-//                System.out.println("Ticket purchasing interrupted for consumer: " + customerId);
-//                return;
-//            }
-//        }
-//        System.out.println("Ticket purchasing completed for consumer: " + customerId);
-//    }
-//
-//    // Load consumers from file
-//    private static synchronized List<Customer> loadCustomers() {
-//        try (FileReader reader = new FileReader("customer.json")) {
-//            Gson gson = new Gson();
-//            Type consumerListType = new TypeToken<List<Customer>>() {}.getType();
-//            return gson.fromJson(reader, consumerListType);
-//        } catch (IOException e) {
-//            System.out.println("Error loading consumers.");
-//            return null;
-//        }
-//    }
-//
-//    // Save consumers to file
-//    private static synchronized boolean saveCustomers(List<Customer> consumers) {
-//        try (FileWriter writer = new FileWriter("customer.json")) {
-//            Gson gson = new Gson();
-//            gson.toJson(consumers, writer);
-//            System.out.println("Consumer saved successfully.");
-//            return true;
-//        } catch (IOException e) {
-//            System.out.println("Error saving consumer.");
-//            return false;
-//        }
-//    }
-//
-//    // Stop and resume ticket purchasing for this consumer
-//    public void stopPurchasingTickets() {
-//        purchasingTickets.set(false);
-//    }
-//
-//    public void resumePurchasingTickets() {
-//        purchasingTickets.set(true);
-//    }
-//}
-
-
-
-
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -182,8 +10,11 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.regex.Pattern;
 
 public class Customer implements Runnable {
     private String customerId;
@@ -193,7 +24,10 @@ public class Customer implements Runnable {
     private static AtomicBoolean adminStopAllPurchases = new AtomicBoolean(false); // Admin-level stop flag
     private int customerRetrievalRate; // in milliseconds
     private static final String CUSTOMER_FILE = "customer.json";
+    private static final int MAX_ATTEMPTS = 3;
 
+    private static final Logger logger = LogManager.getLogger(Customer.class);
+    private static final Logger loggerRun = LogManager.getLogger("CustomerRun");
 
     // Instance variables for event name and ticket quantity to be booked
     private String eventName;
@@ -207,6 +41,19 @@ public class Customer implements Runnable {
 
     public String getCustomerId() {
         return customerId;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setTicketPool(TicketPool ticketPool) {
+        this.ticketPool = ticketPool;
+    }
+
+    public void setCustomerRetrievalRate() {
+        this.customerRetrievalRate = loadRetrievalRateFromConfig();
     }
 
     // Constructor for initializing consumer with TicketPool and retrieval rate
@@ -238,36 +85,86 @@ public class Customer implements Runnable {
         }
     }
 
+    public static String[] promptCustomerCredentials() {
+        Scanner scanner = new Scanner(System.in);
+        String customerId, password;
+
+        for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
+            System.out.print("Enter Customer ID (7 characters, last 3 must be digits): ");
+            customerId = scanner.nextLine().trim();
+
+            if (!isValidCustomerId(customerId)) {
+                System.out.println("Invalid Customer ID. Please ensure it is 7 characters with the last 3 as digits.");
+                continue;
+            }
+
+            System.out.print("Enter Password (8-12 characters): ");
+            password = scanner.nextLine().trim();
+
+            if (!isValidPassword(password)) {
+                System.out.println("Invalid Password. It must be between 8-12 characters.");
+                continue;
+            }
+
+            return new String[]{customerId, password}; // Successful input
+        }
+
+        System.out.println("Maximum attempts reached. Returning to main menu.");
+        return new String[]{"", ""}; // Failed input after max attempts
+    }
+
+    private static boolean isValidCustomerId(String customerId) {
+        return customerId.length() == 7 && Pattern.matches("^[A-Za-z0-9_]{4}[0-9]{3}$", customerId);
+    }
+    private static boolean isValidPassword(String password) {
+        return password.length() >= 8 && password.length() <= 12;
+    }
+
+
     // Method for signing up a new consumer
-    public static synchronized boolean signUp(String customerId, String password) {
+    public static synchronized boolean signUp() {
+        String[] newCustomerCredentials = promptCustomerCredentials();
+        if (newCustomerCredentials[0].equals("")&&newCustomerCredentials[1].equals("")) {
+            return false;
+        }
+
         List<CustomerData> customers = loadCustomers();
 
         // Check if customerId is already taken
         for (CustomerData customer : customers) {
-            if (customer.getCustomerId().equals(customerId)) {
+            if (customer.getCustomerId().equals(newCustomerCredentials[0])) {
                 System.out.println("Consumer ID already taken.");
                 return false;
             }
         }
 
-        customers.add(new CustomerData(customerId, password));
+        customers.add(new CustomerData(newCustomerCredentials[0], newCustomerCredentials[1]));
 
         // Save updated consumer list to file
         return saveCustomers(customers);
     }
 
     // Method for signing in an existing consumer
-    public static synchronized Customer signIn(String customerId, String password) {
+    public static synchronized Customer signIn() {
+        String[] CustomerCredentials = promptCustomerCredentials();
+        if (CustomerCredentials[0].equals("") && CustomerCredentials[1].equals("")) {
+            System.out.println("Returning Back to main menu all the sign in attempts Failed!\n");
+            return null;
+        }
+
         List<CustomerData> customers = loadCustomers();
-        if (customers == null) return null;
+        if (customers.isEmpty()) {
+            System.out.println("Customers database is empty!.\n");
+            return null;
+        }
 
         for (CustomerData customer : customers) {
-            if (customer.getCustomerId().equals(customerId) && customer.password.equals(password)) {
-                System.out.println("Consumer signed in successfully.");
-                return new Customer(customerId, password);
+            if (customer.getCustomerId().equals(CustomerCredentials[0]) && customer.getPassword().equals(CustomerCredentials[1])) {
+                System.out.println("Consumer signed in successfully.\n");
+                return new Customer(CustomerCredentials[0], CustomerCredentials[1]);
             }
         }
-        System.out.println("Sign in failed: Incorrect ID or password.");
+        System.out.println("Sign in failed: Incorrect ID or password.\n");
         return null;
     }
 
@@ -282,15 +179,15 @@ public class Customer implements Runnable {
     public void run() {
         for (int i = 0; i < ticketsToBook; i++) {
             if (!purchasingTickets.get() || adminStopAllPurchases.get()) {
-                System.out.println("Ticket purchasing stopped for consumer: " + customerId);
+                loggerRun.info("Ticket purchasing stopped for consumer: " + customerId);
                 return;
             }
 
             boolean purchased = ticketPool.removeTicket(eventName, customerId);
             if (purchased) {
-                System.out.println("Ticket purchased by " + customerId);
+                loggerRun.info("Ticket purchased by " + customerId);
             } else {
-                System.out.println("No tickets available for purchase.");
+                loggerRun.info("No tickets available for purchase.");
                 break;
             }
 
@@ -299,16 +196,16 @@ public class Customer implements Runnable {
 
                 // Check the stop condition again after the sleep
                 if (!purchasingTickets.get() || adminStopAllPurchases.get()) {
-                    System.out.println("Ticket purchasing stopped after sleep for consumer: " + customerId);
+                    loggerRun.info("Ticket purchasing stopped after sleep for consumer: " + customerId);
                     return;
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                System.out.println("Ticket purchasing interrupted for consumer: " + customerId);
+                loggerRun.error("Ticket purchasing interrupted for consumer: " + customerId);
                 return;
             }
         }
-        System.out.println("Ticket purchasing completed for consumer: " + customerId);
+        loggerRun.info("Ticket purchasing completed for consumer: " + customerId);
     }
 
     // Load consumers from file
@@ -363,6 +260,60 @@ public class Customer implements Runnable {
 
     public void resumePurchasingTickets() {
         purchasingTickets.set(true);
+    }
+
+    public synchronized void requestTickets(Set<String> eventDetails) {
+        Scanner scanner = new Scanner(System.in);
+
+        this.eventName = promptForEventName(scanner, eventDetails);
+        if (this.eventName == null) {
+            System.out.println("Too many invalid attempts for event name. Request cancelled.");
+            return;
+        }
+
+        this.ticketsToBook = promptForTicketQuantity(scanner);
+        if (this.ticketsToBook == -1) {
+            System.out.println("Too many invalid attempts for ticket quantity. Request cancelled.");
+            return;
+        }
+
+        System.out.println("Request successfully recorded: Event = " + this.eventName +
+                ", Tickets to Book = " + this.ticketsToBook +"\n");
+    }
+
+    // Helper method to prompt for a valid event name
+    private String promptForEventName(Scanner scanner, Set<String> eventDetails) {
+        for (int attempts = 3; attempts > 0; attempts--) {
+            System.out.print("Enter the event name: ");
+            String inputEventName = scanner.nextLine().trim();
+
+            if (eventDetails.contains(inputEventName)) {
+                return inputEventName;
+            } else {
+                System.out.println("Invalid event name. Please choose from the following events:");
+                eventDetails.forEach(System.out::println);
+            }
+        }
+        return null;  // Return null if all attempts are exhausted
+    }
+
+    // Helper method to prompt for a valid ticket quantity
+    private int promptForTicketQuantity(Scanner scanner) {
+        for (int attempts = 3; attempts > 0; attempts--) {
+            System.out.print("Enter the number of tickets to book: ");
+            try {
+                int inputTicketsToBook = Integer.parseInt(scanner.nextLine().trim());
+
+                if (inputTicketsToBook > 0) {
+                    return inputTicketsToBook;
+                } else {
+                    System.out.println("Invalid quantity. Number of tickets must be greater than zero.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+            }
+        }
+        return -1;  // Return -1 if all attempts are exhausted
     }
 }
 
