@@ -216,8 +216,8 @@ public class Main {
             System.out.println("1. Remove/Purchase Tickets");
             System.out.println("2. View Tickets Bought");
             System.out.println("3. View Other Tickets");
-            System.out.println("4. Stop purchase of Tickets for the vendor");
-            System.out.println("5. Activate purchase of Tickets for the vendor");
+            System.out.println("4. Stop purchase of Tickets for the customer");
+            System.out.println("5. Activate purchase of Tickets for the customer");
             System.out.println("6. View Real-time Tickets Being Sold and Added");
             System.out.println("7. Exit");
             int choice = getUserChoice(1, 7);
@@ -234,10 +234,24 @@ public class Main {
                 Thread customerThread = new Thread(customer);
                 customerThread.start();
             }
-            case 2 -> System.out.println("Viewing Tickets Bought...\n");
-            case 3 -> System.out.println("Viewing Other Tickets...\n");
-            case 4 -> System.out.println("Stopping purchase of Tickets for the vendor...\n");
-            case 5 -> System.out.println("Activating purchase of Tickets for the vendor...\n");
+            case 2 -> {
+                System.out.println("Viewing Tickets Bought...\n");
+                ticketPool.countBookedTicketsByCustomerId(customer.getCustomerId());
+                System.out.println();
+            }
+            case 3 -> {
+                System.out.println("Viewing Other Tickets...\n");
+                ticketPool.countAvailableTicketsByEvent();
+                System.out.println();
+            }
+            case 4 -> {
+                System.out.println("Stopping purchase of Tickets for the customer...\n");
+                customer.stopPurchasingTickets();
+            }
+            case 5 -> {
+                System.out.println("Activating purchase of Tickets for the customer...\n");
+                customer.resumePurchasingTickets();
+            }
             case 6 -> System.out.println("Viewing Real-time Tickets Being Sold and Added...\n");
             case 7 -> {
                 System.out.println("Exiting Customer Actions...\n");
