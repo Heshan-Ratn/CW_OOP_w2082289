@@ -1,11 +1,56 @@
-2024-11-16 19:17:17 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:19 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:22 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:25 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:28 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:30 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:33 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:36 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:39 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:41 [Thread-0] INFO  CustomerRun - Ticket purchased by john202
-2024-11-16 19:17:44 [Thread-0] INFO  CustomerRun - Ticket purchasing completed for consumer: john202
+2024-11-17 07:58:13 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: lork)
+2024-11-17 07:58:15 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: lork)
+2024-11-17 07:58:18 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:19 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:21 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:22 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:23 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:25 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:26 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:27 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:29 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:30 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:32 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:33 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:34 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:35 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:37 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:38 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:40 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:41 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:42 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:44 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:45 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:46 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:48 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:49 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:51 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:52 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:53 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:54 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:56 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:57 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:58:59 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:00 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:01 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:03 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:04 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:05 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:07 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:08 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:10 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:11 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:12 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:13 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:15 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:16 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:18 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:19 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:20 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:22 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:23 [Thread-0] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:24 [Thread-1] INFO  CustomerRun - Ticket purchased by ehsn432 (Event: Ren)
+2024-11-17 07:59:26 [Thread-0] INFO  CustomerRun - No tickets available for purchase (Event: Ren).
+2024-11-17 07:59:26 [Thread-0] INFO  CustomerRun - Ticket purchasing completed for consumer: ehsn432 (Event: Ren)
+2024-11-17 07:59:27 [Thread-1] INFO  CustomerRun - No tickets available for purchase (Event: Ren).
+2024-11-17 07:59:27 [Thread-1] INFO  CustomerRun - Ticket purchasing completed for consumer: ehsn432 (Event: Ren)

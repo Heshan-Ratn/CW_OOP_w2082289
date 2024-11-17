@@ -179,33 +179,34 @@ public class Customer implements Runnable {
     public void run() {
         for (int i = 0; i < ticketsToBook; i++) {
             if (!purchasingTickets.get() || adminStopAllPurchases.get()) {
-                loggerRun.info("Ticket purchasing stopped for consumer: " + customerId);
+                loggerRun.info("Ticket purchasing stopped for consumer: " + customerId + " (Event: " + eventName + ")");
                 return;
             }
 
             boolean purchased = ticketPool.removeTicket(eventName, customerId);
             if (purchased) {
-                loggerRun.info("Ticket purchased by " + customerId);
+                loggerRun.info("Ticket purchased by " + customerId + " (Event: " + eventName + ")");
             } else {
-                loggerRun.info("No tickets available for purchase.");
+                loggerRun.info("No tickets available for purchase"+ " (Event: " + eventName + ").");
                 break;
             }
 
             try {
+                //Brief break between purchases of each ticket.
                 TimeUnit.MILLISECONDS.sleep(customerRetrievalRate);
 
                 // Check the stop condition again after the sleep
                 if (!purchasingTickets.get() || adminStopAllPurchases.get()) {
-                    loggerRun.info("Ticket purchasing stopped after sleep for consumer: " + customerId);
+                    loggerRun.info("Ticket purchasing stopped after sleep for consumer: " + customerId + " (Event: " + eventName + ")");
                     return;
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                loggerRun.error("Ticket purchasing interrupted for consumer: " + customerId);
+                loggerRun.error("Ticket purchasing interrupted for consumer: " + customerId + " (Event: " + eventName + ")");
                 return;
             }
         }
-        loggerRun.info("Ticket purchasing completed for consumer: " + customerId);
+        loggerRun.info("Ticket purchasing completed for consumer: " + customerId + " (Event: " + eventName + ")");
     }
 
     // Load consumers from file

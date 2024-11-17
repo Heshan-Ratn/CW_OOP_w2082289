@@ -96,7 +96,7 @@ public class TicketPool {
             // Book the ticket by changing its status and setting the customer ID
             ticket.setTicketStatus("Booked");
             ticket.setCustomerId(customerId);
-            loggerRemove.info("Ticket booked: " + ticket.getTicketId() + " for customer: " + customerId);
+            loggerRemove.info("Ticket booked: " + ticket.getTicketId() + " for customer: " + customerId + " (Event: " + eventName + ")");
 
             // Save the updated list of tickets to the file after the change
             saveTickets();
@@ -170,10 +170,25 @@ public class TicketPool {
         }
     }
 
-    public synchronized int countBookedTicketsByCustomerId(String customerId) {
-        return (int) tickets.stream()
+//    public synchronized int countBookedTicketsByCustomerId(String customerId) {
+//        return (int) tickets.stream()
+//                .filter(ticket -> "Booked".equals(ticket.getTicketStatus()) && customerId.equals(ticket.getCustomerId()))
+//                .count();
+//    }
+
+    public synchronized void countBookedTicketsByCustomerId(String customerId) {
+        Map<String, Long> ticketsByEvent = tickets.stream()
                 .filter(ticket -> "Booked".equals(ticket.getTicketStatus()) && customerId.equals(ticket.getCustomerId()))
-                .count();
+                .collect(Collectors.groupingBy(Ticket::getEventName, Collectors.counting()));
+
+        if (ticketsByEvent.isEmpty()) {
+            System.out.println("No tickets found for customer ID: " + customerId);
+        } else {
+            System.out.println("Tickets booked by customer ID: " + customerId);
+            ticketsByEvent.forEach((event, count) ->
+                    System.out.println("Event: " + event + ", Tickets Booked: " + count));
+        }
     }
+
 }
 
