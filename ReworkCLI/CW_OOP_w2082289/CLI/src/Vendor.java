@@ -1,4 +1,3 @@
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -261,6 +260,7 @@ public class Vendor implements Runnable {
         releasingTickets.set(true);
     }
 
+    // This method will be used to check status of releasing ability of tickets.
     public boolean checkReleaseStatus() {
         if (adminStopAll.get()) {
             System.out.println("Ticket release paused by admin for all vendors.\n");

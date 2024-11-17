@@ -29,9 +29,8 @@ public class Customer implements Runnable {
     private static final Logger logger = LogManager.getLogger(Customer.class);
     private static final Logger loggerRun = LogManager.getLogger("CustomerRun");
 
-    // Instance variables for event name and ticket quantity to be booked
-    private String eventName;
-    private int ticketsToBook;
+
+    private PurchaseRequest purchaseRequest;
 
     // Constructor for sign-up and sign-in purposes
     public Customer(String customerId, String password) {
@@ -54,6 +53,10 @@ public class Customer implements Runnable {
 
     public void setCustomerRetrievalRate() {
         this.customerRetrievalRate = loadRetrievalRateFromConfig();
+    }
+
+    public void setPurchaseRequest(PurchaseRequest purchaseRequest) {
+        this.purchaseRequest = purchaseRequest;
     }
 
     // Constructor for initializing consumer with TicketPool and retrieval rate
@@ -168,15 +171,15 @@ public class Customer implements Runnable {
         return null;
     }
 
-    // Method to store event name and ticket quantity requested by the consumer
-    public void requestTickets(String eventName, int ticketsToBook) {
-        this.eventName = eventName;
-        this.ticketsToBook = ticketsToBook;
-    }
 
     // Runnable method to purchase tickets based on requested event and quantity
     @Override
     public void run() {
+
+        // Extract details from the PurchaseRequest object
+        String eventName = purchaseRequest.getEventName();
+        int ticketsToBook = purchaseRequest.getTicketsToBook();
+
         for (int i = 0; i < ticketsToBook; i++) {
             if (!purchasingTickets.get() || adminStopAllPurchases.get()) {
                 loggerRun.info("Ticket purchasing stopped for consumer: " + customerId + " (Event: " + eventName + ")");
@@ -263,23 +266,27 @@ public class Customer implements Runnable {
         purchasingTickets.set(true);
     }
 
-    public synchronized void requestTickets(Set<String> eventDetails) {
+
+
+    public synchronized PurchaseRequest requestTickets(Set<String> eventDetails) {
         Scanner scanner = new Scanner(System.in);
 
-        this.eventName = promptForEventName(scanner, eventDetails);
-        if (this.eventName == null) {
+        String eventName = promptForEventName(scanner, eventDetails);
+        if (eventName == null) {
             System.out.println("Too many invalid attempts for event name. Request cancelled.");
-            return;
+            return null;
         }
 
-        this.ticketsToBook = promptForTicketQuantity(scanner);
-        if (this.ticketsToBook == -1) {
+        int ticketsToBook = promptForTicketQuantity(scanner);
+        if (ticketsToBook == -1) {
             System.out.println("Too many invalid attempts for ticket quantity. Request cancelled.");
-            return;
+            return null;
         }
 
-        System.out.println("Request successfully recorded: Event = " + this.eventName +
-                ", Tickets to Book = " + this.ticketsToBook +"\n");
+        System.out.println("Request successfully recorded: Event = " + eventName +
+                ", Tickets to Book = " + ticketsToBook + "\n");
+
+        return new PurchaseRequest(eventName, ticketsToBook);
     }
 
     // Helper method to prompt for a valid event name
@@ -315,6 +322,21 @@ public class Customer implements Runnable {
             }
         }
         return -1;  // Return -1 if all attempts are exhausted
+    }
+
+
+    //This method will be used to check status of purchasing ability of tickets.
+    public boolean checkPurchaseStatus() {
+        if (adminStopAllPurchases.get()) {
+            System.out.println("Ticket purchase paused by admin for all customer.\n");
+            return false;
+        } else if (!purchasingTickets.get()) {
+            System.out.println("Ticket purchase paused by the customer: " + customerId+"\n");
+            return false;
+        } else {
+            System.out.println("Ticket purchase is active for customer: " + customerId+"\n");
+            return true;
+        }
     }
 }
 

@@ -233,29 +233,29 @@ public class Configuration {
 
 
 
-    public static void main(String[] args) {
-        Configuration config = new Configuration();
-        config.displayConfiguration();
-        //Indirect updating method of configuration setting.
-        config.promptUserForConfigurationUpdate();
-
-        // Setting new admin credentials
-        config.setAdminCredentials();
-
-//        // Attempting to update settings with incorrect credentials
-//        config.updateConfiguration("NewAdmin", "wrongpassword", 4000, 6000, 250);
+//    public static void main(String[] args) {
+//        Configuration config = new Configuration();
+//        config.displayConfiguration();
+//        //Indirect updating method of configuration setting.
+//        config.promptUserForConfigurationUpdate();
 //
-//        // Updating settings with correct credentials
-//        config.updateConfiguration("NewAdmin", "newpassword", 4050, 6000, 250);
-//        config.updateConfiguration("NewAdmin", "newpassword", -1, 6000, 250);
-//        config.updateConfiguration("NewAdmin", "newpassword", 4050, -1, 250);
-//        config.updateConfiguration("NewAdmin", "newpassword", 4050, 6000, 20);
-//        // Displaying configuration again to check updates
-        config.displayConfiguration();
-
-        // Save and load configuration example
-        config.saveConfiguration("Config.json");
-        Configuration config2= config.loadConfiguration("Config.json");
-        config2.displayConfiguration();
-    }
+//        // Setting new admin credentials
+//        config.setAdminCredentials();
+//
+////        // Attempting to update settings with incorrect credentials
+////        config.updateConfiguration("NewAdmin", "wrongpassword", 4000, 6000, 250);
+////
+////        // Updating settings with correct credentials
+////        config.updateConfiguration("NewAdmin", "newpassword", 4050, 6000, 250);
+////        config.updateConfiguration("NewAdmin", "newpassword", -1, 6000, 250);
+////        config.updateConfiguration("NewAdmin", "newpassword", 4050, -1, 250);
+////        config.updateConfiguration("NewAdmin", "newpassword", 4050, 6000, 20);
+////        // Displaying configuration again to check updates
+//        config.displayConfiguration();
+//
+//        // Save and load configuration example
+//        config.saveConfiguration("Config.json");
+//        Configuration config2= config.loadConfiguration("Config.json");
+//        config2.displayConfiguration();
+//    }
 }

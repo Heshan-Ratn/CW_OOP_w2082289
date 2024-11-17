@@ -58,8 +58,16 @@ public class Main {
             }
             case 4 -> System.out.println("Viewing Real-time Tickets Being Sold and Added...\n");
             case 5 -> System.out.println("Stimulating ticket operations in the ticket pool...\n");
-            case 6 -> System.out.println("Starting System if Stopped...\n");
-            case 7 -> System.out.println("Stopping System (All Ticket Operations Halted)...\n");
+            case 6 -> {
+                System.out.println("Starting System if Stopped...\n");
+                Vendor.resumeAllReleases();
+                Customer.resumeAllPurchases();
+            }
+            case 7 -> {
+                System.out.println("Stopping System (All Ticket Operations Halted)...\n");
+                Vendor.stopAllReleases();
+                Customer.stopAllPurchases();
+            }
             default -> System.out.println("Invalid option. Please try again.\n");
         }
     }
@@ -213,7 +221,7 @@ public class Main {
         boolean exit = false;
         while (!exit) {
             System.out.println("Customer Options:");
-            System.out.println("1. Remove/Purchase Tickets");
+            System.out.println("1. Purchase Tickets");
             System.out.println("2. View Tickets Bought");
             System.out.println("3. View Other Tickets");
             System.out.println("4. Stop purchase of Tickets for the customer");
@@ -228,11 +236,18 @@ public class Main {
     private static boolean handleCustomerChoice(int choice, Customer customer) {
         switch (choice) {
             case 1 -> {
-                System.out.println("Removing/Purchasing Tickets...\n");
-                Set<String> eventDetails = ticketPool.getEventDetails();  // Fetch valid event names
-                customer.requestTickets(eventDetails);
-                Thread customerThread = new Thread(customer);
-                customerThread.start();
+                System.out.println("Purchasing Tickets...\n");
+                if (customer.checkPurchaseStatus()) {
+                    Set<String> eventDetails = ticketPool.getEventDetails();  // Fetch valid event names
+                    PurchaseRequest request = customer.requestTickets(eventDetails);
+                    if (request != null) {
+                        customer.setPurchaseRequest(request);
+                        Thread customerThread = new Thread(customer);
+                        customerThread.start();
+                    } else {
+                        System.out.println("No purchase request available to process.\n");
+                    }
+                }
             }
             case 2 -> {
                 System.out.println("Viewing Tickets Bought...\n");
