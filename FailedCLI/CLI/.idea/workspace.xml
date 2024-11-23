@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="baf4c38a-3648-4c0c-9f46-6df867f1a875" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/CLI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CLI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tickets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tickets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendors.json" beforeDir="false" afterPath="$PROJECT_DIR$/Vendors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicketPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicketPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vendor.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2o9s2fqqxVKJZKjLnZ8xzIEHtwZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Main1.executor": "Run",
+    "Application.Main2.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/bashi/Documents/OOP_C/CW_OOP_w2082289/CLI/Test",
+    "last_opened_file_path": "C:/Users/bashi/Documents/OOp_b/CW_OOP_w2082289/CLI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/bashi/Documents/CLI/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bashi\Documents\OOP_C\CW_OOP_w2082289\CLI" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Test" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="baf4c38a-3648-4c0c-9f46-6df867f1a875" name="Changes" comment="" />
+      <created>1730292925238</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730292925238</updated>
+      <workItem from="1730292926353" duration="4886000" />
+      <workItem from="1730306788491" duration="1144000" />
+      <workItem from="1730339763501" duration="7927000" />
+      <workItem from="1730371854929" duration="12269000" />
+      <workItem from="1730420844865" duration="1622000" />
+      <workItem from="1730427657438" duration="3539000" />
+      <workItem from="1730462782399" duration="1022000" />
+      <workItem from="1730542630377" duration="12212000" />
+      <workItem from="1730563769839" duration="210000" />
+      <workItem from="1730591465770" duration="1902000" />
+      <workItem from="1730606028943" duration="10868000" />
+      <workItem from="1730630232734" duration="1289000" />
+      <workItem from="1730632908037" duration="249000" />
+      <workItem from="1730634849707" duration="6616000" />
+      <workItem from="1730645623892" duration="884000" />
+      <workItem from="1730647309146" duration="2055000" />
+      <workItem from="1730682318336" duration="3468000" />
+      <workItem from="1730690153944" duration="14069000" />
+      <workItem from="1730718998098" duration="43000" />
+      <workItem from="1730719255609" duration="1484000" />
+      <workItem from="1730728435159" duration="7517000" />
+      <workItem from="1730768920602" duration="3927000" />
+      <workItem from="1730797857523" duration="2367000" />
+      <workItem from="1730800746713" duration="4047000" />
+      <workItem from="1730809153275" duration="6104000" />
+      <workItem from="1730849792953" duration="9861000" />
+      <workItem from="1730898301838" duration="11988000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Ticket.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

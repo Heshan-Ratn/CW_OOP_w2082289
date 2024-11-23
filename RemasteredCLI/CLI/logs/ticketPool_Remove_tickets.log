@@ -1,0 +1,6 @@
+2024-11-23 17:36:21 [Thread-4] INFO  TicketPoolRemove - Ticket booked: gren234-1 for customer: robe234 (Event: rolo)
+2024-11-23 17:36:21 [Thread-5] INFO  TicketPoolRemove - Ticket booked: kren234-1 for customer: bele234 (Event: polo)
+2024-11-23 17:36:21 [Thread-6] INFO  TicketPoolRemove - Ticket booked: jren234-1 for customer: relo234 (Event: yolo)
+2024-11-23 17:36:21 [Thread-7] INFO  TicketPoolRemove - Ticket booked: gren234-1 for customer: robe234 (Event: holo)
+2024-11-23 17:36:22 [Thread-4] INFO  TicketPoolRemove - Ticket booked: gren234-2 for customer: robe234 (Event: rolo)
+2024-11-23 17:36:22 [Thread-5] INFO  TicketPoolRemove - Ticket booked: kren234-2 for customer: bele234 (Event: polo)
