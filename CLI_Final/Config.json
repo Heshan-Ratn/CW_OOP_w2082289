@@ -1,0 +1,8 @@
+{
+  "totalAvailableTickets": 0,
+  "ticketReleaseRate": 1000.0,
+  "customerRetrievalRate": 2000.0,
+  "maxTicketCapacity": 250,
+  "configAdminUser": "newworld",
+  "configAdminPassword": "rjsf2345"
+}
