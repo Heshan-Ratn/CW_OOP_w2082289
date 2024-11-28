@@ -23,10 +23,10 @@ public class CustomerController {
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<Map<String, String>> signInCustomer(@RequestBody Map<String, String> payload) {
+    public ResponseEntity<Map<String, Object>> signInCustomer(@RequestBody Map<String, String> payload) {
         String customerId = payload.get("customerId");
         String password = payload.get("password");
-        Map<String, String> response = customerService.signInCustomer(customerId, password);
+        Map<String, Object> response = customerService.signInCustomer(customerId, password);
         return ResponseEntity.ok(response);
     }
 }

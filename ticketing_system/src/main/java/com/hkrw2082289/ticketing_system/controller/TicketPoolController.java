@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/ticket-pool")
+@RequestMapping("api/ticket-pool")
 public class TicketPoolController {
 
     private final TicketPoolService ticketPool;  // Corrected this line

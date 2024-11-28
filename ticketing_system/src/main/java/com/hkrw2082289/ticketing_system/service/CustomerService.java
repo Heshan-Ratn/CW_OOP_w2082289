@@ -37,11 +37,11 @@ public class CustomerService {
         return "Sign-up successful.";
     }
 
-    public Map<String, String> signInCustomer(String customerId, String password) {
-        Map<String, String> response = new HashMap<>();
-        boolean isValid = customerRepository.existsByCustomerIdAndPassword(customerId, password);
-
-        if (isValid) {
+    public Map<String, Object> signInCustomer(String customerId, String password) {
+        Map<String, Object> response = new HashMap<>();
+        //boolean isValid = customerRepository.existsByCustomerIdAndPassword(customerId, password);
+        Customer customer = customerRepository.findByCustomerIdAndPassword(customerId, password);
+        if (customer != null) {
             response.put("message", "Sign-in successful.");
             response.put("customerId", customerId);
         } else {
@@ -51,4 +51,6 @@ public class CustomerService {
 
         return response;
     }
+
+
 }

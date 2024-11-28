@@ -1,21 +1,23 @@
 package com.hkrw2082289.ticketing_system.service;
 
-import com.hkrw2082289.ticketing_system.helper.Ticket;
-import com.hkrw2082289.ticketing_system.model.Configuration;
+
 import com.hkrw2082289.ticketing_system.model.TicketEntity;
 import com.hkrw2082289.ticketing_system.repository.TicketRepository;
 import com.hkrw2082289.ticketing_system.utils.TicketUtility;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 @Scope("singleton")
@@ -31,8 +33,8 @@ public class TicketPoolService {
     private final ConfigurationService configurationService;
     private final TicketUtility ticketUtility;
 
-
-//    private long maxCapacity; // Example max capacity, configurable
+    // Create a logger specific to this class
+    private static final Logger logger = LoggerFactory.getLogger(TicketPoolService.class);
 
     @Autowired
     public TicketPoolService(TicketRepository ticketRepository, ConfigurationService configurationService, TicketUtility ticketUtility) {
@@ -42,12 +44,6 @@ public class TicketPoolService {
         loadTicketsFromDatabase();
     }
 
-//    @PostConstruct
-//    public void initializeConfiguration() {
-//        Configuration config = configurationService.viewConfiguration();
-//        this.maxCapacity = config.getMaxTicketCapacity();
-//        System.out.println("Max ticket capacity set to: " + maxCapacity);
-//    }
     private int getCurrentMaxCapacity() {
         // Fetch the max capacity directly from the ConfigurationService, no need to store it here
         return configurationService.viewConfiguration().getMaxTicketCapacity();
@@ -77,8 +73,22 @@ public class TicketPoolService {
     public synchronized boolean addTicket(TicketEntity ticket) {
         ticketLock.lock();
         try {
+//            while (countAvailableTickets() >= getCurrentMaxCapacity()) {
+//                vendorCondition.await();
+//            }
+
             while (countAvailableTickets() >= getCurrentMaxCapacity()) {
-                vendorCondition.await();
+                boolean signaled = vendorCondition.await(5000, TimeUnit.MILLISECONDS);  // Wait with timeout.
+                if (!signaled) {
+                    // Timeout occurred, recheck the condition
+                    logger.warn("Timeout reached while waiting for ticket availability.");
+                }
+                // After waking up, check the condition again
+                if (countAvailableTickets() < getCurrentMaxCapacity()) {
+                    // The condition is now true, we can proceed with adding the ticket
+                    break;  // Exit the loop and proceed with the ticket addition
+                }
+                // If the condition is still false (pool is still at max capacity), the thread will go back to waiting
             }
             tickets.add(ticket);
             ticketRepository.save(ticket);
@@ -128,16 +138,6 @@ public class TicketPoolService {
         }
     }
 
-    // Count available tickets
-//    public int countAvailableTickets() {
-//        ticketLock.lock();  // Locking before reading
-//        try {
-//            return (int) tickets.stream().filter(ticket -> "Available".equals(ticket.getTicketStatus())).count();
-//        } finally {
-//            ticketLock.unlock();  // Always unlock after reading
-//        }
-//    }
-
     public int countAvailableTickets() {
         ticketLock.lock();
         try {
@@ -147,17 +147,6 @@ public class TicketPoolService {
         }
     }
 
-//
-//    // Method to update the max capacity dynamically
-//    public void updateMaxCapacity(int newCapacity) {
-//        ticketLock.lock(); // Ensure thread safety
-//        try {
-//            this.maxCapacity = newCapacity;
-//            System.out.println("Max ticket capacity updated to: " + maxCapacity);
-//        } finally {
-//            ticketLock.unlock();
-//        }
-//    }
 
     private TicketEntity findAvailableTicket(String eventName) {
         ticketLock.lock();
