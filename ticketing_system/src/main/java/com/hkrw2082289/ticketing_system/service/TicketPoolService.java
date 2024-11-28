@@ -73,23 +73,22 @@ public class TicketPoolService {
     public synchronized boolean addTicket(TicketEntity ticket) {
         ticketLock.lock();
         try {
-//            while (countAvailableTickets() >= getCurrentMaxCapacity()) {
-//                vendorCondition.await();
-//            }
-
             while (countAvailableTickets() >= getCurrentMaxCapacity()) {
-                boolean signaled = vendorCondition.await(5000, TimeUnit.MILLISECONDS);  // Wait with timeout.
-                if (!signaled) {
-                    // Timeout occurred, recheck the condition
-                    logger.warn("Timeout reached while waiting for ticket availability.");
-                }
-                // After waking up, check the condition again
-                if (countAvailableTickets() < getCurrentMaxCapacity()) {
-                    // The condition is now true, we can proceed with adding the ticket
-                    break;  // Exit the loop and proceed with the ticket addition
-                }
-                // If the condition is still false (pool is still at max capacity), the thread will go back to waiting
+                vendorCondition.await();
             }
+//
+//            while (countAvailableTickets() >= getCurrentMaxCapacity()) {
+//                boolean signaled = vendorCondition.await(5000, TimeUnit.MILLISECONDS);  // Wait with timeout.
+//                if (!signaled) {
+//                    // Timeout occurred, recheck the condition
+//                    logger.warn("Timeout reached while waiting for ticket availability.");
+//                }
+//                // After waking up, check the condition again.If the condition is still false (pool is still at max capacity), the thread will go back to waiting
+//                if (countAvailableTickets() < getCurrentMaxCapacity()) {
+//                    // The condition is now true, we can proceed with adding the ticket
+//                    break;  // Exit the loop and proceed with the ticket addition
+//                }
+//            }
             tickets.add(ticket);
             ticketRepository.save(ticket);
             notifyConsumersForEvent(ticket.getEventName());
@@ -103,13 +102,12 @@ public class TicketPoolService {
         }
     }
 
-    public synchronized boolean removeTicket(String eventName, String customerId) {
+    public synchronized Object[] removeTicket(String eventName, String customerId) {
         ticketLock.lock();
         try {
             while (!isTicketAvailable(eventName)) {
                 waitForSpecificEventTicket(eventName);
             }
-
             TicketEntity ticket = findAvailableTicket(eventName);
             if (ticket != null) {
                 ticket.setTicketStatus("Booked");
@@ -117,12 +115,12 @@ public class TicketPoolService {
                 ticketRepository.save(ticket);
                 vendorCondition.signalAll();
                 cleanupUnusedConditions();
-                return true;
+                return new Object[]{true, ticket.getTicketId()};
             }
-            return false;
+            return new Object[]{false, null};
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            return false;
+            return new Object[]{false, null};
         } finally {
             ticketLock.unlock();
         }

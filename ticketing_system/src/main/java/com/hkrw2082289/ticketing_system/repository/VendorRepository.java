@@ -9,6 +9,5 @@ public interface VendorRepository extends JpaRepository<Vendor, String> {
     boolean existsByVendorId(String vendorId);
 
 //    boolean existsByVendorIdAndPassword(String vendorId, String password);
-
     Vendor findByVendorIdAndPassword(String vendorId, String password);
 }

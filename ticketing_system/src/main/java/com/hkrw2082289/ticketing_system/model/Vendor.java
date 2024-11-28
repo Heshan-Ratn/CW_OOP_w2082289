@@ -7,12 +7,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Data
 @Entity
 @Table(name = "vendors")
 public class Vendor implements Runnable{
     private static final Logger logger = LoggerFactory.getLogger(Vendor.class);
+    // AtomicBoolean to control Ticket Release globally
+    private static final AtomicBoolean adminStopAllRelease = new AtomicBoolean(false);
 
     @Id
     @Column(name = "vendor_id", nullable = false, unique = true, length = 7)
@@ -44,6 +47,13 @@ public class Vendor implements Runnable{
         }
         try {
             for (TicketEntity ticket : ticketBatch) {
+                // Check if global stop flag is enabled
+                if (adminStopAllRelease.get()) {
+                    logger.info("Global stop enabled. Vendor {} thread will terminate. (Thread ID: {})",
+                            vendorId, Thread.currentThread().getId());
+                    break;
+                }
+
                 if (Thread.currentThread().isInterrupted()) {
                     logger.info("Thread for Vendor ID: {} was interrupted. (Thread ID: {})", vendorId, Thread.currentThread().getId());
                     break;
@@ -65,5 +75,20 @@ public class Vendor implements Runnable{
         }
 
         logger.info("Thread completed for Vendor ID: {} (Thread ID: {})", vendorId, Thread.currentThread().getId());
+    }
+
+    // Methods to manage the adminStopAllRelease flag
+    public static boolean isAdminStopAllRelease() {
+        return adminStopAllRelease.get();
+    }
+
+    public static void enableStopAllRelease() {
+        adminStopAllRelease.set(true);
+        logger.info("Global stop for all Ticket Release enabled.");
+    }
+
+    public static void disableStopAllRelease() {
+        adminStopAllRelease.set(false);
+        logger.info("Global stop for all Ticket Release disabled.");
     }
 }
