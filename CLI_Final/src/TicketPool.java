@@ -47,24 +47,6 @@ public class TicketPool {
         return instance;
     }
 
-    public long getMaxCapacity() {
-        ticketLock.lock();  // Locking to ensure thread-safe reading
-        try {
-            return maxCapacity;
-        } finally {
-            ticketLock.unlock();  // Unlock after reading
-        }
-    }
-
-    public void setMaxCapacity(long maxCapacity) {
-        ticketLock.lock();  // Locking to ensure thread-safe modification
-        try {
-            this.maxCapacity = maxCapacity;
-        } finally {
-            ticketLock.unlock();  // Unlock after modification
-        }
-    }
-
     public Set<String> getEventDetails() {
         ticketLock.lock();  // Locking to ensure thread-safe reading
         try {
