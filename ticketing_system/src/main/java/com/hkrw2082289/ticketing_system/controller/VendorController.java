@@ -30,11 +30,11 @@ public class VendorController {
         return ResponseEntity.ok(response);
     }
 
-
-
     @PostMapping("/{vendorId}/start-thread")
-    public ResponseEntity<String> startVendorThread(@PathVariable String vendorId) {
-        String message = vendorService.startVendorThread(vendorId);
+    public ResponseEntity<String> startVendorThread(
+            @PathVariable String vendorId,
+            @RequestBody Map<String, Object> payload) {
+        String message = vendorService.startVendorThread(vendorId,payload);
         return ResponseEntity.ok(message);
     }
 

@@ -13,4 +13,5 @@ public class Customer {
 
     @Column(nullable = false, length = 12)
     private String password;
+
 }

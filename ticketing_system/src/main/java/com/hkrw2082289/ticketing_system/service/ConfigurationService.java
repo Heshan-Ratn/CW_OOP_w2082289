@@ -36,10 +36,7 @@ public class ConfigurationService {
     public Configuration viewConfiguration() {
         Configuration config = getOrCreateDefaultConfiguration();
         int totalAvailableTickets = (int) ticketUtility.countAvailableTickets();
-//        int totalAvailableTickets = ticketPoolService.countAvailableTickets();
         config.setTotalAvailableTickets(totalAvailableTickets);
-        config.setConfigAdminUser(null);
-        config.setConfigAdminPassword(null);
         return config;
     }
 

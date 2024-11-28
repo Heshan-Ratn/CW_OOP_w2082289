@@ -29,5 +29,6 @@ public class Configuration {
 
     @Column(name = "config_admin_password", nullable = false, length = 50)
     private String configAdminPassword;
+
 }
 

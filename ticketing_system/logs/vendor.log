@@ -1,71 +1,91 @@
-2024-11-27 18:27:44 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 87)
-2024-11-27 18:27:47 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 88)
-2024-11-27 18:27:47 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 87)
-2024-11-27 18:27:49 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 89)
-2024-11-27 18:27:50 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 88)
-2024-11-27 18:27:50 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 87)
-2024-11-27 18:27:52 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 89)
-2024-11-27 18:27:53 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 88)
-2024-11-27 18:27:53 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 87)
-2024-11-27 18:27:55 [Thread-7] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 87)
-2024-11-27 18:27:55 [Thread-9] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 89)
-2024-11-27 18:27:55 [Thread-8] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 88)
-2024-11-27 18:27:55 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 87)
-2024-11-27 18:27:55 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 89)
-2024-11-27 18:27:55 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 88)
-2024-11-27 18:29:06 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 90)
-2024-11-27 18:29:07 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 91)
-2024-11-27 18:29:09 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 92)
-2024-11-27 18:29:09 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 90)
-2024-11-27 18:29:10 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 91)
-2024-11-27 18:29:12 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 92)
-2024-11-27 18:29:12 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 90)
-2024-11-27 18:29:13 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 91)
-2024-11-27 18:29:15 [Thread-11] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 91)
-2024-11-27 18:29:15 [Thread-10] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 90)
-2024-11-27 18:29:15 [Thread-12] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 92)
-2024-11-27 18:29:15 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 91)
-2024-11-27 18:29:15 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 92)
-2024-11-27 18:29:15 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 90)
-2024-11-27 18:29:35 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: pere123 (Thread ID: 93)
-2024-11-27 18:29:38 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 93)
-2024-11-27 18:29:41 [Thread-14] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: pere123 (Thread ID: 94)
-2024-11-27 18:29:41 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 93)
-2024-11-27 18:29:44 [Thread-14] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 94)
-2024-11-27 18:29:44 [Thread-15] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: pere123 (Thread ID: 95)
-2024-11-27 18:29:44 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 93)
-2024-11-27 18:29:47 [Thread-14] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 94)
-2024-11-27 18:29:47 [Thread-15] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 95)
-2024-11-27 18:29:47 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 93)
-2024-11-27 18:29:50 [Thread-14] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 94)
-2024-11-27 18:29:50 [Thread-15] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 95)
-2024-11-27 18:29:50 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 93)
-2024-11-27 18:29:50 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: pere123 (Thread ID: 93)
-2024-11-27 18:29:53 [Thread-14] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 94)
-2024-11-27 18:29:53 [Thread-15] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 95)
-2024-11-27 18:29:56 [Thread-14] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 94)
-2024-11-27 18:29:56 [Thread-14] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: pere123 (Thread ID: 94)
-2024-11-27 18:29:56 [Thread-15] INFO  c.h.ticketing_system.model.Vendor - Vendor pere123 is working... (Thread ID: 95)
-2024-11-27 18:29:59 [Thread-15] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor pere123 was interrupted. (Thread ID: 95)
-2024-11-27 18:29:59 [Thread-15] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: pere123 (Thread ID: 95)
-2024-11-27 18:35:32 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 81)
-2024-11-27 18:35:34 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 82)
-2024-11-27 18:35:35 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 81)
-2024-11-27 18:35:36 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 83)
-2024-11-27 18:35:37 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 82)
-2024-11-27 18:35:38 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 81)
-2024-11-27 18:35:39 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 83)
-2024-11-27 18:35:40 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 82)
-2024-11-27 18:35:41 [Thread-8] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 82)
-2024-11-27 18:35:41 [Thread-9] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 83)
-2024-11-27 18:35:41 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 82)
-2024-11-27 18:35:41 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 83)
-2024-11-27 18:35:41 [Thread-7] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor Role123 was interrupted. (Thread ID: 81)
-2024-11-27 18:35:41 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 81)
-2024-11-27 18:36:34 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: Role123 (Thread ID: 84)
-2024-11-27 18:36:37 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 84)
-2024-11-27 18:36:40 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 84)
-2024-11-27 18:36:43 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 84)
-2024-11-27 18:36:46 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 84)
-2024-11-27 18:36:49 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Vendor Role123 is working... (Thread ID: 84)
-2024-11-27 18:36:49 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: Role123 (Thread ID: 84)
+2024-11-28 16:10:43 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 (Thread ID: 89)
+2024-11-28 16:10:45 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 (Thread ID: 90)
+2024-11-28 16:10:46 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 89)
+2024-11-28 16:10:47 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 (Thread ID: 91)
+2024-11-28 16:10:48 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 90)
+2024-11-28 16:10:49 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 89)
+2024-11-28 16:10:50 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 91)
+2024-11-28 16:10:52 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 90)
+2024-11-28 16:10:52 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 89)
+2024-11-28 16:10:52 [Thread-11] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 89)
+2024-11-28 16:10:52 [Thread-13] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 91)
+2024-11-28 16:10:52 [Thread-11] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 89)
+2024-11-28 16:10:52 [Thread-13] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 91)
+2024-11-28 16:10:52 [Thread-12] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 90)
+2024-11-28 16:10:52 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 90)
+2024-11-28 16:16:11 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 (Thread ID: 81)
+2024-11-28 16:16:13 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 (Thread ID: 82)
+2024-11-28 16:16:14 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 81)
+2024-11-28 16:16:14 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 (Thread ID: 83)
+2024-11-28 16:16:16 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 82)
+2024-11-28 16:16:17 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 81)
+2024-11-28 16:16:17 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 83)
+2024-11-28 16:16:19 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 82)
+2024-11-28 16:16:20 [Thread-7] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 81)
+2024-11-28 16:16:20 [Thread-9] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 83)
+2024-11-28 16:16:20 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 81)
+2024-11-28 16:16:20 [Thread-8] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 82)
+2024-11-28 16:16:20 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 83)
+2024-11-28 16:16:20 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 82)
+2024-11-28 16:45:22 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 (Thread ID: 81)
+2024-11-28 16:45:32 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 81)
+2024-11-28 16:45:42 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 81)
+2024-11-28 16:45:52 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 81)
+2024-11-28 16:46:02 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 81)
+2024-11-28 16:46:12 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Vendor ABCD123 is working... (Thread ID: 81)
+2024-11-28 16:46:12 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 81)
+2024-11-28 18:29:55 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 20 (Thread ID: 84)
+2024-11-28 18:29:55 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT722 for Vendor: ABCD123
+2024-11-28 18:29:55 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT722 to the pool.
+2024-11-28 18:30:05 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT782 for Vendor: ABCD123
+2024-11-28 18:30:05 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT782 to the pool.
+2024-11-28 18:30:15 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT862 for Vendor: ABCD123
+2024-11-28 18:30:15 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT862 to the pool.
+2024-11-28 18:30:25 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT138 for Vendor: ABCD123
+2024-11-28 18:30:25 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT138 to the pool.
+2024-11-28 18:30:35 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT705 for Vendor: ABCD123
+2024-11-28 18:30:35 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT705 to the pool.
+2024-11-28 18:30:44 [Thread-7] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 84)
+2024-11-28 18:30:44 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 84)
+2024-11-28 18:37:21 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 20 (Thread ID: 85)
+2024-11-28 18:37:21 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT225 for Vendor: ABCD123
+2024-11-28 18:37:21 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT225 to the pool.
+2024-11-28 18:37:23 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT727 for Vendor: ABCD123
+2024-11-28 18:37:23 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT727 to the pool.
+2024-11-28 18:37:25 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT604 for Vendor: ABCD123
+2024-11-28 18:37:25 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT604 to the pool.
+2024-11-28 18:37:27 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT340 for Vendor: ABCD123
+2024-11-28 18:37:27 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT340 to the pool.
+2024-11-28 18:37:29 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT531 for Vendor: ABCD123
+2024-11-28 18:37:29 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT531 to the pool.
+2024-11-28 18:37:31 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT933 for Vendor: ABCD123
+2024-11-28 18:37:31 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT933 to the pool.
+2024-11-28 18:37:33 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT859 for Vendor: ABCD123
+2024-11-28 18:37:33 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT859 to the pool.
+2024-11-28 18:37:35 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT463 for Vendor: ABCD123
+2024-11-28 18:37:35 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT463 to the pool.
+2024-11-28 18:37:37 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT786 for Vendor: ABCD123
+2024-11-28 18:37:37 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT786 to the pool.
+2024-11-28 18:37:39 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT161 for Vendor: ABCD123
+2024-11-28 18:37:39 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT161 to the pool.
+2024-11-28 18:37:41 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT412 for Vendor: ABCD123
+2024-11-28 18:37:41 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT412 to the pool.
+2024-11-28 18:37:43 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT726 for Vendor: ABCD123
+2024-11-28 18:37:43 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT726 to the pool.
+2024-11-28 18:37:45 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT134 for Vendor: ABCD123
+2024-11-28 18:37:45 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT134 to the pool.
+2024-11-28 18:37:47 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT878 for Vendor: ABCD123
+2024-11-28 18:37:47 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT878 to the pool.
+2024-11-28 18:37:49 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT661 for Vendor: ABCD123
+2024-11-28 18:37:49 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT661 to the pool.
+2024-11-28 18:37:51 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT912 for Vendor: ABCD123
+2024-11-28 18:37:51 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT912 to the pool.
+2024-11-28 18:37:53 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT613 for Vendor: ABCD123
+2024-11-28 18:37:53 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT613 to the pool.
+2024-11-28 18:37:55 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT195 for Vendor: ABCD123
+2024-11-28 18:37:55 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT195 to the pool.
+2024-11-28 18:37:57 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT149 for Vendor: ABCD123
+2024-11-28 18:37:57 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT149 to the pool.
+2024-11-28 18:37:59 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with ID: ABCDT788 for Vendor: ABCD123
+2024-11-28 18:37:59 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: ABCDT788 to the pool.
+2024-11-28 18:38:01 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 85)
