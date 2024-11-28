@@ -29,5 +29,19 @@ public class CustomerController {
         Map<String, Object> response = customerService.signInCustomer(customerId, password);
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/{customerId}/start-thread")
+    public ResponseEntity<String> startCustomerThread(
+            @PathVariable String customerId,
+            @RequestBody Map<String, Object> payload) {
+        String message = customerService.startCustomerThread(customerId,payload);
+        return ResponseEntity.ok(message);
+    }
+
+    @PostMapping("/{customerId}/stop-thread")
+    public ResponseEntity<String> stopCustomerThread(@PathVariable String customerId) {
+        String message = customerService.stopAllThreadsOfCustomer(customerId);
+        return ResponseEntity.ok(message);
+    }
 }
 

@@ -105,7 +105,7 @@ public class VendorService {
     }
 
     // Stop all threads for a specific vendor
-    public String stopAllVendorThreads(String vendorId) {
+    public String stopAllThreadsOfVendor(String vendorId) {
         List<Thread> threads = vendorThreads.get(vendorId);
 
         if (threads == null || threads.isEmpty()) {

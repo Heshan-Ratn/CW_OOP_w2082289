@@ -16,6 +16,15 @@
         </encoder>
     </appender>
 
+    <!-- File Appender for Customer-specific logs -->
+    <appender name="CUSTOMER_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/customer.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
     <!-- File Appender for TicketPoolService-specific logs -->
     <appender name="TICKET_POOL_SERVICE_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/TicketPoolService.log</file>
@@ -37,6 +46,11 @@
     <!-- Logger specifically for Vendor class -->
     <logger name="com.hkrw2082289.ticketing_system.model.Vendor" level="DEBUG" additivity="false">
         <appender-ref ref="VENDOR_FILE" />
+    </logger>
+
+    <!-- Logger specifically for Customer class -->
+    <logger name="com.hkrw2082289.ticketing_system.model.Customer" level="DEBUG" additivity="false">
+        <appender-ref ref="CUSTOMER_FILE" />
     </logger>
 
     <!-- Logger specifically for TicketPoolService class -->

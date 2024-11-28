@@ -40,7 +40,7 @@ public class VendorController {
 
     @PostMapping("/{vendorId}/stop-thread")
     public ResponseEntity<String> stopVendorThread(@PathVariable String vendorId) {
-        String message = vendorService.stopAllVendorThreads(vendorId);
+        String message = vendorService.stopAllThreadsOfVendor(vendorId);
         return ResponseEntity.ok(message);
     }
 }
