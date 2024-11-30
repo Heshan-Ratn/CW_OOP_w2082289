@@ -1,6 +1,5 @@
 package com.hkrw2082289.ticketing_system.service;
 
-
 import com.hkrw2082289.ticketing_system.model.TicketEntity;
 import com.hkrw2082289.ticketing_system.repository.TicketRepository;
 import com.hkrw2082289.ticketing_system.utils.TicketUtility;
@@ -70,31 +69,25 @@ public class TicketPoolService {
         }
     }
 
-    public synchronized boolean addTicket(TicketEntity ticket) {
+    public boolean addTicket(TicketEntity ticket) {
         ticketLock.lock();
         try {
             while (countAvailableTickets() >= getCurrentMaxCapacity()) {
+                logger.info("Waiting to add ticket, pool is full...");
                 vendorCondition.await();
             }
-//
-//            while (countAvailableTickets() >= getCurrentMaxCapacity()) {
-//                boolean signaled = vendorCondition.await(5000, TimeUnit.MILLISECONDS);  // Wait with timeout.
-//                if (!signaled) {
-//                    // Timeout occurred, recheck the condition
-//                    logger.warn("Timeout reached while waiting for ticket availability.");
-//                }
-//                // After waking up, check the condition again.If the condition is still false (pool is still at max capacity), the thread will go back to waiting
-//                if (countAvailableTickets() < getCurrentMaxCapacity()) {
-//                    // The condition is now true, we can proceed with adding the ticket
-//                    break;  // Exit the loop and proceed with the ticket addition
-//                }
-//            }
-            tickets.add(ticket);
-            ticketRepository.save(ticket);
+            // Save the ticket to the database (ticketId will be auto-generated)
+            TicketEntity savedTicket = ticketRepository.save(ticket);
+            tickets.add(savedTicket);
+
+            logger.info("Added ticket for event: {}", ticket.getEventName());
             notifyConsumersForEvent(ticket.getEventName());
+            logger.info("Thread {} notified consumers for event: {}",
+                    Thread.currentThread().getId(), ticket.getEventName());
             cleanupUnusedConditions();
             return true;
         } catch (InterruptedException e) {
+            logger.error("Thread {} interrupted while adding ticket", Thread.currentThread().getId());
             Thread.currentThread().interrupt();
             return false;
         } finally {
@@ -102,23 +95,35 @@ public class TicketPoolService {
         }
     }
 
-    public synchronized Object[] removeTicket(String eventName, String customerId) {
+    public Object[] removeTicket(String eventName, String customerId) {
         ticketLock.lock();
         try {
             while (!isTicketAvailable(eventName)) {
+                logger.info("Thread {} waiting for tickets to become available for event: {}",
+                        Thread.currentThread().getId(), eventName);
                 waitForSpecificEventTicket(eventName);
             }
             TicketEntity ticket = findAvailableTicket(eventName);
             if (ticket != null) {
+                // Update ticket status and customer information
                 ticket.setTicketStatus("Booked");
                 ticket.setCustomerId(customerId);
-                ticketRepository.save(ticket);
+
+                // Persist the updated ticket
+                TicketEntity updatedTicket = ticketRepository.save(ticket);
+
+                logger.info("Thread {} booked ticket {} for event: {} by customer: {}",
+                        Thread.currentThread().getId(),  updatedTicket.getTicketId(), eventName, customerId);
                 vendorCondition.signalAll();
+                logger.info("Thread {} signaled vendors for more capacity", Thread.currentThread().getId());
                 cleanupUnusedConditions();
                 return new Object[]{true, ticket.getTicketId()};
             }
+            logger.info("Thread {} found no tickets available for event: {}",
+                    Thread.currentThread().getId(), eventName);
             return new Object[]{false, null};
         } catch (InterruptedException e) {
+            logger.error("Thread {} interrupted while booking ticket", Thread.currentThread().getId());
             Thread.currentThread().interrupt();
             return new Object[]{false, null};
         } finally {

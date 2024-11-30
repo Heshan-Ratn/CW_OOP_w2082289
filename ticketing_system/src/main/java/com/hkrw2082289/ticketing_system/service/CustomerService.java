@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 @Service
 public class CustomerService {
@@ -24,52 +25,67 @@ public class CustomerService {
     @Autowired
     private ConfigurationService configurationService;
 
+    // Lock instance for controlling access
+    private static final ReentrantLock customerLock = new ReentrantLock();
+
     public CustomerService(TicketPoolService ticketPoolService) {
         this.ticketPoolService = ticketPoolService;
     }
 
     public String signUpCustomer(String customerId, String password) {
-        if (!customerId.matches(CUSTOMER_ID_REGEX)) {
-            return "Error: Customer ID must be in the format of 4 letters followed by 3 digits.";
+        customerLock.lock();
+        try {
+            if (!customerId.matches(CUSTOMER_ID_REGEX)) {
+                return "Error: Customer ID must be in the format of 4 letters followed by 3 digits.";
+            }
+
+            if (password.length() < 8 || password.length() > 12) {
+                return "Error: Password must be between 8 and 12 characters.";
+            }
+
+            if (customerRepository.existsByCustomerId(customerId)) {
+                return "Error: Customer ID already exists.";
+            }
+            Customer customer = new Customer();
+            customer.setCustomerId(customerId);
+            customer.setPassword(password);
+
+            customerRepository.save(customer);
+            return "Sign-up successful.";
         }
-
-        if (password.length() < 8 || password.length() > 12) {
-            return "Error: Password must be between 8 and 12 characters.";
+        finally {
+            customerLock.unlock();
         }
-
-        if (customerRepository.existsByCustomerId(customerId)) {
-            return "Error: Customer ID already exists.";
-        }
-
-        Customer customer = new Customer();
-        customer.setCustomerId(customerId);
-        customer.setPassword(password);
-
-        customerRepository.save(customer);
-        return "Sign-up successful.";
     }
 
     public Map<String, Object> signInCustomer(String customerId, String password) {
-        Map<String, Object> response = new HashMap<>();
-        //boolean isValid = customerRepository.existsByCustomerIdAndPassword(customerId, password);
-        Customer customer = customerRepository.findByCustomerIdAndPassword(customerId, password);
-        if (customer != null) {
-            response.put("message", "Sign-in successful.");
-            response.put("customerId", customerId);
-        } else {
-            response.put("message", "Error: Invalid customer ID or password.");
-            response.put("customerId", null);
-        }
+        customerLock.lock();
+        try {
+            Map<String, Object> response = new HashMap<>();
+            //boolean isValid = customerRepository.existsByCustomerIdAndPassword(customerId, password);
+            Customer customer = customerRepository.findByCustomerIdAndPassword(customerId, password);
+            if (customer != null) {
+                response.put("message", "Sign-in successful.");
+                response.put("customerId", customerId);
+            } else {
+                response.put("message", "Error: Invalid customer ID or password.");
+                response.put("customerId", null);
+            }
 
-        return response;
+            return response;
+        }
+        finally {
+            customerLock.unlock();
+        }
     }
 
     public String startCustomerThread(String customerId, Map<String, Object> payload) {
         Optional<Customer> optionalCustomer = customerRepository.findById(customerId);
 
-        if (!optionalCustomer.isPresent()) {
+        if (optionalCustomer.isEmpty()) {
             return "Error: Vendor ID " + customerId + " does not exist in the database.";
         }
+
         String eventName = (String) payload.get("eventName");
         int ticketToBook = (int) payload.get("ticketToBook");
 
@@ -87,7 +103,12 @@ public class CustomerService {
 
         customerThread.start();
 
-        return String.format("Thread started for CustomerID: %s with event '%s' and purchase request batch size %d. ", customerId, eventName,ticketToBook);
+        if(isAdminStopAllPurchases()) {
+            return String.format("System has been stopped by Admin, Sorry, your ticket purchase request for '%s' has been denied",eventName);
+        }
+        else{
+            return String.format("Thread started for CustomerID: %s with event '%s' and purchase request batch size %d. ", customerId, eventName,ticketToBook);
+        }
     }
 
     public String stopAllThreadsOfCustomer(String customerId){
@@ -102,5 +123,35 @@ public class CustomerService {
         }
         customerThreads.remove(customerId);
         return "All threads for customer ID: " + customerId + " have been interrupted.";
+    }
+
+    // Method to check if global stop is enabled
+    public  boolean isAdminStopAllPurchases() {
+        customerLock.lock();  // Acquire the lock to synchronize this block
+        try {
+            return Customer.isAdminStopAllPurchases(); // Accessing the method from Customer class
+        } finally {
+            customerLock.unlock();  // Ensure the lock is released after execution
+        }
+    }
+
+    // Method to enable the global stop flag
+    public static void enableStopAllPurchases() {
+        customerLock.lock();  // Acquire the lock to synchronize this block
+        try {
+            Customer.enableStopAllPurchases(); // Accessing the method from Customer class
+        } finally {
+            customerLock.unlock();  // Ensure the lock is released after execution
+        }
+    }
+
+    // Method to disable the global stop flag
+    public static void disableStopAllPurchases() {
+        customerLock.lock();  // Acquire the lock to synchronize this block
+        try {
+            Customer.disableStopAllPurchases(); // Accessing the method from Customer class
+        } finally {
+            customerLock.unlock();  // Ensure the lock is released after execution
+        }
     }
 }
