@@ -1,0 +1,24 @@
+2024-11-30 19:37:52 [http-nio-8080-exec-1] INFO  c.h.t.utils.CustomerSimulation - Starting customer simulation with 5 customers.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust001: Error: Customer ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust002: Error: Customer ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust003: Error: Customer ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust004: Error: Customer ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust005: Error: Customer ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] INFO  c.h.t.utils.CustomerSimulation - Simulation started. Customer threads are running concurrently.
+2024-11-30 19:37:52 [Thread-15] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust004: Thread started for CustomerID: cust004 with event 'Event_VEND004' and purchase request batch size 10. 
+2024-11-30 19:37:52 [Thread-14] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust003: Thread started for CustomerID: cust003 with event 'Event_VEND003' and purchase request batch size 10. 
+2024-11-30 19:37:52 [Thread-12] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust001: Thread started for CustomerID: cust001 with event 'Event_VEND001' and purchase request batch size 10. 
+2024-11-30 19:37:52 [Thread-16] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust005: Thread started for CustomerID: cust005 with event 'Event_VEND005' and purchase request batch size 10. 
+2024-11-30 19:37:52 [Thread-13] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust002: Thread started for CustomerID: cust002 with event 'Event_VEND002' and purchase request batch size 10. 
+2024-11-30 19:53:58 [http-nio-8080-exec-1] INFO  c.h.t.utils.CustomerSimulation - Starting customer simulation with 5 customers.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust001: Error: Customer ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust002: Error: Customer ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust003: Error: Customer ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust004: Error: Customer ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust005: Error: Customer ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] INFO  c.h.t.utils.CustomerSimulation - Simulation started. Customer threads are running concurrently.
+2024-11-30 19:53:58 [Thread-15] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust004: Thread started for CustomerID: cust004 with event 'Event_VEND004' and purchase request batch size 10. 
+2024-11-30 19:53:58 [Thread-12] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust001: Thread started for CustomerID: cust001 with event 'Event_VEND001' and purchase request batch size 10. 
+2024-11-30 19:53:58 [Thread-14] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust003: Thread started for CustomerID: cust003 with event 'Event_VEND003' and purchase request batch size 10. 
+2024-11-30 19:53:58 [Thread-16] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust005: Thread started for CustomerID: cust005 with event 'Event_VEND005' and purchase request batch size 10. 
+2024-11-30 19:53:58 [Thread-13] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust002: Thread started for CustomerID: cust002 with event 'Event_VEND002' and purchase request batch size 10. 

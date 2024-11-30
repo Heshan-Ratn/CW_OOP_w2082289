@@ -1,0 +1,24 @@
+2024-11-30 19:37:52 [http-nio-8080-exec-1] INFO  c.h.t.utils.VendorSimulation - Starting vendor simulation with 5 vendors.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND001: Error: Vendor ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND002: Error: Vendor ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND003: Error: Vendor ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND004: Error: Vendor ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND005: Error: Vendor ID already exists.
+2024-11-30 19:37:52 [http-nio-8080-exec-1] INFO  c.h.t.utils.VendorSimulation - Simulation started. Vendor threads are running concurrently.
+2024-11-30 19:37:52 [Thread-9] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND003: Thread started for vendor ID: VEND003 with event 'Event_VEND003' and ticket batch size 10.
+2024-11-30 19:37:52 [Thread-11] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND005: Thread started for vendor ID: VEND005 with event 'Event_VEND005' and ticket batch size 10.
+2024-11-30 19:37:52 [Thread-8] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND002: Thread started for vendor ID: VEND002 with event 'Event_VEND002' and ticket batch size 10.
+2024-11-30 19:37:52 [Thread-7] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND001: Thread started for vendor ID: VEND001 with event 'Event_VEND001' and ticket batch size 10.
+2024-11-30 19:37:52 [Thread-10] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND004: Thread started for vendor ID: VEND004 with event 'Event_VEND004' and ticket batch size 10.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] INFO  c.h.t.utils.VendorSimulation - Starting vendor simulation with 5 vendors.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND001: Error: Vendor ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND002: Error: Vendor ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND003: Error: Vendor ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND004: Error: Vendor ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] DEBUG c.h.t.utils.VendorSimulation - Sign-up result for VEND005: Error: Vendor ID already exists.
+2024-11-30 19:53:58 [http-nio-8080-exec-1] INFO  c.h.t.utils.VendorSimulation - Simulation started. Vendor threads are running concurrently.
+2024-11-30 19:53:58 [Thread-9] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND003: Thread started for vendor ID: VEND003 with event 'Event_VEND003' and ticket batch size 10.
+2024-11-30 19:53:58 [Thread-7] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND001: Thread started for vendor ID: VEND001 with event 'Event_VEND001' and ticket batch size 10.
+2024-11-30 19:53:58 [Thread-8] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND002: Thread started for vendor ID: VEND002 with event 'Event_VEND002' and ticket batch size 10.
+2024-11-30 19:53:58 [Thread-10] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND004: Thread started for vendor ID: VEND004 with event 'Event_VEND004' and ticket batch size 10.
+2024-11-30 19:53:58 [Thread-11] DEBUG c.h.t.utils.VendorSimulation - Thread result for VEND005: Thread started for vendor ID: VEND005 with event 'Event_VEND005' and ticket batch size 10.
