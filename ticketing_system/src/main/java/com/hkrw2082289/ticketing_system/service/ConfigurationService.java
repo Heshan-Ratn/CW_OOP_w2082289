@@ -2,6 +2,7 @@ package com.hkrw2082289.ticketing_system.service;
 
 import com.hkrw2082289.ticketing_system.model.Configuration;
 import com.hkrw2082289.ticketing_system.repository.ConfigurationRepository;
+import com.hkrw2082289.ticketing_system.utils.ResponseFinder;
 import com.hkrw2082289.ticketing_system.utils.TicketUtility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,6 @@ public class ConfigurationService {
 
     @Autowired
     private ConfigurationRepository configurationRepository;
-//    @Autowired
-//    private TicketPoolService ticketPoolService;
 
     @Autowired
     private TicketUtility ticketUtility;
@@ -40,18 +39,18 @@ public class ConfigurationService {
         return config;
     }
 
-    public String updateAdminCredentials(String oldUser, String oldPassword, String newUser, String newPassword) {
+    public ResponseFinder updateAdminCredentials(String oldUser, String oldPassword, String newUser, String newPassword) {
         Configuration config = getOrCreateDefaultConfiguration();
         if (config.getConfigAdminUser().equals(oldUser) && config.getConfigAdminPassword().equals(oldPassword)) {
             config.setConfigAdminUser(newUser);
             config.setConfigAdminPassword(newPassword);
             configurationRepository.save(config);
-            return "Admin credentials updated successfully.";
+            return new ResponseFinder(true,"Admin credentials updated successfully.");
         }
-        return "Error: Invalid old credentials.";
+        return new ResponseFinder(false, "Error: Invalid old credentials.");
     }
 
-    public String updateTicketSettings(String adminUser, String adminPassword, Double releaseRate, Double retrievalRate, Integer maxCapacity) {
+    public ResponseFinder updateTicketSettings(String adminUser, String adminPassword, Double releaseRate, Double retrievalRate, Integer maxCapacity) {
         Configuration config = getOrCreateDefaultConfiguration();
 
         // Get total available tickets from TicketPoolService
@@ -59,7 +58,7 @@ public class ConfigurationService {
 
         // Check if the new maxCapacity is valid
         if (maxCapacity < totalAvailableTickets) {
-            return "Error: Cannot set max capacity lower than the current total available tickets.";
+            return new ResponseFinder(false, "Cannot set max capacity lower than the current total available tickets.");
         }
 
         if (config.getConfigAdminUser().equals(adminUser) && config.getConfigAdminPassword().equals(adminPassword)) {
@@ -69,8 +68,8 @@ public class ConfigurationService {
             config.setMaxTicketCapacity(maxCapacity);
             configurationRepository.save(config);
 
-            return "Ticket settings updated successfully.";
+            return new ResponseFinder(true, "Ticket settings updated successfully.");
         }
-        return "Error: Invalid admin credentials.";
+        return new ResponseFinder(false, "Invalid admin credentials.");
     }
 }
