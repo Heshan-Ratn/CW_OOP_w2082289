@@ -3,6 +3,7 @@ package com.hkrw2082289.ticketing_system.service;
 import com.hkrw2082289.ticketing_system.model.TicketEntity;
 import com.hkrw2082289.ticketing_system.model.Vendor;
 import com.hkrw2082289.ticketing_system.repository.VendorRepository;
+import com.hkrw2082289.ticketing_system.utils.ResponseFinder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,23 +38,23 @@ public class VendorService {
         this.ticketPoolService = ticketPoolService;
     }
 
-    public String signUpVendor(String vendorId, String password) {
+    public ResponseFinder signUpVendor(String vendorId, String password) {
         vendorLock.lock();  // Acquire the lock to synchronize this block
         try {
             if (!vendorId.matches(VENDOR_ID_REGEX)) {
-                return "Error: Vendor ID must be in the format of 4 letters followed by 3 digits.";
+                return new ResponseFinder(false, "Error: Vendor ID must be in the format of 4 letters followed by 3 digits.");
             }
             if (password.length() < 8 || password.length() > 12) {
-                return "Error: Password must be between 8 and 12 characters.";
+                return new ResponseFinder(false,"Error: Password must be between 8 and 12 characters.");
             }
             if (vendorRepository.existsByVendorId(vendorId)) {
-                return "Error: Vendor ID already exists.";
+                return new ResponseFinder(false,"Error: Vendor ID already exists.");
             }
             Vendor vendor = new Vendor();
             vendor.setVendorId(vendorId);
             vendor.setPassword(password);
             vendorRepository.save(vendor);
-            return "Sign-up successful.";
+            return new ResponseFinder(true,String.format("Sign-up was successful, Here is your Vendor ID: '%s'.", vendorId));
         } finally {
             vendorLock.unlock();  // Ensure the lock is released after execution
         }

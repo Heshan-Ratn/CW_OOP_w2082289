@@ -35,7 +35,7 @@ public class ConfigurationController {
         }
         // Return success message with a 200 OK status
         return ResponseEntity.ok(message.getMessage());
-        
+
     }
 
     @PutMapping("/update-ticket-settings")

@@ -58,7 +58,7 @@ public class ConfigurationService {
 
         // Check if the new maxCapacity is valid
         if (maxCapacity < totalAvailableTickets) {
-            return new ResponseFinder(false, "Cannot set max capacity lower than the current total available tickets.");
+            return new ResponseFinder(false, "Error: Cannot set max capacity lower than the current total available tickets.");
         }
 
         if (config.getConfigAdminUser().equals(adminUser) && config.getConfigAdminPassword().equals(adminPassword)) {
@@ -70,6 +70,6 @@ public class ConfigurationService {
 
             return new ResponseFinder(true, "Ticket settings updated successfully.");
         }
-        return new ResponseFinder(false, "Invalid admin credentials.");
+        return new ResponseFinder(false, "Error: Invalid admin credentials.");
     }
 }
