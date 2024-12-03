@@ -25,8 +25,8 @@ public class CustomerSimulation {
             String customerId = "cust" + String.format("%03d", i);
             String password = "password" + i;
 
-            String signUpResult = customerService.signUpCustomer(customerId, password);
-            logger.debug("Sign-up result for {}: {}", customerId, signUpResult);
+            ResponseFinder signUpResult = customerService.signUpCustomer(customerId, password);
+            logger.debug("Sign-up result for {}: {}", customerId, signUpResult.getMessage());
         }
 
         for (int i = 1; i <= numberOfCustomers; i++) {

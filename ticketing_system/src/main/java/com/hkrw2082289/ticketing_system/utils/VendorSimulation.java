@@ -25,8 +25,8 @@ public class VendorSimulation {
             String vendorId = "VEND" + String.format("%03d", i);
             String password = "password" + i;
 
-            String signUpResult = vendorService.signUpVendor(vendorId, password);
-            logger.debug("Sign-up result for {}: {}", vendorId, signUpResult);
+            ResponseFinder signUpResult = vendorService.signUpVendor(vendorId, password);
+            logger.debug("Sign-up result for {}: {}", vendorId, signUpResult.getMessage());
         }
 
         for (int i = 1; i <= numberOfVendors; i++) {

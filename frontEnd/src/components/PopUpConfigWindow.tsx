@@ -28,17 +28,17 @@ const PopUpConfigWindow: React.FC<PopUpConfigWindowProps> = ({
       <div className="popup-content">
         <h2>{text || "Configure Settings"}</h2>
         {onSetAdminCredentials && (
-          <button onClick={onSetAdminCredentials} className="button-close">
+          <button onClick={onSetAdminCredentials} className="button">
             {buttonTexts[0]}
           </button>
         )}
         {onEditConfigSetting && (
-          <button onClick={onEditConfigSetting} className="button-close">
+          <button onClick={onEditConfigSetting} className="button">
             {buttonTexts[1]}
           </button>
         )}
         {onViewConfigSettings && (
-          <button onClick={onViewConfigSettings} className="button-close">
+          <button onClick={onViewConfigSettings} className="button">
             {buttonTexts[2]}
           </button>
         )}

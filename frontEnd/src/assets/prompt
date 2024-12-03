@@ -1,3 +1,9 @@
+Ok Now I'd like to go and add functionality to the "Sign up as a Customer" button that was in the Sign up popup window, here is what I want to do:
+when I click this button a popup window should be created, it needs to have a heading "Sign up as a Customer", two fields ( labels and input fields) to get the Username and password, submit button, reset button, and a close button that closes the current window while the Sign up window is open.
+
+The input taken from the two fields are sent as a request to the Rest API endpoint method called 
+"signUpCustomer" in the controller class below:
+
 package com.hkrw2082289.ticketing_system.controller;
 
 import com.hkrw2082289.ticketing_system.service.CustomerService;
@@ -52,3 +58,11 @@ public class CustomerController {
     }
 }
 
+The input taken from the fields are put into JSON payload like:
+{
+  "customerId": "resn234",
+   "password" : "password123"
+}
+
+and sent to the backend. There is one thing I forgot to mention that is that when taking the Username it should be only 7 character long and it should contain 4 letters and 3 digits at the end and also the password needs to be between 8 -12 characters long.
+Also when the request is sent a response message will be returned, It might be an error message or a success message.If the sign up was a success, I want  to display the message in a notification with a green background, otherwise the message should be displayed as a error message in a notification with red background.    

@@ -3,6 +3,7 @@ package com.hkrw2082289.ticketing_system.service;
 import com.hkrw2082289.ticketing_system.helper.PurchaseRequest;
 import com.hkrw2082289.ticketing_system.model.Customer;
 import com.hkrw2082289.ticketing_system.repository.CustomerRepository;
+import com.hkrw2082289.ticketing_system.utils.ResponseFinder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,26 +33,26 @@ public class CustomerService {
         this.ticketPoolService = ticketPoolService;
     }
 
-    public String signUpCustomer(String customerId, String password) {
+    public ResponseFinder signUpCustomer(String customerId, String password) {
         customerLock.lock();
         try {
             if (!customerId.matches(CUSTOMER_ID_REGEX)) {
-                return "Error: Customer ID must be in the format of 4 letters followed by 3 digits.";
+                return new ResponseFinder(false,"Error: Customer ID must be in the format of 4 letters followed by 3 digits.");
             }
 
             if (password.length() < 8 || password.length() > 12) {
-                return "Error: Password must be between 8 and 12 characters.";
+                return new ResponseFinder(false,"Error: Password must be between 8 and 12 characters.");
             }
 
             if (customerRepository.existsByCustomerId(customerId)) {
-                return "Error: Customer ID already exists.";
+                return new ResponseFinder(false,"Error: Customer ID already exists.");
             }
             Customer customer = new Customer();
             customer.setCustomerId(customerId);
             customer.setPassword(password);
 
             customerRepository.save(customer);
-            return "Sign-up successful.";
+            return new ResponseFinder(true,String.format("Sign-up was successful, Here is your Vendor ID: '%s'.", customerId));
         }
         finally {
             customerLock.unlock();
