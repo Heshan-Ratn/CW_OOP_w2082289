@@ -60,23 +60,38 @@ public class VendorService {
         }
     }
 
-    public Map<String, Object> signInVendor(String vendorId, String password) {
-        vendorLock.lock();  // Acquire the lock to synchronize this block
+//    public Map<String, Object> signInVendor(String vendorId, String password) {
+//        vendorLock.lock();  // Acquire the lock to synchronize this block
+//        try {
+//            Map<String, Object> response = new HashMap<>();
+//            Vendor vendor = vendorRepository.findByVendorIdAndPassword(vendorId, password);
+//            if (vendor != null) {
+//                response.put("message", "Sign-in successful.");
+//                response.put("vendor", vendor);
+//            } else {
+//                response.put("message", "Error: Invalid vendor ID or password.");
+//                response.put("vendor", null);
+//            }
+//            return response;
+//        } finally {
+//            vendorLock.unlock();  // Ensure the lock is released after execution
+//        }
+//    }
+
+    public ResponseFinder signInVendor(String vendorId, String password) {
+        vendorLock.lock();
         try {
-            Map<String, Object> response = new HashMap<>();
             Vendor vendor = vendorRepository.findByVendorIdAndPassword(vendorId, password);
             if (vendor != null) {
-                response.put("message", "Sign-in successful.");
-                response.put("vendor", vendor);
+                return new ResponseFinder(true, String.format("Success: Sign-in successful, VendorID found: '%s'.",vendor.getVendorId()), vendor);
             } else {
-                response.put("message", "Error: Invalid vendor ID or password.");
-                response.put("vendor", null);
+                return new ResponseFinder(false, "Error: Invalid vendor ID or password.", null);
             }
-            return response;
         } finally {
-            vendorLock.unlock();  // Ensure the lock is released after execution
+            vendorLock.unlock();
         }
     }
+
 
     // Start a new thread for the vendor
     public String startVendorThread(String vendorId, Map<String, Object> payload) {

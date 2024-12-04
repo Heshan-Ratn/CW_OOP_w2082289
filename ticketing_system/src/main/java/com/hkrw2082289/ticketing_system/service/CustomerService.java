@@ -59,21 +59,36 @@ public class CustomerService {
         }
     }
 
-    public Map<String, Object> signInCustomer(String customerId, String password) {
+//    public Map<String, Object> signInCustomer(String customerId, String password) {
+//        customerLock.lock();
+//        try {
+//            Map<String, Object> response = new HashMap<>();
+//            //boolean isValid = customerRepository.existsByCustomerIdAndPassword(customerId, password);
+//            Customer customer = customerRepository.findByCustomerIdAndPassword(customerId, password);
+//            if (customer != null) {
+//                response.put("message", "Sign-in successful.");
+//                response.put("customerId", customerId);
+//            } else {
+//                response.put("message", "Error: Invalid customer ID or password.");
+//                response.put("customerId", null);
+//            }
+//
+//            return response;
+//        }
+//        finally {
+//            customerLock.unlock();
+//        }
+//    }
+
+    public ResponseFinder signInCustomer(String customerId, String password) {
         customerLock.lock();
         try {
-            Map<String, Object> response = new HashMap<>();
-            //boolean isValid = customerRepository.existsByCustomerIdAndPassword(customerId, password);
             Customer customer = customerRepository.findByCustomerIdAndPassword(customerId, password);
             if (customer != null) {
-                response.put("message", "Sign-in successful.");
-                response.put("customerId", customerId);
+                return new ResponseFinder(true, String.format("Success: Sign-in successful, Customer ID: '%s'.", customer.getCustomerId()), customer);
             } else {
-                response.put("message", "Error: Invalid customer ID or password.");
-                response.put("customerId", null);
+                return new ResponseFinder(false, "Error: Invalid customer ID or password.", null);
             }
-
-            return response;
         }
         finally {
             customerLock.unlock();

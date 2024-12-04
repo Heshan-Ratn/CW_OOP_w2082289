@@ -29,12 +29,26 @@ public class CustomerController {
         return ResponseEntity.ok(message.getMessage());
     }
 
+//    @PostMapping("/signin")
+//    public ResponseEntity<Map<String, Object>> signInCustomer(@RequestBody Map<String, String> payload) {
+//        String customerId = payload.get("customerId");
+//        String password = payload.get("password");
+//        Map<String, Object> response = customerService.signInCustomer(customerId, password);
+//        return ResponseEntity.ok(response);
+//    }
+
     @PostMapping("/signin")
-    public ResponseEntity<Map<String, Object>> signInCustomer(@RequestBody Map<String, String> payload) {
+    public ResponseEntity<ResponseFinder> signInCustomer(@RequestBody Map<String, String> payload) {
         String customerId = payload.get("customerId");
         String password = payload.get("password");
-        Map<String, Object> response = customerService.signInCustomer(customerId, password);
-        return ResponseEntity.ok(response);
+        ResponseFinder response = customerService.signInCustomer(customerId, password);
+        if (response.isSuccess()) {
+            // Successful login
+            return ResponseEntity.ok(response); // 200 OK
+        } else {
+            // Failed login
+            return ResponseEntity.badRequest().body(response); // 400 Bad Request
+        }
     }
 
     @PostMapping("/{customerId}/start-thread")

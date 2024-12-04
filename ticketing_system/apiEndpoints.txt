@@ -69,3 +69,12 @@ Content-Type: application/json
    "ticketToBook": 30,
    "event_Name": "lorent"
 }
+
+
+//    @PostMapping("/signin")
+//    public ResponseEntity<Map<String, Object>> signInVendor(@RequestBody Map<String, String> payload) {
+//        String vendorId = payload.get("vendorId");
+//        String password = payload.get("password");
+//        Map<String, Object> response = vendorService.signInVendor(vendorId, password);
+//        return ResponseEntity.ok(response);
+//    }

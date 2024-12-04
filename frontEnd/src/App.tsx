@@ -271,7 +271,12 @@ const App: React.FC = () => {
         />
       )}
 
-      {isSignInPopupOpen && <SignInPopup onClose={handleCloseSignInPopup} />}
+      {isSignInPopupOpen && (
+        <SignInPopup
+          onClose={handleCloseSignInPopup}
+          showNotification={showNotification}
+        />
+      )}
 
       {/* Global notification bar */}
       {notification && (

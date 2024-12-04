@@ -1,3 +1,10 @@
+Now, I want to add functionality to the "Sign in as a Vendor" button.
+This what I want to do:
+
+When this  "Sign in as a Vendor" button, I want a new popup window to open, in this new window there will be a heading "Sign as a Vendor", two fields ( two Labels ("Username", "Password") and two input fields to take input for these two labels), a submit button, a reset button, and a close button to close the window.
+
+When the submit button is pressed after filling the two fields, the frontend will send a request to spring boot Rest endpoint in the controller class method: signInVendor. This is the controller class:
+
 package com.hkrw2082289.ticketing_system.controller;
 
 import com.hkrw2082289.ticketing_system.service.VendorService;
@@ -29,7 +36,7 @@ public class VendorController {
         return ResponseEntity.ok(message.getMessage());
     }
 
-
+    
     @PostMapping("/signin")
     public ResponseEntity<ResponseFinder> signInVendor(@RequestBody Map<String, String> payload) {
         String vendorId = payload.get("vendorId");
@@ -61,3 +68,39 @@ public class VendorController {
     }
 }
 
+
+when this request is made we need to send a json body, this will contain the data we gathered from the two inputs. the json body will look like this:
+
+{
+  "vendorId": "ABqD123",
+  "password": "Password1"
+} 
+
+And when taking the inputs remember that only 7 character are allowed for the Username and in that 7 characters the first 4 character should be letters and the rest of the 3 character should be numbers, and for the password there should be between 8 -12 characters. 
+
+and this payload is sent when the request is made. And the backend will send either send a good response or a bad response based on the data sent to the backend Rest endpoint.
+
+For a good request, a response like this will be returned:
+
+{
+    "success": true,
+    "message": "Success: Sign-in successful, VendorID found: 'ABCD123'.",
+    "data": {
+        "vendorId": "ABCD123",
+        "password": "Password1",
+        "ticketReleaseRate": 0.0,
+        "ticketBatch": null,
+        "ticketPoolService": null
+    }
+}
+
+and for bad request, the response will be like this:
+
+{
+    "success": false,
+    "message": "Error: Invalid vendor ID or password.",
+    "data": null
+}
+
+and when this response is recieved to the frontend, I want to frontend to analyze the response recieved and display a notification based on what type of response is recieved.
+If a good response is recieved, a notification with a green background containing the message from the json body receieved should be displayed. And if a bad response is recieved a notification with a red background containing the message from the json body receieved should be displayed.  
