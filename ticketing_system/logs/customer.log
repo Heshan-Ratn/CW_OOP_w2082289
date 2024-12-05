@@ -4,3 +4,41 @@
 2024-12-03 23:18:43 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Global stop enabled. Customer URKA002 thread will terminate. (Thread ID: 60)
 2024-12-03 23:18:43 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Thread:60 for customer with ID:URKA002 finished executing
 2024-12-03 23:18:43 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: URKA002 (Thread ID: 60)
+2024-12-05 10:24:26 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: URKA002 with purchase batch size: 5 (Thread ID: 97)
+2024-12-05 10:24:26 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 76 to the pool. Ticket No. of ticked booked in batch:1 
+2024-12-05 10:24:29 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 77 to the pool. Ticket No. of ticked booked in batch:2 
+2024-12-05 10:25:30 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 80 to the pool. Ticket No. of ticked booked in batch:3 
+2024-12-05 10:25:33 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 81 to the pool. Ticket No. of ticked booked in batch:4 
+2024-12-05 10:25:36 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 82 to the pool. Ticket No. of ticked booked in batch:5 
+2024-12-05 10:25:39 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Thread:97 for customer with ID:URKA002 finished executing
+2024-12-05 10:25:39 [Thread-7] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: URKA002 (Thread ID: 97)
+2024-12-05 10:25:39 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: URKA002 with purchase batch size: 5 (Thread ID: 99)
+2024-12-05 10:25:39 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 83 to the pool. Ticket No. of ticked booked in batch:1 
+2024-12-05 10:25:42 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 84 to the pool. Ticket No. of ticked booked in batch:2 
+2024-12-05 10:25:45 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 85 to the pool. Ticket No. of ticked booked in batch:3 
+2024-12-05 10:25:48 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 86 to the pool. Ticket No. of ticked booked in batch:4 
+2024-12-05 10:25:51 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 87 to the pool. Ticket No. of ticked booked in batch:5 
+2024-12-05 10:25:54 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Thread:99 for customer with ID:URKA002 finished executing
+2024-12-05 10:25:54 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: URKA002 (Thread ID: 99)
+2024-12-05 10:26:58 [Thread-10] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: URKA002 with purchase batch size: 5 (Thread ID: 100)
+2024-12-05 10:27:04 [Thread-10] WARN  c.h.ticketing_system.model.Customer - Failed to book ticket ID: null to the pool.
+2024-12-05 10:27:04 [Thread-10] ERROR c.h.ticketing_system.model.Customer - Thread for Customer URKA002 was interrupted. (Thread ID: 100)
+2024-12-05 10:27:04 [Thread-10] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: URKA002 (Thread ID: 100)
+2024-12-05 12:37:29 [Thread-8] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust004 with purchase batch size: 10 (Thread ID: 79)
+2024-12-05 12:37:29 [Thread-8] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 11 to the pool. Ticket No. of ticked booked in batch:1 
+2024-12-05 12:37:31 [Thread-8] ERROR c.h.ticketing_system.model.Customer - Thread for Customer cust004 was interrupted. (Thread ID: 79)
+2024-12-05 12:37:31 [Thread-8] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust004 (Thread ID: 79)
+2024-12-05 12:38:06 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust004 with purchase batch size: 10 (Thread ID: 80)
+2024-12-05 12:38:06 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 88 to the pool. Ticket No. of ticked booked in batch:1 
+2024-12-05 12:38:08 [Thread-9] ERROR c.h.ticketing_system.model.Customer - Thread for Customer cust004 was interrupted. (Thread ID: 80)
+2024-12-05 12:38:08 [Thread-9] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust004 (Thread ID: 80)
+2024-12-05 12:38:17 [Thread-10] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust004 with purchase batch size: 1 (Thread ID: 81)
+2024-12-05 12:38:17 [Thread-10] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 89 to the pool. Ticket No. of ticked booked in batch:1 
+2024-12-05 12:38:20 [Thread-10] INFO  c.h.ticketing_system.model.Customer - Thread:81 for customer with ID:cust004 finished executing
+2024-12-05 12:38:20 [Thread-10] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust004 (Thread ID: 81)
+2024-12-05 12:38:54 [http-nio-8080-exec-3] INFO  c.h.ticketing_system.model.Customer - Global stop for all purchases enabled.
+2024-12-05 12:39:21 [Thread-11] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: CUST123 with purchase batch size: 10 (Thread ID: 82)
+2024-12-05 12:39:21 [Thread-11] INFO  c.h.ticketing_system.model.Customer - Global stop enabled. Customer CUST123 thread will terminate. (Thread ID: 82)
+2024-12-05 12:39:21 [Thread-11] INFO  c.h.ticketing_system.model.Customer - Thread:82 for customer with ID:CUST123 finished executing
+2024-12-05 12:39:21 [Thread-11] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: CUST123 (Thread ID: 82)
+2024-12-05 12:39:29 [http-nio-8080-exec-6] INFO  c.h.ticketing_system.model.Customer - Global stop for all purchases disabled.

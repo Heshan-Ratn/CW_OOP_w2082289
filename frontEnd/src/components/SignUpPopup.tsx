@@ -35,6 +35,16 @@ const SignUpPopup: React.FC<SignUpPopupProps> = ({
             <button className="close-button" onClick={onClose}>
               Close
             </button>
+            {/* <button
+              className="close-button"
+              onClick={() => {
+                setIsVendorSignUpOpen(false);
+                setIsCustomerSignUpOpen(false);
+                onClose(); // Reopen LoginPopup
+              }}
+            >
+              Close
+            </button> */}
           </div>
         </div>
       </div>

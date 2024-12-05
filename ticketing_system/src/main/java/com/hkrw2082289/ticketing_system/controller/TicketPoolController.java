@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/ticket-pool")
 public class TicketPoolController {
 
-    private final TicketPoolService ticketPool;  // Corrected this line
+    private final TicketPoolService ticketPool;
 
     @Autowired
-    public TicketPoolController(TicketPoolService ticketPool) {  // Corrected this line
+    public TicketPoolController(TicketPoolService ticketPool) {
         this.ticketPool = ticketPool;
     }
 
