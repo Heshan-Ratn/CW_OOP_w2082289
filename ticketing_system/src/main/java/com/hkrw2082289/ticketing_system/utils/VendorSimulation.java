@@ -34,8 +34,8 @@ public class VendorSimulation {
             Map<String, Object> payload = generatePayload(vendorId);
 
             Thread vendorThread = new Thread(() -> {
-                String result = vendorService.startVendorThread(vendorId, payload);
-                logger.debug("Thread result for {}: {}", vendorId, result);
+                ResponseFinder result = vendorService.startVendorThread(vendorId, payload);
+                logger.debug("Thread result for {}: {}", vendorId, result.getMessage());
             });
 
             vendorThreads.add(vendorThread);

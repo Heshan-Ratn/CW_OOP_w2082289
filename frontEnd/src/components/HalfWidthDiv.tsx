@@ -47,7 +47,7 @@ const HalfWidthDiv: React.FC<HalfWidthDivProps> = ({
         buttonTexts.map((text, index) => (
           <button
             key={index}
-            className="button"
+            className={text === "Exit Program" ? "button-close" : "button"}
             onClick={() => onButtonClick(text)} // Pass the button text to the handler
           >
             {text}

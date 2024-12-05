@@ -34,8 +34,8 @@ public class CustomerSimulation {
             Map<String, Object> payload = generatePayload(i,customerId);
 
             Thread customerThread = new Thread(() -> {
-                String result = customerService.startCustomerThread(customerId, payload);
-                logger.debug("Thread result for {}: {}", customerId, result);
+                ResponseFinder result = customerService.startCustomerThread(customerId, payload);
+                logger.debug("Thread result for {}: {}", customerId, result.getMessage());
             });
 
             customerThreads.add(customerThread);

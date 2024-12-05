@@ -50,14 +50,26 @@ public class VendorController {
     public ResponseEntity<String> startVendorThread(
             @PathVariable String vendorId,
             @RequestBody Map<String, Object> payload) {
-        String message = vendorService.startVendorThread(vendorId,payload);
-        return ResponseEntity.ok(message);
+        ResponseFinder message = vendorService.startVendorThread(vendorId,payload);
+        if (message.isSuccess()) {
+            // Successful login
+            return ResponseEntity.ok(message.getMessage()); // 200 OK
+        } else {
+            // Failed login
+            return ResponseEntity.badRequest().body(message.getMessage()); // 400 Bad Request
+        }
     }
 
     @PostMapping("/{vendorId}/stop-thread")
     public ResponseEntity<String> stopVendorThread(@PathVariable String vendorId) {
-        String message = vendorService.stopAllThreadsOfVendor(vendorId);
-        return ResponseEntity.ok(message);
+        ResponseFinder message = vendorService.stopAllThreadsOfVendor(vendorId);
+        if (message.isSuccess()) {
+            // Successful login
+            return ResponseEntity.ok(message.getMessage()); // 200 OK
+        } else {
+            // Failed login
+            return ResponseEntity.badRequest().body(message.getMessage()); // 400 Bad Request
+        }
     }
 }
 

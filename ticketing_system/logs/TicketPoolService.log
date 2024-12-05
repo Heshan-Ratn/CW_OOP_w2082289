@@ -1,0 +1,207 @@
+2024-12-05 00:02:31 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:31 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:33 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:33 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:35 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:35 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:37 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:37 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:39 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:39 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:41 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:41 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:43 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:43 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:45 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:45 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:47 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:47 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:02:49 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: foko
+2024-12-05 00:02:49 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: foko
+2024-12-05 00:03:23 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:23 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:25 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:25 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:27 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:27 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:29 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:29 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:31 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:31 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:33 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:33 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:35 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:35 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:37 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:37 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:39 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:39 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:03:41 [Thread-9] INFO  c.h.t.service.TicketPoolService - Added ticket for event: poko
+2024-12-05 00:03:41 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 60 notified consumers for event: poko
+2024-12-05 00:10:06 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:06 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:08 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:08 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:10 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:10 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:12 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:12 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:14 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:14 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:16 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:16 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:18 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:18 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:20 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:20 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:22 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:22 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 00:10:24 [Thread-7] INFO  c.h.t.service.TicketPoolService - Added ticket for event: jokk
+2024-12-05 00:10:24 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 58 notified consumers for event: jokk
+2024-12-05 07:15:12 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:12 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:14 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:14 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:16 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:16 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:18 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:18 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:20 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:20 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:22 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:22 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:24 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:24 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:26 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:26 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:29 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:29 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:31 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:31 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:33 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:33 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:35 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:35 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:37 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:37 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:39 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:39 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 07:15:41 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: perok
+2024-12-05 07:15:41 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: perok
+2024-12-05 08:02:53 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:02:53 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:02:55 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:02:55 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:02:57 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:02:57 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:02:59 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:02:59 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:03:01 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:03:01 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:03:03 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:03:03 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:03:05 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:03:05 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:03:07 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:03:07 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:03:09 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:03:09 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 08:03:11 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: golo
+2024-12-05 08:03:11 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 59 notified consumers for event: golo
+2024-12-05 09:41:43 [Thread-10] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 09:41:43 [Thread-10] INFO  c.h.t.service.TicketPoolService - Thread 61 notified consumers for event: roko
+2024-12-05 09:41:45 [Thread-10] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 09:41:45 [Thread-10] INFO  c.h.t.service.TicketPoolService - Thread 61 notified consumers for event: roko
+2024-12-05 10:01:53 [Thread-12] INFO  c.h.t.service.TicketPoolService - Added ticket for event: greko
+2024-12-05 10:01:53 [Thread-12] INFO  c.h.t.service.TicketPoolService - Thread 63 notified consumers for event: greko
+2024-12-05 10:01:56 [Thread-12] INFO  c.h.t.service.TicketPoolService - Added ticket for event: greko
+2024-12-05 10:01:56 [Thread-12] INFO  c.h.t.service.TicketPoolService - Thread 63 notified consumers for event: greko
+2024-12-05 10:24:26 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 booked ticket 76 for event: roko by customer: URKA002
+2024-12-05 10:24:26 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 signaled vendors for more capacity
+2024-12-05 10:24:29 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 booked ticket 77 for event: roko by customer: URKA002
+2024-12-05 10:24:29 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 signaled vendors for more capacity
+2024-12-05 10:24:33 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 waiting for tickets to become available for event: roko
+2024-12-05 10:25:30 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:30 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:30 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 booked ticket 80 for event: roko by customer: URKA002
+2024-12-05 10:25:30 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 signaled vendors for more capacity
+2024-12-05 10:25:32 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:32 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:33 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 booked ticket 81 for event: roko by customer: URKA002
+2024-12-05 10:25:33 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 signaled vendors for more capacity
+2024-12-05 10:25:34 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:34 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:36 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 booked ticket 82 for event: roko by customer: URKA002
+2024-12-05 10:25:36 [Thread-7] INFO  c.h.t.service.TicketPoolService - Thread 97 signaled vendors for more capacity
+2024-12-05 10:25:36 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:36 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:38 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:38 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:39 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 booked ticket 83 for event: roko by customer: URKA002
+2024-12-05 10:25:39 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 signaled vendors for more capacity
+2024-12-05 10:25:40 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:40 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:42 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:42 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:42 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 booked ticket 84 for event: roko by customer: URKA002
+2024-12-05 10:25:42 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 signaled vendors for more capacity
+2024-12-05 10:25:44 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:44 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:45 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 booked ticket 85 for event: roko by customer: URKA002
+2024-12-05 10:25:45 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 signaled vendors for more capacity
+2024-12-05 10:25:46 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:46 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:48 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:48 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:48 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 booked ticket 86 for event: roko by customer: URKA002
+2024-12-05 10:25:48 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 signaled vendors for more capacity
+2024-12-05 10:25:50 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:50 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:51 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 booked ticket 87 for event: roko by customer: URKA002
+2024-12-05 10:25:51 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 99 signaled vendors for more capacity
+2024-12-05 10:25:52 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:52 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:55 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:55 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:57 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:57 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:25:59 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:25:59 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:01 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:01 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:03 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:03 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:05 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:05 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:07 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:07 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:09 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:09 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:11 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:11 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:13 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:13 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:15 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:15 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:17 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:17 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:19 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:19 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:22 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:22 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:24 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:24 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:26 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:26 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:28 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:28 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:30 [Thread-8] INFO  c.h.t.service.TicketPoolService - Added ticket for event: roko
+2024-12-05 10:26:30 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 98 notified consumers for event: roko
+2024-12-05 10:26:58 [Thread-10] INFO  c.h.t.service.TicketPoolService - Thread 100 waiting for tickets to become available for event: leko
+2024-12-05 10:27:04 [Thread-10] ERROR c.h.t.service.TicketPoolService - Thread 100 interrupted while booking ticket
+2024-12-05 12:37:29 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 79 booked ticket 11 for event: poko by customer: cust004
+2024-12-05 12:37:29 [Thread-8] INFO  c.h.t.service.TicketPoolService - Thread 79 signaled vendors for more capacity
+2024-12-05 12:38:06 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 80 booked ticket 88 for event: roko by customer: cust004
+2024-12-05 12:38:06 [Thread-9] INFO  c.h.t.service.TicketPoolService - Thread 80 signaled vendors for more capacity
+2024-12-05 12:38:17 [Thread-10] INFO  c.h.t.service.TicketPoolService - Thread 81 booked ticket 89 for event: roko by customer: cust004
+2024-12-05 12:38:17 [Thread-10] INFO  c.h.t.service.TicketPoolService - Thread 81 signaled vendors for more capacity

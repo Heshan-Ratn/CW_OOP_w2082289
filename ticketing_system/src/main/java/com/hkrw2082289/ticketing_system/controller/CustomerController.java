@@ -29,14 +29,6 @@ public class CustomerController {
         return ResponseEntity.ok(message.getMessage());
     }
 
-//    @PostMapping("/signin")
-//    public ResponseEntity<Map<String, Object>> signInCustomer(@RequestBody Map<String, String> payload) {
-//        String customerId = payload.get("customerId");
-//        String password = payload.get("password");
-//        Map<String, Object> response = customerService.signInCustomer(customerId, password);
-//        return ResponseEntity.ok(response);
-//    }
-
     @PostMapping("/signin")
     public ResponseEntity<ResponseFinder> signInCustomer(@RequestBody Map<String, String> payload) {
         String customerId = payload.get("customerId");
@@ -55,14 +47,26 @@ public class CustomerController {
     public ResponseEntity<String> startCustomerThread(
             @PathVariable String customerId,
             @RequestBody Map<String, Object> payload) {
-        String message = customerService.startCustomerThread(customerId,payload);
-        return ResponseEntity.ok(message);
+        ResponseFinder message = customerService.startCustomerThread(customerId,payload);
+        if (message.isSuccess()) {
+            // Successful login
+            return ResponseEntity.ok(message.getMessage()); // 200 OK
+        } else {
+            // Failed login
+            return ResponseEntity.badRequest().body(message.getMessage()); // 400 Bad Request
+        }
     }
 
     @PostMapping("/{customerId}/stop-thread")
     public ResponseEntity<String> stopCustomerThread(@PathVariable String customerId) {
-        String message = customerService.stopAllThreadsOfCustomer(customerId);
-        return ResponseEntity.ok(message);
+        ResponseFinder message = customerService.stopAllThreadsOfCustomer(customerId);
+        if (message.isSuccess()) {
+            // Successful login
+            return ResponseEntity.ok(message.getMessage()); // 200 OK
+        } else {
+            // Failed login
+            return ResponseEntity.badRequest().body(message.getMessage()); // 400 Bad Request
+        }
     }
 }
 

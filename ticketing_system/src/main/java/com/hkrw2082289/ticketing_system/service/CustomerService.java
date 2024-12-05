@@ -52,33 +52,12 @@ public class CustomerService {
             customer.setPassword(password);
 
             customerRepository.save(customer);
-            return new ResponseFinder(true,String.format("Sign-up was successful, Here is your Vendor ID: '%s'.", customerId));
+            return new ResponseFinder(true,String.format("Success: Sign-up was successful, Here is your Vendor ID: '%s'.", customerId));
         }
         finally {
             customerLock.unlock();
         }
     }
-
-//    public Map<String, Object> signInCustomer(String customerId, String password) {
-//        customerLock.lock();
-//        try {
-//            Map<String, Object> response = new HashMap<>();
-//            //boolean isValid = customerRepository.existsByCustomerIdAndPassword(customerId, password);
-//            Customer customer = customerRepository.findByCustomerIdAndPassword(customerId, password);
-//            if (customer != null) {
-//                response.put("message", "Sign-in successful.");
-//                response.put("customerId", customerId);
-//            } else {
-//                response.put("message", "Error: Invalid customer ID or password.");
-//                response.put("customerId", null);
-//            }
-//
-//            return response;
-//        }
-//        finally {
-//            customerLock.unlock();
-//        }
-//    }
 
     public ResponseFinder signInCustomer(String customerId, String password) {
         customerLock.lock();
@@ -95,11 +74,11 @@ public class CustomerService {
         }
     }
 
-    public String startCustomerThread(String customerId, Map<String, Object> payload) {
+    public ResponseFinder startCustomerThread(String customerId, Map<String, Object> payload) {
         Optional<Customer> optionalCustomer = customerRepository.findById(customerId);
 
         if (optionalCustomer.isEmpty()) {
-            return "Error: Vendor ID " + customerId + " does not exist in the database.";
+            return new ResponseFinder(false,"Error: Vendor ID " + customerId + " does not exist in the database.");
         }
 
         String eventName = (String) payload.get("eventName");
@@ -120,25 +99,25 @@ public class CustomerService {
         customerThread.start();
 
         if(isAdminStopAllPurchases()) {
-            return String.format("System has been stopped by Admin, Sorry, your ticket purchase request for '%s' has been denied",eventName);
+            return new ResponseFinder(false, String.format("Error: System has been stopped by Admin, Sorry, your ticket purchase request for '%s' has been denied",eventName));
         }
         else{
-            return String.format("Thread started for CustomerID: %s with event '%s' and purchase request batch size %d. ", customerId, eventName,ticketToBook);
+            return new ResponseFinder(true, String.format("Success: Thread started for CustomerID: %s with event '%s' and purchase request batch size %d. ", customerId, eventName,ticketToBook));
         }
     }
 
-    public String stopAllThreadsOfCustomer(String customerId){
+    public ResponseFinder stopAllThreadsOfCustomer(String customerId){
         List<Thread> threads = customerThreads.get(customerId);
 
         if (threads == null || threads.isEmpty()) {
-            return "No active threads found for vendor ID: " + customerId;
+            return new ResponseFinder(false, "Error: No active threads found for vendor ID: " + customerId);
         }
         // Interrupt all threads for this customer
         for (Thread thread : threads) {
             thread.interrupt();
         }
         customerThreads.remove(customerId);
-        return "All threads for customer ID: " + customerId + " have been interrupted.";
+        return new ResponseFinder(true, "Success: All threads for customer ID: " + customerId + " have been interrupted.");
     }
 
     // Method to check if global stop is enabled

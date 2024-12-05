@@ -4,3 +4,207 @@
 2024-12-03 23:17:42 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Global stop enabled. Vendor ABCD123 thread will terminate. (Thread ID: 59)
 2024-12-03 23:17:42 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread:59 for vendor with ID:ABCD123 finished executing
 2024-12-03 23:17:42 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 59)
+2024-12-05 00:02:31 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 10 (Thread ID: 59)
+2024-12-05 00:02:31 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:31 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 21 of event: foko to the pool. Ticket number in the batch: 1
+2024-12-05 00:02:33 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:33 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 22 of event: foko to the pool. Ticket number in the batch: 2
+2024-12-05 00:02:35 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:35 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 23 of event: foko to the pool. Ticket number in the batch: 3
+2024-12-05 00:02:37 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:37 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 24 of event: foko to the pool. Ticket number in the batch: 4
+2024-12-05 00:02:39 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:39 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 25 of event: foko to the pool. Ticket number in the batch: 5
+2024-12-05 00:02:41 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:41 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 26 of event: foko to the pool. Ticket number in the batch: 6
+2024-12-05 00:02:43 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:43 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 27 of event: foko to the pool. Ticket number in the batch: 7
+2024-12-05 00:02:45 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:45 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 28 of event: foko to the pool. Ticket number in the batch: 8
+2024-12-05 00:02:47 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:47 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 29 of event: foko to the pool. Ticket number in the batch: 9
+2024-12-05 00:02:49 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: foko for Vendor: ABCD123
+2024-12-05 00:02:49 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 30 of event: foko to the pool. Ticket number in the batch: 10
+2024-12-05 00:02:51 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread:59 for vendor with ID:ABCD123 finished executing
+2024-12-05 00:02:51 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 59)
+2024-12-05 00:03:23 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 10 (Thread ID: 60)
+2024-12-05 00:03:23 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:23 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 31 of event: poko to the pool. Ticket number in the batch: 1
+2024-12-05 00:03:25 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:25 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 32 of event: poko to the pool. Ticket number in the batch: 2
+2024-12-05 00:03:27 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:27 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 33 of event: poko to the pool. Ticket number in the batch: 3
+2024-12-05 00:03:29 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:29 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 34 of event: poko to the pool. Ticket number in the batch: 4
+2024-12-05 00:03:31 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:31 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 35 of event: poko to the pool. Ticket number in the batch: 5
+2024-12-05 00:03:33 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:33 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 36 of event: poko to the pool. Ticket number in the batch: 6
+2024-12-05 00:03:35 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:35 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 37 of event: poko to the pool. Ticket number in the batch: 7
+2024-12-05 00:03:37 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:37 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 38 of event: poko to the pool. Ticket number in the batch: 8
+2024-12-05 00:03:39 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:39 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 39 of event: poko to the pool. Ticket number in the batch: 9
+2024-12-05 00:03:41 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: poko for Vendor: ABCD123
+2024-12-05 00:03:41 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 40 of event: poko to the pool. Ticket number in the batch: 10
+2024-12-05 00:03:43 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread:60 for vendor with ID:ABCD123 finished executing
+2024-12-05 00:03:43 [Thread-9] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 60)
+2024-12-05 00:10:05 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 10 (Thread ID: 58)
+2024-12-05 00:10:05 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:06 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 41 of event: jokk to the pool. Ticket number in the batch: 1
+2024-12-05 00:10:08 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:08 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 42 of event: jokk to the pool. Ticket number in the batch: 2
+2024-12-05 00:10:10 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:10 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 43 of event: jokk to the pool. Ticket number in the batch: 3
+2024-12-05 00:10:12 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:12 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 44 of event: jokk to the pool. Ticket number in the batch: 4
+2024-12-05 00:10:14 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:14 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 45 of event: jokk to the pool. Ticket number in the batch: 5
+2024-12-05 00:10:16 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:16 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 46 of event: jokk to the pool. Ticket number in the batch: 6
+2024-12-05 00:10:18 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:18 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 47 of event: jokk to the pool. Ticket number in the batch: 7
+2024-12-05 00:10:20 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:20 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 48 of event: jokk to the pool. Ticket number in the batch: 8
+2024-12-05 00:10:22 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:22 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 49 of event: jokk to the pool. Ticket number in the batch: 9
+2024-12-05 00:10:24 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: jokk for Vendor: ABCD123
+2024-12-05 00:10:24 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 50 of event: jokk to the pool. Ticket number in the batch: 10
+2024-12-05 00:10:26 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread:58 for vendor with ID:ABCD123 finished executing
+2024-12-05 00:10:26 [Thread-7] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 58)
+2024-12-05 07:15:11 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: abod123 with ticket batch size: 15 (Thread ID: 59)
+2024-12-05 07:15:11 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:12 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 51 of event: perok to the pool. Ticket number in the batch: 1
+2024-12-05 07:15:14 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:14 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 52 of event: perok to the pool. Ticket number in the batch: 2
+2024-12-05 07:15:16 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:16 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 53 of event: perok to the pool. Ticket number in the batch: 3
+2024-12-05 07:15:18 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:18 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 54 of event: perok to the pool. Ticket number in the batch: 4
+2024-12-05 07:15:20 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:20 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 55 of event: perok to the pool. Ticket number in the batch: 5
+2024-12-05 07:15:22 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:22 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 56 of event: perok to the pool. Ticket number in the batch: 6
+2024-12-05 07:15:24 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:24 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 57 of event: perok to the pool. Ticket number in the batch: 7
+2024-12-05 07:15:26 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:26 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 58 of event: perok to the pool. Ticket number in the batch: 8
+2024-12-05 07:15:29 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:29 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 59 of event: perok to the pool. Ticket number in the batch: 9
+2024-12-05 07:15:31 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:31 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 60 of event: perok to the pool. Ticket number in the batch: 10
+2024-12-05 07:15:33 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:33 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 61 of event: perok to the pool. Ticket number in the batch: 11
+2024-12-05 07:15:35 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:35 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 62 of event: perok to the pool. Ticket number in the batch: 12
+2024-12-05 07:15:37 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:37 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 63 of event: perok to the pool. Ticket number in the batch: 13
+2024-12-05 07:15:39 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:39 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 64 of event: perok to the pool. Ticket number in the batch: 14
+2024-12-05 07:15:41 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: perok for Vendor: abod123
+2024-12-05 07:15:41 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 65 of event: perok to the pool. Ticket number in the batch: 15
+2024-12-05 07:15:43 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread:59 for vendor with ID:abod123 finished executing
+2024-12-05 07:15:43 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: abod123 (Thread ID: 59)
+2024-12-05 08:02:52 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 10 (Thread ID: 59)
+2024-12-05 08:02:52 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:02:53 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 66 of event: golo to the pool. Ticket number in the batch: 1
+2024-12-05 08:02:55 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:02:55 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 67 of event: golo to the pool. Ticket number in the batch: 2
+2024-12-05 08:02:57 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:02:57 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 68 of event: golo to the pool. Ticket number in the batch: 3
+2024-12-05 08:02:59 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:02:59 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 69 of event: golo to the pool. Ticket number in the batch: 4
+2024-12-05 08:03:01 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:03:01 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 70 of event: golo to the pool. Ticket number in the batch: 5
+2024-12-05 08:03:03 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:03:03 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 71 of event: golo to the pool. Ticket number in the batch: 6
+2024-12-05 08:03:05 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:03:05 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 72 of event: golo to the pool. Ticket number in the batch: 7
+2024-12-05 08:03:07 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:03:07 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 73 of event: golo to the pool. Ticket number in the batch: 8
+2024-12-05 08:03:09 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:03:09 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 74 of event: golo to the pool. Ticket number in the batch: 9
+2024-12-05 08:03:11 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: golo for Vendor: ABCD123
+2024-12-05 08:03:11 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 75 of event: golo to the pool. Ticket number in the batch: 10
+2024-12-05 08:03:13 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread:59 for vendor with ID:ABCD123 finished executing
+2024-12-05 08:03:13 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 59)
+2024-12-05 09:41:43 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 30 (Thread ID: 61)
+2024-12-05 09:41:43 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 09:41:43 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 76 of event: roko to the pool. Ticket number in the batch: 1
+2024-12-05 09:41:45 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 09:41:45 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 77 of event: roko to the pool. Ticket number in the batch: 2
+2024-12-05 09:41:46 [Thread-10] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 61)
+2024-12-05 09:41:46 [Thread-10] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 61)
+2024-12-05 10:01:53 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 20 (Thread ID: 63)
+2024-12-05 10:01:53 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: greko for Vendor: ABCD123
+2024-12-05 10:01:53 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 78 of event: greko to the pool. Ticket number in the batch: 1
+2024-12-05 10:01:55 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: greko for Vendor: ABCD123
+2024-12-05 10:01:56 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 79 of event: greko to the pool. Ticket number in the batch: 2
+2024-12-05 10:01:58 [Thread-12] ERROR c.h.ticketing_system.model.Vendor - Thread for Vendor ABCD123 was interrupted. (Thread ID: 63)
+2024-12-05 10:01:58 [Thread-12] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 63)
+2024-12-05 10:25:29 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: ABCD123 with ticket batch size: 30 (Thread ID: 98)
+2024-12-05 10:25:29 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:30 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 80 of event: roko to the pool. Ticket number in the batch: 1
+2024-12-05 10:25:32 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:32 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 81 of event: roko to the pool. Ticket number in the batch: 2
+2024-12-05 10:25:34 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:34 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 82 of event: roko to the pool. Ticket number in the batch: 3
+2024-12-05 10:25:36 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:36 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 83 of event: roko to the pool. Ticket number in the batch: 4
+2024-12-05 10:25:38 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:38 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 84 of event: roko to the pool. Ticket number in the batch: 5
+2024-12-05 10:25:40 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:40 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 85 of event: roko to the pool. Ticket number in the batch: 6
+2024-12-05 10:25:42 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:42 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 86 of event: roko to the pool. Ticket number in the batch: 7
+2024-12-05 10:25:44 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:44 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 87 of event: roko to the pool. Ticket number in the batch: 8
+2024-12-05 10:25:46 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:46 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 88 of event: roko to the pool. Ticket number in the batch: 9
+2024-12-05 10:25:48 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:48 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 89 of event: roko to the pool. Ticket number in the batch: 10
+2024-12-05 10:25:50 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:50 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 90 of event: roko to the pool. Ticket number in the batch: 11
+2024-12-05 10:25:52 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:52 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 91 of event: roko to the pool. Ticket number in the batch: 12
+2024-12-05 10:25:54 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:55 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 92 of event: roko to the pool. Ticket number in the batch: 13
+2024-12-05 10:25:57 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:57 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 93 of event: roko to the pool. Ticket number in the batch: 14
+2024-12-05 10:25:59 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:25:59 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 94 of event: roko to the pool. Ticket number in the batch: 15
+2024-12-05 10:26:01 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:01 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 95 of event: roko to the pool. Ticket number in the batch: 16
+2024-12-05 10:26:03 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:03 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 96 of event: roko to the pool. Ticket number in the batch: 17
+2024-12-05 10:26:05 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:05 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 97 of event: roko to the pool. Ticket number in the batch: 18
+2024-12-05 10:26:07 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:07 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 98 of event: roko to the pool. Ticket number in the batch: 19
+2024-12-05 10:26:09 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:09 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 99 of event: roko to the pool. Ticket number in the batch: 20
+2024-12-05 10:26:11 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:11 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 100 of event: roko to the pool. Ticket number in the batch: 21
+2024-12-05 10:26:13 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:13 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 101 of event: roko to the pool. Ticket number in the batch: 22
+2024-12-05 10:26:15 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:15 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 102 of event: roko to the pool. Ticket number in the batch: 23
+2024-12-05 10:26:17 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:17 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 103 of event: roko to the pool. Ticket number in the batch: 24
+2024-12-05 10:26:19 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:19 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 104 of event: roko to the pool. Ticket number in the batch: 25
+2024-12-05 10:26:21 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:22 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 105 of event: roko to the pool. Ticket number in the batch: 26
+2024-12-05 10:26:24 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:24 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 106 of event: roko to the pool. Ticket number in the batch: 27
+2024-12-05 10:26:26 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:26 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 107 of event: roko to the pool. Ticket number in the batch: 28
+2024-12-05 10:26:28 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:28 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 108 of event: roko to the pool. Ticket number in the batch: 29
+2024-12-05 10:26:30 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: roko for Vendor: ABCD123
+2024-12-05 10:26:30 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 109 of event: roko to the pool. Ticket number in the batch: 30
+2024-12-05 10:26:32 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread:98 for vendor with ID:ABCD123 finished executing
+2024-12-05 10:26:32 [Thread-8] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: ABCD123 (Thread ID: 98)
+2024-12-05 12:38:54 [http-nio-8080-exec-3] INFO  c.h.ticketing_system.model.Vendor - Global stop for all Ticket Release enabled.
+2024-12-05 12:39:29 [http-nio-8080-exec-6] INFO  c.h.ticketing_system.model.Vendor - Global stop for all Ticket Release disabled.

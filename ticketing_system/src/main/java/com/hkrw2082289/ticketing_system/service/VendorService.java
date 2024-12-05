@@ -54,29 +54,11 @@ public class VendorService {
             vendor.setVendorId(vendorId);
             vendor.setPassword(password);
             vendorRepository.save(vendor);
-            return new ResponseFinder(true,String.format("Sign-up was successful, Here is your Vendor ID: '%s'.", vendorId));
+            return new ResponseFinder(true,String.format("Success: Sign-up was successful, Here is your Vendor ID: '%s'.", vendorId));
         } finally {
             vendorLock.unlock();  // Ensure the lock is released after execution
         }
     }
-
-//    public Map<String, Object> signInVendor(String vendorId, String password) {
-//        vendorLock.lock();  // Acquire the lock to synchronize this block
-//        try {
-//            Map<String, Object> response = new HashMap<>();
-//            Vendor vendor = vendorRepository.findByVendorIdAndPassword(vendorId, password);
-//            if (vendor != null) {
-//                response.put("message", "Sign-in successful.");
-//                response.put("vendor", vendor);
-//            } else {
-//                response.put("message", "Error: Invalid vendor ID or password.");
-//                response.put("vendor", null);
-//            }
-//            return response;
-//        } finally {
-//            vendorLock.unlock();  // Ensure the lock is released after execution
-//        }
-//    }
 
     public ResponseFinder signInVendor(String vendorId, String password) {
         vendorLock.lock();
@@ -94,16 +76,27 @@ public class VendorService {
 
 
     // Start a new thread for the vendor
-    public String startVendorThread(String vendorId, Map<String, Object> payload) {
+    public ResponseFinder startVendorThread(String vendorId, Map<String, Object> payload) {
         Optional<Vendor> optionalVendor = vendorRepository.findById(vendorId);
 
         if (optionalVendor.isEmpty()) {
-            return "Error: Vendor ID " + vendorId + " does not exist in the database.";
+            return new ResponseFinder(false,"Error: Vendor ID " + vendorId + " does not exist in the database.");
         }
+
+        Object priceObj = payload.get("price");
+        Double price;
+        if (priceObj instanceof Integer) {
+            price = ((Integer) priceObj).doubleValue(); // Convert Integer to Double
+        } else if (priceObj instanceof Double) {
+            price = (Double) priceObj;
+        } else {
+            throw new IllegalArgumentException("Invalid price type");
+        }
+
 
         // Extract payload values
         String eventName = (String) payload.get("event_Name");
-        double price = (Double) payload.get("price");
+//        double price = (Double) payload.get("price");
         String timeDuration = (String) payload.get("time_Duration");
         String date = (String) payload.get("date");
         int batchSize = (Integer) payload.get("batch_Size");
@@ -123,18 +116,18 @@ public class VendorService {
         vendorThread.start();
 
         if (isAdminStopAllRelease()) {
-            return String.format("System has been stopped by Admin, Sorry, your ticket release request for '%s' has been denied", eventName);
+            return new ResponseFinder(false,String.format("Error: System has been stopped by Admin, Sorry, your ticket release request for '%s' has been denied", eventName));
         } else {
-            return String.format("Thread started for vendor ID: %s with event '%s' and ticket batch size %d.", vendorId, eventName, batchSize);
+            return new ResponseFinder(true,String.format("Success: Thread started for vendor ID: %s with event '%s' and ticket batch size %d.", vendorId, eventName, batchSize));
         }
     }
 
     // Stop all threads for a specific vendor
-    public String stopAllThreadsOfVendor(String vendorId) {
+    public ResponseFinder stopAllThreadsOfVendor(String vendorId) {
         List<Thread> threads = vendorThreads.get(vendorId);
 
         if (threads == null || threads.isEmpty()) {
-            return "No active threads found for vendor ID: " + vendorId;
+            return new ResponseFinder(false,"Error: No active threads found for vendor ID: " + vendorId);
         }
 
         // Interrupt all threads for this vendor
@@ -145,7 +138,7 @@ public class VendorService {
         // Remove all threads for this vendor from the map
         vendorThreads.remove(vendorId);
 
-        return "All threads for vendor ID: " + vendorId + " have been interrupted.";
+        return new ResponseFinder(true,"Success: All threads for vendor ID: " + vendorId + " have been interrupted.");
     }
 
     // Method to check if global stop is enabled
