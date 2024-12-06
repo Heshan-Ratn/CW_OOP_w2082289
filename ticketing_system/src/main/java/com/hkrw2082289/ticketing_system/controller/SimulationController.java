@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
+import static com.hkrw2082289.ticketing_system.model.Customer.isAdminStopAllPurchases;
+import static com.hkrw2082289.ticketing_system.model.Vendor.isAdminStopAllRelease;
+
 @RestController
 @RequestMapping("/api/simulation")
 public class SimulationController {
@@ -31,6 +34,9 @@ public class SimulationController {
 
     @PostMapping("/start")
     public ResponseEntity<String> startSimulation(@RequestParam int numberOfUsers) {
+        if(isAdminStopAllRelease() && isAdminStopAllPurchases()){
+            return ResponseEntity.badRequest().body("All Vendor and Customer ticket operations have been stopped by Admin.");
+        }
         //http://localhost:8080/api/simulation/start?numberOfUsers=5
         vendorSimulation.simulateVendorsAddingTickets(numberOfUsers);
         customerSimulation.simulateCustomerThreads(numberOfUsers);
