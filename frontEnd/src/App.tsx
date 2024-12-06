@@ -15,6 +15,7 @@ import BookedTicketsPopup from "./components/BookedTicketsPopup";
 import LoginPopup from "./components/LoginPopup";
 import SignUpPopup from "./components/SignUpPopup";
 import SignInPopup from "./components/SignInPopup";
+import StimulateTicketOperationPopup from "./components/StimulateTicketOperationPopup";
 
 const App: React.FC = () => {
   const buttonTexts = [
@@ -24,6 +25,7 @@ const App: React.FC = () => {
     "View All Booked Tickets",
     "Start System",
     "Stop System",
+    "Stimulate Ticket Operations",
     "Exit Program",
   ];
 
@@ -185,6 +187,12 @@ const App: React.FC = () => {
     setIsSignInPopupOpen(false); // Hide Sign-In Popup
     setIsLoginPopupOpen(true); // Restore Login Popup
   };
+
+  const [isStimulatePopupOpen, setIsStimulatePopupOpen] = useState(false);
+
+  const handleOpenStimulatePopup = () => setIsStimulatePopupOpen(true);
+  const handleCloseStimulatePopup = () => setIsStimulatePopupOpen(false);
+
   return (
     <div className="App app-container" style={{ minWidth: "514px" }}>
       <FullWhiteScreen>
@@ -199,6 +207,8 @@ const App: React.FC = () => {
             if (buttonText === "Stop System") handleStopSystem();
             if (buttonText === "Start System") handleStartSystem();
             if (buttonText === "Login") handleOpenLoginPopup();
+            if (buttonText === "Stimulate Ticket Operations")
+              handleOpenStimulatePopup();
           }}
         />
 
@@ -283,6 +293,13 @@ const App: React.FC = () => {
         <div className={`notification-bar ${notificationClass}`}>
           {notification}
         </div>
+      )}
+
+      {isStimulatePopupOpen && (
+        <StimulateTicketOperationPopup
+          onClose={handleCloseStimulatePopup}
+          showNotification={showNotification}
+        />
       )}
     </div>
   );
