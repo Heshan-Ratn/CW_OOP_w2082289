@@ -1,22 +1,65 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.regex.Pattern;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Vendor implements Runnable {
-    private final String vendorId;
-    private final String vendorPassword;
-    private  int ticketsPerRelease; //Rate at which tickets will be released.
-    private  int releaseInterval; //The interval between tickets.
-    private final TicketPool ticketPool;
-    protected volatile boolean isActive;
-    private int quantity;
-    private double ticketPrice;
-    private String eventDetails;
+    private String vendorId;
+    private String password;
+    private TicketPool ticketPool; // Shared ticket pool
+    private AtomicBoolean releasingTickets = new AtomicBoolean(true); // Vendor-level stop/start authority
+    private static AtomicBoolean adminStopAll = new AtomicBoolean(false); // Admin-level stop/start authority
+    private int ticketReleaseRate; // in milliseconds
+    private List<Ticket> ticketBatch; // For ticket batch storage
+    private static final String VENDOR_FILE = "Vendors.json";
+    private static final int MAX_ATTEMPTS = 3;
+    private static final Logger logger = LogManager.getLogger(Vendor.class);
+    private static final Logger loggerRun = LogManager.getLogger("VendorRun");
+    private static final ReentrantLock vendorLock = new ReentrantLock();
 
-    public Vendor (String vendorId, String vendorPassword, int ticketsPerRelease){
+
+    // Constructor for initializing vendor credentials only (for sign-in / sign-up)
+    private Vendor(String vendorId, String password) {
         this.vendorId = vendorId;
-        this.vendorPassword = vendorPassword;
-        this.ticketsPerRelease = ticketsPerRelease;
-        this.ticketPool = new TicketPool();
-        this.isActive = true;
+        this.password = password;
+    }
+
+    // Factory method to create a Vendor with only vendorId and password
+    public static Vendor createVendor(String vendorId, String password) {
+        return new Vendor(vendorId, password); // Calls the private constructor
+    }
+
+    // Constructor for using vendor functions
+    public Vendor(String vendorId, String password, TicketPool ticketPool, List<Ticket> ticketBatch, int releaseRate) {
+        this.vendorId = vendorId;
+        this.password = password;
+        this.ticketPool = ticketPool;
+        this.ticketReleaseRate = releaseRate;
+        this.ticketBatch = ticketBatch;
+    }
+
+    public void setTicketPool(TicketPool ticketPool) {
+        this.ticketPool = ticketPool;
+    }
+
+    public void setTicketReleaseRate(int releaseRate) {
+        this.ticketReleaseRate = releaseRate;
+    }
+
+    public void setTicketBatch(List<Ticket> ticketBatch) {
+        this.ticketBatch = ticketBatch;
     }
 
     public String getVendorId() {
@@ -24,97 +67,214 @@ public class Vendor implements Runnable {
     }
 
 
-public void setTicketReleaseParameters() {
-    Scanner input = new Scanner(System.in);
-    // Validate ticket price
-    this.ticketPrice = getValidDoubleInput(input, "Enter ticket price (must be positive): ");
-    // Validate quantity
-    this.quantity = getValidIntInput(input, "Enter quantity of tickets to be released (must be positive): ");
-    // Validate release interval (allow zero)
-    this.releaseInterval = getValidIntInput(input, "Enter interval between releases (ms, must be non-negative): ");
-    // Get event details
-    System.out.print("Enter the Name of the event for which tickets are released: ");
-    this.eventDetails = input.nextLine();
-    System.out.println();
-}
+    public static String[] promptVendorCredentials() {
+        Scanner scanner = new Scanner(System.in);
+        String vendorId, password;
 
-    private double getValidDoubleInput(Scanner input, String message) {
-        double value;
-        while (true) {
-            System.out.print(message);
-            if (input.hasNextDouble()) {
-                value = input.nextDouble();
-                if (value > 0) {  // Check for positive values
-                    input.nextLine(); // Consume the newline
-                    return value; // Valid input
-                } else {
-                    System.out.println("Error: Value must be positive.");
-                }
-            } else {
-                System.out.println("Error: Please enter a valid number.");
-                input.next(); // Clear invalid input
+        for (int attempts = 0; attempts < MAX_ATTEMPTS; attempts++) {
+            System.out.print("Enter Vendor ID (7 characters, last 3 must be digits): ");
+            vendorId = scanner.nextLine().trim();
+
+            if (!isValidVendorId(vendorId)) {
+                System.out.println("Invalid Vendor ID. Vendor ID should be exactly 7 characters long, with the last 3 characters being digits");
+                continue;
             }
+
+            System.out.print("Enter Password (8-12 characters): ");
+            password = scanner.nextLine().trim();
+
+            if (!isValidPassword(password)) {
+                System.out.println("Invalid Password. Password must be between 8-12 characters.");
+                continue;
+            }
+
+            return new String[]{vendorId, password}; // Successful input
+        }
+
+        System.out.println("Maximum attempts reached. Returning to main menu.");
+        return new String[]{"", ""}; // Failed input after max attempts
+    }
+
+    private static boolean isValidVendorId(String vendorId) {
+        return vendorId.length() == 7 && Pattern.matches("^[A-Za-z0-9_]{4}[0-9]{3}$", vendorId);
+    }
+    private static boolean isValidPassword(String password) {
+        return password.length() >= 8 && password.length() <= 12;
+    }
+
+    // Sign up a new vendor
+    public static boolean signUp() {
+        vendorLock.lock(); // Acquire the lock
+        try {
+            String[] newVendorCredentials = promptVendorCredentials();
+            if (newVendorCredentials[0].equals("") && newVendorCredentials[1].equals("")) {
+                return false;
+            }
+            List<VendorData> vendors = loadVendors();
+            // Check if vendorId is already taken
+            for (VendorData vendor : vendors) {
+                if (vendor.getVendorId().equals(newVendorCredentials[0])) {
+                    System.out.println("Vendor ID already taken.");
+                    return false;
+                }
+            }
+            vendors.add(new VendorData(newVendorCredentials[0], newVendorCredentials[1]));
+            // Write updated vendor list back to file
+            return saveVendors(vendors);
+        } finally {
+            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
         }
     }
 
-    private int getValidIntInput(Scanner input, String message) {
-        int value;
-        while (true) {
-            System.out.print(message);
-            if (input.hasNextInt()) {
-                value = input.nextInt();
-                if (value >= 0) {  // Check for non-negative values
-                    input.nextLine(); // Consume the newline
-                    return value; // Valid input
-                } else {
-                    System.out.println("Error: Value must be non-negative.");
-                }
-            } else {
-                System.out.println("Error: Please enter a valid integer.");
-                input.next(); // Clear invalid input
+    // Sign in an existing vendor
+    public static Vendor signIn() {
+        vendorLock.lock(); // Acquire the lock
+        try {
+            String[] vendorCredentials = promptVendorCredentials();
+            if (vendorCredentials[0].equals("") && vendorCredentials[1].equals("")) {
+                System.out.println("Returning Back to main menu all the sign in attempts Failed!\n");
+                return null;
             }
+            List<VendorData> vendors = loadVendors();
+            if (vendors.isEmpty()) {
+                System.out.println("Vendors database is empty!.\n");
+                return null;
+            }
+            for (VendorData vendor : vendors) {
+                if (vendor.getVendorId().equals(vendorCredentials[0]) && vendor.getPassword().equals(vendorCredentials[1])) {
+                    System.out.println("Vendor signed in successfully!\n");
+                    return new Vendor(vendorCredentials[0], vendorCredentials[1]); // Initialize only credentials for sign-in
+                }
+            }
+            System.out.println("Sign in failed: Incorrect ID or password.\n");
+            return null;
+        } finally {
+            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
         }
     }
 
+    // Load vendors from file
+    private static List<VendorData> loadVendors() {
+        vendorLock.lock(); // Acquire the lock
+        try {
+            try (FileReader reader = new FileReader(VENDOR_FILE)) {
+                Gson gson = new Gson();
+                Type vendorListType = new TypeToken<List<VendorData>>() {}.getType();
+                List<VendorData> vendors = gson.fromJson(reader, vendorListType);
+                return vendors != null ? vendors : new ArrayList<>(); // Return empty list if JSON is null
+            } catch (IOException e) {
+                System.out.println("Error loading vendors: " + e.getMessage());
+                return new ArrayList<>(); // Return an empty list if file doesn't exist or read error occurs
+            }
+        } finally {
+            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
+        }
+    }
 
+    // Save vendors to file
+    private static boolean saveVendors(List<VendorData> vendors) {
+        vendorLock.lock(); // Acquire the lock
+        try {
+            try (FileWriter writer = new FileWriter(VENDOR_FILE)) {
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                gson.toJson(vendors, writer);
+                System.out.println("Vendor saved successfully.");
+                return true;
+            } catch (IOException e) {
+                System.out.println("Error saving vendor: " + e.getMessage());
+                return false;
+            }
+        } finally {
+            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
+        }
+    }
 
+    // Inner class for vendor data storage
+    private static class VendorData {
+        private final String vendorId;
+        private final String password;
+
+        public VendorData(String vendorId, String password) {
+            this.vendorId = vendorId;
+            this.password = password;
+        }
+
+        public String getVendorId() {
+            return vendorId;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+    }
+
+    // Runnable method: releasing tickets in batches
+    @Override
     public void run() {
-        int remainingQuantity = quantity;
+        String ticketName ="";
+        for (Ticket ticket : ticketBatch) {
+            ticketName = ticket.getEventName();
+            if (shouldStop(1)) return; // general stop
 
-        while (isActive && remainingQuantity > 0) {
-            int ticketsToRelease = Math.min(ticketsPerRelease, remainingQuantity);
-
-            // Try adding tickets to TicketPool, ensuring thread safety
-            boolean added = ticketPool.addTickets(vendorId, eventDetails, ticketPrice, ticketsToRelease, this);
+            boolean added = ticketPool.addTicket(ticket); // Synchronization handled in TicketPool
             if (added) {
-                remainingQuantity -= ticketsToRelease;
+                loggerRun.info("Ticket added by " + vendorId + ": " + ticket.getTicketId()+ " "+ticket.getEventName());
             }
 
-            // Pause the thread between sub-batch releases
             try {
-                Thread.sleep(releaseInterval);
+                TimeUnit.MILLISECONDS.sleep(ticketReleaseRate);
+                if (shouldStop(2)) return; // Case 3: Stopped after sleep
             } catch (InterruptedException e) {
-                System.out.println("Vendor " + vendorId + " interrupted.");
                 Thread.currentThread().interrupt();
+                loggerRun.error("Ticket release interrupted for vendor: " + vendorId);
+                return;
             }
         }
+        loggerRun.info("Ticket release completed for vendor: " + vendorId +" selling " + ticketName+ " tickets.");
     }
 
-    public void stopSession() {
-        isActive = !isActive; // Toggle the value of isActive
-        if (isActive) {
-            System.out.println("Resuming ticket release for vendor: " + vendorId+"\n");
-        } else {
-            System.out.println("Pausing ticket release for vendor: " + vendorId +"\n");
-        }
-    }
-    public boolean CheckReleaseStatus() {
-        if (isActive) {
-            System.out.println("Ticket release for vendor: " + vendorId+ " is Active.\n");
+    //Implements the release check stop in run method.
+    private boolean shouldStop(int logCase) {
+        if (!releasingTickets.get() || adminStopAll.get()) {
+            if (logCase == 1) {
+                loggerRun.info("Ticket release stopped for vendor: " + vendorId);
+            } else if (logCase == 2) {
+                loggerRun.info("Ticket release stopped after sleep for vendor: " + vendorId);
+            }
             return true;
-        } else {
-            System.out.println("Ticket release for vendor: " + vendorId+" has stopped\n");
+        }
+        return false;
+    }
+
+    // Admin method to stop and resume all vendors
+    public static void stopAllReleases() {
+        adminStopAll.set(true);
+    }
+
+    public static void resumeAllReleases() {
+        adminStopAll.set(false);
+    }
+
+    // Stop and resume ticket release for this vendor
+    public void stopReleasingTickets() {
+        releasingTickets.set(false);
+    }
+
+    public void resumeReleasingTickets() {
+        releasingTickets.set(true);
+    }
+
+    // This method will be used to check status of releasing ability of tickets.
+    public boolean checkReleaseStatus() {
+        if (adminStopAll.get()) {
+            System.out.println("Ticket release paused by admin for all vendors.\n");
             return false;
+        } else if (!releasingTickets.get()) {
+            System.out.println("Ticket release paused by the vendor: " + vendorId+"\n");
+            return false;
+        } else {
+            System.out.println("Ticket release is active for vendor: " + vendorId+"\n");
+            return true;
         }
     }
 }

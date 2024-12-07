@@ -1,74 +1,522 @@
 [
   {
-    "ticketId": "Ticket1",
-    "eventDetails": "oklahama",
-    "price": 32.49,
-    "vendorId": "penn892"
+    "ticketId": "shal345-1",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket2",
-    "eventDetails": "oklahama",
-    "price": 32.49,
-    "vendorId": "penn892"
+    "ticketId": "shal345-2",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket3",
-    "eventDetails": "oklahama",
-    "price": 32.49,
-    "vendorId": "penn892"
+    "ticketId": "shal345-3",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket4",
-    "eventDetails": "oklahama",
-    "price": 32.49,
-    "vendorId": "penn892"
+    "ticketId": "shal345-4",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket5",
-    "eventDetails": "oklahama",
-    "price": 32.49,
-    "vendorId": "penn892"
+    "ticketId": "shal345-5",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket6",
-    "eventDetails": "felipe",
-    "price": 72.0,
-    "vendorId": "penn892"
+    "ticketId": "shal345-6",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket7",
-    "eventDetails": "felipe",
-    "price": 72.0,
-    "vendorId": "penn892"
+    "ticketId": "shal345-7",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket8",
-    "eventDetails": "felipe",
-    "price": 72.0,
-    "vendorId": "penn892"
+    "ticketId": "shal345-8",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket9",
-    "eventDetails": "felipe",
-    "price": 72.0,
-    "vendorId": "penn892"
+    "ticketId": "shal345-9",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket10",
-    "eventDetails": "felipe",
-    "price": 72.0,
-    "vendorId": "penn892"
+    "ticketId": "shal345-10",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket11",
-    "eventDetails": "penny",
-    "price": 73.0,
-    "vendorId": "penn892"
+    "ticketId": "shal345-11",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
   },
   {
-    "ticketId": "Ticket12",
-    "eventDetails": "penny",
-    "price": 73.0,
-    "vendorId": "penn892"
+    "ticketId": "shal345-12",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-13",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-14",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-15",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-16",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-17",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-18",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-19",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-20",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-21",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-22",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-23",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-24",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-25",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-26",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-27",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-28",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-29",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-30",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-31",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-32",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-33",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-34",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-35",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-36",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-37",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-38",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-39",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-40",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2023-02-10",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-1",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-2",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-3",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-4",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-5",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-6",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-7",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-8",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-9",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-10",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Booked",
+    "customerId": "gern234"
+  },
+  {
+    "ticketId": "shal345-11",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Available",
+    "customerId": "Not Set"
+  },
+  {
+    "ticketId": "shal345-12",
+    "eventName": "eolo",
+    "price": 12.0,
+    "timeDuration": "2 hours",
+    "date": "2024-10-12",
+    "vendorId": "shal345",
+    "ticketStatus": "Available",
+    "customerId": "Not Set"
   }
 ]
