@@ -8,6 +8,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.*;
 
+/**
+ * This class simulates vendor interactions by creating multiple vendor threads to perform actions like sign-up
+ * and adding tickets to events concurrently.
+ *
+ * This class allows simulating a large number of vendors adding tickets to events, with each vendor running
+ * in its own thread to simulate concurrent behavior.
+ */
 @Component
 public class VendorSimulation {
 
@@ -16,7 +23,12 @@ public class VendorSimulation {
 
     private static final Logger logger = LoggerFactory.getLogger(VendorSimulation.class);
 
-    // Simulate the process of signing up vendors and starting their threads
+    /**
+     * This method simulates vendor actions by creating and starting threads for each vendor.
+     * Each vendor signs up and then adds tickets to events concurrently in separate threads.
+     *
+     * @param numberOfVendors the number of vendors to simulate.
+     */
     public void simulateVendorsAddingTickets(int numberOfVendors) {
         logger.info("Starting vendor simulation with {} vendors.", numberOfVendors);
 
@@ -41,10 +53,15 @@ public class VendorSimulation {
             vendorThreads.add(vendorThread);
             vendorThread.start();
         }
-
         logger.info("Simulation started. Vendor threads are running concurrently.");
     }
 
+    /**
+     * This method generates a payload map for vendor actions, including event details like price, duration,and date.
+     *
+     * @param vendorId the unique identifier of the vendor
+     * @return a map containing event-related data for the vendor
+     */
     private Map<String, Object> generatePayload(String vendorId) {
         Map<String, Object> payload = new HashMap<>();
         payload.put("event_Name", "Event_" + vendorId);

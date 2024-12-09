@@ -72,16 +72,8 @@ Content-Type: application/json
 
 
 
-//    @PostMapping("/signin")
-//    public ResponseEntity<Map<String, Object>> signInVendor(@RequestBody Map<String, String> payload) {
-//        String vendorId = payload.get("vendorId");
-//        String password = payload.get("password");
-//        Map<String, Object> response = vendorService.signInVendor(vendorId, password);
-//        return ResponseEntity.ok(response);
-//    }
+http://localhost:8080/api/simulation/start-vendor?numberOfVendors=5
+http://localhost:8080/api/simulation/start-customer?numberOfCustomers=5
+http://localhost:8080/api/simulation/start?numberOfUsers=5
 
 
-
-Testing the WebSocket
-Use a WebSocket testing tool (e.g., Postman, websocat, or frontend client) to verify WebSocket functionality.
-Connect to ws://localhost:8080/ws and subscribe to /topic/ticket-updates.

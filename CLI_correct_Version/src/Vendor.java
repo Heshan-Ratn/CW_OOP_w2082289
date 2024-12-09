@@ -15,33 +15,57 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * This class represents a vendor entity that interacts with the TicketPool to release tickets.
+ * This class supports vendor sign-up, sign-in, ticket release functionality,which includes starting and stopping
+ * Ticket releasing threads, and includes multi-threading capabilities for releasing tickets in batches.
+ */
 public class Vendor implements Runnable {
-    private String vendorId;
-    private String password;
-    private TicketPool ticketPool; // Shared ticket pool
-    private AtomicBoolean releasingTickets = new AtomicBoolean(true); // Vendor-level stop/start authority
-    private static AtomicBoolean adminStopAll = new AtomicBoolean(false); // Admin-level stop/start authority
-    private int ticketReleaseRate; // in milliseconds
-    private List<Ticket> ticketBatch; // For ticket batch storage
-    private static final String VENDOR_FILE = "Vendors.json";
-    private static final int MAX_ATTEMPTS = 3;
-    private static final Logger logger = LogManager.getLogger(Vendor.class);
-    private static final Logger loggerRun = LogManager.getLogger("VendorRun");
-    private static final ReentrantLock vendorLock = new ReentrantLock();
+    private String vendorId; // Unique identifier for the vendor.
+    private String password; // Vendor's password.
+    private TicketPool ticketPool; // Shared ticket pool.
+    private AtomicBoolean releasingTickets = new AtomicBoolean(true); // Vendor-level stop/start authority.
+    private static AtomicBoolean adminStopAll = new AtomicBoolean(false); // Admin-level stop/start authority.
+    private int ticketReleaseRate; //Ticket release rate in milliseconds
+    private List<Ticket> ticketBatch;  // Batch of tickets to release.
+    private static final String VENDOR_FILE = "Vendors.json"; // File storing vendor data.
+    private static final int MAX_ATTEMPTS = 3; // Number of attempts provided for user inputs.
+    private static final Logger logger = LogManager.getLogger(Vendor.class); //Logging for vendor class.
+    private static final Logger loggerRun = LogManager.getLogger("VendorRun"); //Logging for vendor class.
+    private static final ReentrantLock vendorLock = new ReentrantLock(); // Lock for vendor file operations.
 
 
-    // Constructor for initializing vendor credentials only (for sign-in / sign-up)
+    /**
+     * This private constructor is for initializing vendor credentials (for sign-in or sign-up).
+     *
+     * @param vendorId Vendor's unique ID
+     * @param password Vendor's password
+     */
     private Vendor(String vendorId, String password) {
         this.vendorId = vendorId;
         this.password = password;
     }
 
-    // Factory method to create a Vendor with only vendorId and password
+    /**
+     * This is the factory method to create a Vendor instance with only vendor ID and password.
+     *
+     * @param vendorId Vendor's unique ID
+     * @param password Vendor's password
+     * @return A new Vendor instance.
+     */
     public static Vendor createVendor(String vendorId, String password) {
-        return new Vendor(vendorId, password); // Calls the private constructor
+        return new Vendor(vendorId, password); // This Calls the private constructor.
     }
 
-    // Constructor for using vendor functions
+    /**
+     * This overload constructor is for initializing vendor with ticket-related functionality.
+     *
+     * @param vendorId Vendor's unique ID
+     * @param password Vendor's password
+     * @param ticketPool Shared ticket pool
+     * @param ticketBatch Batch of tickets to release
+     * @param releaseRate Ticket release rate in milliseconds
+     */
     public Vendor(String vendorId, String password, TicketPool ticketPool, List<Ticket> ticketBatch, int releaseRate) {
         this.vendorId = vendorId;
         this.password = password;
@@ -49,6 +73,8 @@ public class Vendor implements Runnable {
         this.ticketReleaseRate = releaseRate;
         this.ticketBatch = ticketBatch;
     }
+
+    //The required getters and setters.
 
     public void setTicketPool(TicketPool ticketPool) {
         this.ticketPool = ticketPool;
@@ -66,7 +92,11 @@ public class Vendor implements Runnable {
         return vendorId;
     }
 
-
+    /**
+     * This method prompts the user to enter valid vendor credentials.
+     *
+     * @return An array containing vendor ID and password.
+     */
     public static String[] promptVendorCredentials() {
         Scanner scanner = new Scanner(System.in);
         String vendorId, password;
@@ -76,7 +106,8 @@ public class Vendor implements Runnable {
             vendorId = scanner.nextLine().trim();
 
             if (!isValidVendorId(vendorId)) {
-                System.out.println("Invalid Vendor ID. Vendor ID should be exactly 7 characters long, with the last 3 characters being digits");
+                System.out.println("Invalid Vendor ID. Vendor ID should be exactly 7 characters long," +
+                        " with the last 3 characters being digits");
                 continue;
             }
 
@@ -87,31 +118,48 @@ public class Vendor implements Runnable {
                 System.out.println("Invalid Password. Password must be between 8-12 characters.");
                 continue;
             }
-
-            return new String[]{vendorId, password}; // Successful input
+            // For successful inputs an array containing the inputs is returned.
+            return new String[]{vendorId, password};
         }
 
         System.out.println("Maximum attempts reached. Returning to main menu.");
-        return new String[]{"", ""}; // Failed input after max attempts
+        return new String[]{"", ""}; // For Failed input after max attempts an array with empty strings is returned.
     }
 
+    /**
+     * This method validates the format of a vendor ID.
+     *
+     * @param vendorId Vendor ID to validate
+     * @return True if valid, otherwise false
+     */
     private static boolean isValidVendorId(String vendorId) {
         return vendorId.length() == 7 && Pattern.matches("^[A-Za-z0-9_]{4}[0-9]{3}$", vendorId);
     }
+
+    /**
+     * This validates the length of a vendor password.
+     *
+     * @param password Password to validate
+     * @return True if valid, otherwise false
+     */
     private static boolean isValidPassword(String password) {
         return password.length() >= 8 && password.length() <= 12;
     }
 
-    // Sign up a new vendor
+    /**
+     * This method is to Signs up a new vendor.
+     *
+     * @return True if sign-up is successful, otherwise false
+     */
     public static boolean signUp() {
-        vendorLock.lock(); // Acquire the lock
+        vendorLock.lock();
         try {
             String[] newVendorCredentials = promptVendorCredentials();
             if (newVendorCredentials[0].equals("") && newVendorCredentials[1].equals("")) {
                 return false;
             }
             List<VendorData> vendors = loadVendors();
-            // Check if vendorId is already taken
+            // This Checks if vendorId is already taken
             for (VendorData vendor : vendors) {
                 if (vendor.getVendorId().equals(newVendorCredentials[0])) {
                     System.out.println("Vendor ID already taken.");
@@ -122,13 +170,17 @@ public class Vendor implements Runnable {
             // Write updated vendor list back to file
             return saveVendors(vendors);
         } finally {
-            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
+            vendorLock.unlock();
         }
     }
 
-    // Sign in an existing vendor
+    /**
+     * This method is to Signs in an existing vendor.
+     *
+     * @return A Vendor object if sign-in is successful, otherwise null
+     */
     public static Vendor signIn() {
-        vendorLock.lock(); // Acquire the lock
+        vendorLock.lock();
         try {
             String[] vendorCredentials = promptVendorCredentials();
             if (vendorCredentials[0].equals("") && vendorCredentials[1].equals("")) {
@@ -141,21 +193,27 @@ public class Vendor implements Runnable {
                 return null;
             }
             for (VendorData vendor : vendors) {
-                if (vendor.getVendorId().equals(vendorCredentials[0]) && vendor.getPassword().equals(vendorCredentials[1])) {
+                if (vendor.getVendorId().equals(vendorCredentials[0]) &&
+                        vendor.getPassword().equals(vendorCredentials[1])) {
                     System.out.println("Vendor signed in successfully!\n");
-                    return new Vendor(vendorCredentials[0], vendorCredentials[1]); // Initialize only credentials for sign-in
+                    // Initialize only credentials for sign-in
+                    return new Vendor(vendorCredentials[0], vendorCredentials[1]);
                 }
             }
             System.out.println("Sign in failed: Incorrect ID or password.\n");
             return null;
         } finally {
-            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
+            vendorLock.unlock();
         }
     }
 
-    // Load vendors from file
+    /**
+     * This method Loads vendors from the vendor storage file.
+     *
+     * @return A list of VendorData objects
+     */
     private static List<VendorData> loadVendors() {
-        vendorLock.lock(); // Acquire the lock
+        vendorLock.lock();
         try {
             try (FileReader reader = new FileReader(VENDOR_FILE)) {
                 Gson gson = new Gson();
@@ -167,13 +225,18 @@ public class Vendor implements Runnable {
                 return new ArrayList<>(); // Return an empty list if file doesn't exist or read error occurs
             }
         } finally {
-            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
+            vendorLock.unlock();
         }
     }
 
-    // Save vendors to file
+    /**
+     * This method is used to save vendors to the vendor storage file.
+     *
+     * @param vendors List of VendorData objects to save
+     * @return True if successful, otherwise false
+     */
     private static boolean saveVendors(List<VendorData> vendors) {
-        vendorLock.lock(); // Acquire the lock
+        vendorLock.lock();
         try {
             try (FileWriter writer = new FileWriter(VENDOR_FILE)) {
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -185,14 +248,16 @@ public class Vendor implements Runnable {
                 return false;
             }
         } finally {
-            vendorLock.unlock(); // Ensure the lock is released even if an exception occurs
+            vendorLock.unlock();
         }
     }
 
-    // Inner class for vendor data storage
+    /**
+     * This an Inner class representing vendor data for storage and retrieval.
+     */
     private static class VendorData {
-        private final String vendorId;
-        private final String password;
+        private final String vendorId; // Vendor's unique ID.
+        private final String password; // Vendor's password.
 
         public VendorData(String vendorId, String password) {
             this.vendorId = vendorId;
@@ -208,22 +273,25 @@ public class Vendor implements Runnable {
         }
     }
 
-    // Runnable method: releasing tickets in batches
+    /**
+     * This method is Runnable implementation for releasing tickets in batches.
+     */
     @Override
     public void run() {
         String ticketName ="";
         for (Ticket ticket : ticketBatch) {
             ticketName = ticket.getEventName();
-            if (shouldStop(1)) return; // general stop
+            if (shouldStop(1)) return; // general/Admin stop message.
 
             boolean added = ticketPool.addTicket(ticket); // Synchronization handled in TicketPool
             if (added) {
-                loggerRun.info("Ticket added by " + vendorId + ": " + ticket.getTicketId()+ " "+ticket.getEventName());
+                loggerRun.info("Ticket added by " + vendorId + ": " + ticket.getTicketId()+ " "+
+                        ticket.getEventName());
             }
 
             try {
                 TimeUnit.MILLISECONDS.sleep(ticketReleaseRate);
-                if (shouldStop(2)) return; // Case 3: Stopped after sleep
+                if (shouldStop(2)) return; // Stopped after sleep message
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 loggerRun.error("Ticket release interrupted for vendor: " + vendorId);
@@ -233,7 +301,12 @@ public class Vendor implements Runnable {
         loggerRun.info("Ticket release completed for vendor: " + vendorId +" selling " + ticketName+ " tickets.");
     }
 
-    //Implements the release check stop in run method.
+    /**
+     * This method checks if the ticket release process should stop.
+     *
+     * @param logCase Specifies the logging case
+     * @return True if the process should stop, otherwise false
+     */
     private boolean shouldStop(int logCase) {
         if (!releasingTickets.get() || adminStopAll.get()) {
             if (logCase == 1) {
@@ -246,25 +319,40 @@ public class Vendor implements Runnable {
         return false;
     }
 
-    // Admin method to stop and resume all vendors
+    /**
+     * Admin-level method to stop all ticket release for all vendors.
+     */
     public static void stopAllReleases() {
         adminStopAll.set(true);
     }
 
+    /**
+     * Admin-level method to resume all ticket release for all vendors.
+     */
     public static void resumeAllReleases() {
         adminStopAll.set(false);
     }
 
-    // Stop and resume ticket release for this vendor
+    /**
+     * Stops ticket releases for individual vendors.
+     */
     public void stopReleasingTickets() {
         releasingTickets.set(false);
     }
 
+    /**
+     * Resume ticket releases for individual vendors.
+     */
     public void resumeReleasingTickets() {
         releasingTickets.set(true);
     }
 
-    // This method will be used to check status of releasing ability of tickets.
+    /**
+     * This method checks the current ticket releasing status of an individual vendor
+     * before starting the ticket releasing activities for that customer again.
+     *
+     * @return True if purchasing is active, otherwise false
+     */
     public boolean checkReleaseStatus() {
         if (adminStopAll.get()) {
             System.out.println("Ticket release paused by admin for all vendors.\n");

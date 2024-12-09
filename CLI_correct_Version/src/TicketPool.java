@@ -15,31 +15,54 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.Collectors;
 
+/**
+ * This TicketPool class represents a thread-safe singleton pool of tickets
+ * that provides functionalities for managing tickets for various events.
+ * It allows vendors to add tickets and consumers to book tickets for specific events,
+ * ensuring thread safety through locks and conditions.
+ */
 public class TicketPool {
-    private static TicketPool instance;  // Singleton instance
+    private static TicketPool instance;  // Singleton instance of the shared ticket pool.
+    //The queue holding the tickets in the pool.
     private final ConcurrentLinkedQueue<Ticket> tickets = new ConcurrentLinkedQueue<>();
-    private long maxCapacity;
-    private static final String TICKETS_FILE = "Tickets.json";
+    private long maxCapacity; //he maximum capacity of the ticket pool.
+    private static final String TICKETS_FILE = "Tickets.json"; //The file path for persisting tickets.
+    //The Gson instance for JSON serialization and deserialization.
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    // Locks and Conditions for both vendors and consumers
+    // The lock for managing access to the ticket pool.
     private final Lock ticketLock = new ReentrantLock();
-    private final Condition vendorCondition = ticketLock.newCondition();  // Condition for vendors to wait
-    private final Map<String, Condition> consumerConditions = new HashMap<>(); // Map of Conditions for each event
+    // Condition for vendors to wait when the pool is full.
+    private final Condition vendorCondition = ticketLock.newCondition();
+    // Conditions for consumers to wait for specific events.
+    private final Map<String, Condition> consumerConditions = new HashMap<>();
+    // A map to track the usage count of each event condition.
     private final Map<String, Integer> eventUsageCount = new HashMap<>();
 
-
+    /**
+     * All the Loggers for different operations.
+     */
     private static final Logger logger = LogManager.getLogger(TicketPool.class);
     private static final Logger loggerAdd = LogManager.getLogger("TicketPoolAdd");
     private static final Logger loggerSave = LogManager.getLogger("TicketPoolSave");
     private static final Logger loggerRemove = LogManager.getLogger("TicketPoolRemove");
 
+    /**
+     * This is the private constructor to enforce the singleton pattern on the Ticket pool system.
+     *
+     * @param maxCapacity The maximum capacity of the ticket pool.
+     */
     private TicketPool(long maxCapacity) {
         this.maxCapacity = maxCapacity;
         loadTickets();  // Load tickets from JSON file
     }
 
-    // Singleton instance retrieval
+    /**
+     * This retrieves the singleton instance of TicketPool.
+     *
+     * @param maxCapacity The maximum capacity of the ticket pool.
+     * @return The singleton TicketPool instance.
+     */
     public static TicketPool getInstance(long maxCapacity) {
         if (instance == null) {
             instance = new TicketPool(maxCapacity);
@@ -47,20 +70,27 @@ public class TicketPool {
         return instance;
     }
 
+    /**
+     * This retrieves a set of all unique event names available in the pool.
+     *
+     * @return A set of unique event names.
+     */
     public Set<String> getEventDetails() {
-        ticketLock.lock();  // Locking to ensure thread-safe reading
+        ticketLock.lock();
         try {
             return tickets.stream()
                     .map(Ticket::getEventName)
                     .collect(Collectors.toSet());
         } finally {
-            ticketLock.unlock();  // Unlock after reading
+            ticketLock.unlock();
         }
     }
 
-    // Load tickets from the JSON file
+    /**
+     * This method loads tickets from the JSON file into the ticket pool.
+     */
     private void loadTickets() {
-        ticketLock.lock();  // Locking to ensure thread-safe modification of the tickets list
+        ticketLock.lock();
         try {
             try (FileReader reader = new FileReader(TICKETS_FILE)) {
                 Type ticketListType = new TypeToken<List<Ticket>>() {}.getType();
@@ -73,38 +103,48 @@ public class TicketPool {
                 System.out.println("Could not load tickets: " + e.getMessage());
             }
         } finally {
-            ticketLock.unlock();  // Unlock after loading
+            ticketLock.unlock();
         }
     }
 
-    // Count available tickets
+    /**
+     * This method counts the number of available tickets in the pool.
+     *
+     * @return The count of available tickets.
+     */
     public int countAvailableTickets() {
-        ticketLock.lock();  // Locking before reading
+        ticketLock.lock();
         try {
             return (int) tickets.stream().filter(ticket -> "Available".equals(ticket.getTicketStatus())).count();
         } finally {
-            ticketLock.unlock();  // Always unlock after reading
+            ticketLock.unlock();
         }
     }
 
-    // Add ticket to the pool (Vendor method)
+    /**
+     * This method Adds a ticket to the shared ticket pool.
+     * If the pool is full, the vendor waits until space is available.
+     *
+     * @param ticket The ticket to be added.
+     * @return True if the ticket was added successfully, false otherwise.
+     */
     public boolean addTicket(Ticket ticket) {
         ticketLock.lock();
         try {
-            // If the pool is full, vendor will wait until a customer removes a ticket
+            // If the pool is full, vendors will wait until a customer removes a ticket.
             while (countAvailableTickets() >= maxCapacity) {
                 loggerAdd.info("Ticket pool is full. Vendor: "+ ticket.getVendorId()+ " is waiting...");
-                vendorCondition.await();  // Vendor waits
+                vendorCondition.await();  // All Vendor waits.
             }
 
             tickets.add(ticket);
             loggerAdd.info("Ticket added to pool: " + ticket.getTicketId() + " " + ticket.getEventName());
-            saveTickets();  // Save tickets after addition
+            saveTickets();  // Save tickets after addition.
 
-            // Notify all consumers waiting for a specific event
-            notifyConsumersForEvent(ticket.getEventName());  // Notify only consumers looking for this event
+            // Notify all consumers waiting for a specific event.
+            notifyConsumersForEvent(ticket.getEventName());  // Notify only consumers looking for this event.
 
-            // Cleanup unused conditions
+            // Cleanup unused conditions of customers.
             cleanupUnusedConditions();
             return true;
         } catch (InterruptedException e) {
@@ -115,9 +155,13 @@ public class TicketPool {
         }
     }
 
-    // Notify consumers waiting for a specific event type
+    /**
+     * This method notifies consumers waiting for a specific event.
+     *
+     * @param eventName The name of the event for which consumers are waiting.
+     */
     private void notifyConsumersForEvent(String eventName) {
-        ticketLock.lock();  // Locking before modifying the consumerConditions map
+        ticketLock.lock();
         try {
             // Notify consumers waiting for tickets for the event
             Condition eventCondition = consumerConditions.get(eventName);
@@ -128,33 +172,46 @@ public class TicketPool {
             // Cleanup the event condition if there are no more waiting consumers
             Integer usageCount = eventUsageCount.get(eventName);
             if (usageCount != null && usageCount <= 0) {
-                // No more consumers are waiting for this event, clean up the resources
+                // If no more consumers are waiting for this event, clean up the resources
                 consumerConditions.remove(eventName);
                 eventUsageCount.remove(eventName);
             }
         } finally {
-            ticketLock.unlock();  // Unlock after notifying
+            ticketLock.unlock();
         }
     }
 
-    // Check if a ticket is available for a specific event
+    /**
+     * This method checks if a ticket is available for a specific event.
+     *
+     * @param eventName The name of the event.
+     * @return True if a ticket is available, false otherwise.
+     */
     public boolean isTicketAvailable(String eventName) {
-        ticketLock.lock();  // Locking to ensure thread-safe reading
+        ticketLock.lock();
         try {
-            return tickets.stream().anyMatch(t -> "Available".equals(t.getTicketStatus()) && eventName.equals(t.getEventName()));
+            return tickets.stream().anyMatch(t -> "Available".equals(t.getTicketStatus()) &&
+                    eventName.equals(t.getEventName()));
         } finally {
-            ticketLock.unlock();  // Unlock after reading
+            ticketLock.unlock();
         }
     }
 
-    // Find and remove a ticket from the pool (Consumer method)
+    /**
+     * This method Books a ticket for a specific event from the pool.
+     * If no ticket is available, the consumer waits for the specific events tickets to be available again.
+     *
+     * @param eventName  The name of the event.
+     * @param customerId The ID of the customer booking the ticket.
+     * @return True if the ticket was successfully booked, false otherwise.
+     */
     public boolean removeTicket(String eventName, String customerId) {
         ticketLock.lock();
         try {
-            // Consumer waits if no ticket is available for the specific event
+            // Consumer waits if no ticket is available for the specific event.
             while (!isTicketAvailable(eventName)) {
                 System.out.println("No tickets available for event: " + eventName + ". Consumer waiting...");
-                waitForSpecificEventTicket(eventName);  // Consumer waits for a ticket for this specific event
+                waitForSpecificEventTicket(eventName);
             }
 
             Ticket ticket = findAvailableTicket(eventName);
@@ -164,10 +221,10 @@ public class TicketPool {
                 loggerRemove.info("Ticket booked: " + ticket.getTicketId() + " for customer: " + customerId + " (Event: " + eventName + ")");
                 saveTickets();
 
-                // Notify vendors that space is now available (i.e., a ticket has been booked)
-                vendorCondition.signalAll();  // Notify vendors to potentially add new tickets
+                // Notify vendors that space is now available (when a ticket has been booked)
+                vendorCondition.signalAll();  // Notify vendors to potentially add new tickets.
 
-                // Cleanup unused conditions
+                // Cleanup unused conditions customer conditions.
                 cleanupUnusedConditions();
                 return true;
             }
@@ -180,36 +237,49 @@ public class TicketPool {
         }
     }
 
-    // Wait for a specific event ticket to become available (Consumer-specific logic)
+    /**
+     * This method make customers wait for a specific event ticket to become available.
+     *
+     * @param eventName The name of the event.
+     * @throws InterruptedException If the thread is interrupted while waiting.
+     */
     private void waitForSpecificEventTicket(String eventName) throws InterruptedException {
         ticketLock.lock();
         try {
-            // If no ticket is available for the event, create a new condition for this event if not already created
+            // If no ticket is available for the event, create a new condition for this event if not already created.
             consumerConditions.putIfAbsent(eventName, ticketLock.newCondition());
-            // Increment the usage counter
+            // Increment the usage counter.
             eventUsageCount.put(eventName, eventUsageCount.getOrDefault(eventName, 0) + 1);
-            // Now wait until the ticket for this event is available
+            // Now wait until the ticket for this event is available.
             consumerConditions.get(eventName).await();
         } finally {
             ticketLock.unlock();
         }
     }
 
-    // Helper method to find available ticket for a specific event
+    /**
+     * This method finds an available ticket for a specific event.
+     *
+     * @param eventName The name of the event.
+     * @return The available ticket, or null if no ticket is found.
+     */
     private Ticket findAvailableTicket(String eventName) {
-        ticketLock.lock();  // Locking to ensure thread-safe reading
+        ticketLock.lock();
         try {
             return tickets.stream()
                     .filter(t -> "Available".equals(t.getTicketStatus()) && eventName.equals(t.getEventName()))
                     .findFirst()
                     .orElse(null);
         } finally {
-            ticketLock.unlock();  // Unlock after reading
+            ticketLock.unlock();
         }
     }
 
+    /**
+     * This method cleans up unused conditions for events with no waiting consumers.
+     */
     private void cleanupUnusedConditions() {
-        ticketLock.lock(); // Ensure thread safety during cleanup
+        ticketLock.lock();
         try {
             // Iterate over the usage counter map
             Iterator<Map.Entry<String, Integer>> iterator = eventUsageCount.entrySet().iterator();
@@ -219,7 +289,7 @@ public class TicketPool {
                 // Remove conditions for events with no waiting consumers
                 if (entry.getValue() <= 0) {
                     consumerConditions.remove(entry.getKey());
-                    iterator.remove(); // Safely remove from the map
+                    iterator.remove();
                 }
             }
         } finally {
@@ -228,22 +298,28 @@ public class TicketPool {
     }
 
 
-    // Save the current list of tickets to the JSON file
+    /**
+     * This method saves the current state of the ticket pool to the JSON file.
+     */
     private void saveTickets() {
-        ticketLock.lock();  // Lock here to ensure no other thread modifies the tickets while saving
+        ticketLock.lock();
         try (FileWriter writer = new FileWriter(TICKETS_FILE)) {
             gson.toJson(tickets, writer);
             loggerSave.info("Tickets saved to file.");
         } catch (IOException e) {
             loggerSave.error("Could not save tickets: " + e.getMessage());
         } finally {
-            ticketLock.unlock();  // Unlock after saving
+            ticketLock.unlock();
         }
     }
 
-    // Display available tickets by vendor
+    /**
+     * This method displays the total available ticket count for each ticket released by the specific vendor,
+     * to whom the vendor ID belongs to.
+     * @param vendorId The unqiue identifier of the vendor.
+     */
     public void viewAvailableTicketCountsByVendor(String vendorId) {
-        ticketLock.lock();  // Lock here to ensure no modifications happen during iteration
+        ticketLock.lock();
         try {
             Map<String, Integer> ticketTypeCounts = getTicketCountsByVendor(vendorId);
             if (ticketTypeCounts.isEmpty()) {
@@ -253,11 +329,17 @@ public class TicketPool {
                 ticketTypeCounts.forEach((type, count) -> System.out.println(type + ": " + count));
             }
         } finally {
-            ticketLock.unlock();  // Unlock after reading
+            ticketLock.unlock();
         }
     }
 
-    // Get ticket counts by vendor
+    /**
+     * This is a helper method for the viewAvailableTicketCountsByVendor method. This extracts the
+     * available ticket count for each event released by vendor.
+     * @param vendorId The unique identifier of the vendor.
+     * @return This returns a Map containing event names as keys and the total available ticket count for each event as
+     * value.
+     */
     private Map<String, Integer> getTicketCountsByVendor(String vendorId) {
         Map<String, Integer> ticketTypeCounts = new HashMap<>();
 
@@ -270,9 +352,11 @@ public class TicketPool {
         return ticketTypeCounts;
     }
 
-    // Count available tickets by event
+    /**
+     * This method retrieves the sum of total available ticket count for each event in the ticket pool.
+     */
     public void countAvailableTicketsByEvent() {
-        ticketLock.lock();  // Lock to ensure thread-safe reading
+        ticketLock.lock();
         try {
             Map<String, Integer> availableTicketsByEvent = new HashMap<>();
             for (Ticket ticket : tickets) {
@@ -288,12 +372,15 @@ public class TicketPool {
                 availableTicketsByEvent.forEach((eventName, count) -> System.out.println(eventName + ": " + count));
             }
         } finally {
-            ticketLock.unlock();  // Unlock after reading
+            ticketLock.unlock();
         }
     }
 
+    /**
+     * This method retrieves the sum of total booked ticket count for each event in the ticket pool.
+     */
     public void countBookedTicketsByEvent() {
-        ticketLock.lock();  // Lock to ensure thread-safe reading
+        ticketLock.lock();
         try {
             Map<String, Integer> bookedTicketsByEvent = new HashMap<>();
             for (Ticket ticket : tickets) {
@@ -309,17 +396,23 @@ public class TicketPool {
                 bookedTicketsByEvent.forEach((eventName, count) -> System.out.println(eventName + ": " + count));
             }
         } finally {
-            ticketLock.unlock();  // Unlock after reading
+            ticketLock.unlock();
         }
     }
 
 
+    /**
+     * This method displays the total booked ticket count for each ticket purchased by the specific vendor,
+     * to whom the customer ID belongs to.
+     * @param customerId The unique identifier of the customer.
+     */
     public void countBookedTicketsByCustomerId(String customerId) {
         ticketLock.lock();
         try {
             // Group the tickets by event and count the tickets booked by the specific customer
             Map<String, Long> ticketsByEvent = tickets.stream()
-                    .filter(ticket -> "Booked".equals(ticket.getTicketStatus()) && customerId.equals(ticket.getCustomerId()))
+                    .filter(ticket -> "Booked".equals(ticket.getTicketStatus()) &&
+                            customerId.equals(ticket.getCustomerId()))
                     .collect(Collectors.groupingBy(Ticket::getEventName, Collectors.counting()));
 
             if (ticketsByEvent.isEmpty()) {

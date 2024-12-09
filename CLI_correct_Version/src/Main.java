@@ -2,22 +2,35 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * The Main class is the entry point for the Real-time Ticketing System application.
+ * This provides a menu-driven interface for configuring system settings,
+ * managing tickets such as releasing tickets, purchasing tickets, and viewing
+ * details of tickets stored in the shared ticket pool, and simulating
+ * ticketing operations with vendors and customers.
+ */
 public class Main {
     private static final Scanner input = new Scanner(System.in);
     private static Configuration config;
     private static TicketPool ticketPool;
 
+    /**
+     * The main method serves as the starting point of the real-time ticketing application.
+     * It initializes configurations, sets up the ticket pool, and handles the main menu.
+     *
+     * @param args command-line arguments (not used in this application).
+     */
     public static void main(String[] args) {
         System.out.println("Welcome to the Real-time Ticketing System by HKR!");
 
-        // Load Configuration Settings
+        // Load Configuration Settings.
         config = new Configuration().loadConfiguration("Config.json");
         if (config == null) {
             System.out.println("No saved configuration found. Loading default settings...");
-            config = new Configuration(); // Load default settings
+            config = new Configuration(); // Load default settings.
         }
 
-        // Display Configuration Menu (only once per application run)
+        // Display Configuration Menu (only once per application run).
         boolean configExit = false;
         while (!configExit) {
             configExit = handleConfigurationSettings();
@@ -25,18 +38,23 @@ public class Main {
         //Initializing the shared ticket pool to be used in the application.
         ticketPool = TicketPool.getInstance(config.getMaxTicketCapacity());
 
-        // Main Menu Loop
+        // Main Menu Loop for the ticketing application.
         boolean exitSystem = false;
         while (!exitSystem) {
             printMainMenu();
-            int option = getUserChoice(1, 7); // Adjusted based on your main menu structure
+            int option = getUserChoice(1, 7);
             exitSystem = handleMainOption(option);
         }
 
         System.out.println("Exiting System... Goodbye!");
     }
 
-    // Configuration Menu
+
+    /**
+     * Displays the configuration settings menu and handles user choices.
+     *
+     * @return true if the user chooses to exit the configuration menu, false otherwise.
+     */
     private static boolean handleConfigurationSettings() {
         System.out.println("\nConfiguration Settings:");
         System.out.println("1. Edit Admin credentials");
@@ -65,7 +83,9 @@ public class Main {
         return false;
     }
 
-    // Main Menu
+    /**
+     * Displays the main menu options to the user.
+     */
     private static void printMainMenu() {
         System.out.println("\nMain Menu:");
         System.out.println("1. Login");
@@ -77,6 +97,12 @@ public class Main {
         System.out.println("7. Exit System");
     }
 
+    /**
+     * This method handles the user's selection from the main menu.
+     *
+     * @param option the user's chosen option from the main menu.
+     * @return true if the user chooses to exit the system, false otherwise.
+     */
     private static boolean handleMainOption(int option) {
         switch (option) {
             case 1 -> handleLogin();
@@ -116,7 +142,9 @@ public class Main {
         return false;
     }
 
-    // Login Menu
+    /**
+     * This displays the login menu and handles login-related actions for vendors and customers.
+     */
     private static void handleLogin() {
         System.out.println("\nLogin:");
         System.out.println("1. Login as a Vendor");
@@ -132,6 +160,9 @@ public class Main {
         }
     }
 
+    /**
+     * This displays the vendor login menu offering options like sign-up, sign-in, and exit menu.
+     */
     private static void handleVendorLogin() {
         System.out.println("\nVendor Login:");
         System.out.println("1. Sign up Vendor");
@@ -158,6 +189,10 @@ public class Main {
         }
     }
 
+    /**
+     * This method displays the vendor actions menu which displays all the feature that can be utilized as a vendor.
+     * @param vendor this is the vendor object that is passed after vendor sign-in was successful.
+     */
     private static void handleVendorActions(Vendor vendor) {
         vendor.setTicketReleaseRate((int)config.getTicketReleaseRate());
         vendor.setTicketPool(ticketPool);
@@ -176,6 +211,13 @@ public class Main {
         }
     }
 
+    /**
+     * This method manages all the feature executions for vendor action menu. It assists in delivering
+     * the functionalities of vendors.
+     * @param choice This is used to find which option needs to be executed in the vendor actions menu.
+     * @param vendor This is used to determine to which vendor the service is provided.
+     * @return This returns true if the vendor selected to exit the vendor actions menu, otherwise it is false.
+     */
     private static boolean handleVendorChoice(int choice, Vendor vendor) {
         switch (choice) {
             case 1 -> {
@@ -215,7 +257,9 @@ public class Main {
         return false;
     }
 
-
+    /**
+     * This displays the customer login menu offering options like sign-up, sign-in, and exit menu.
+     */
     private static void handleCustomerLogin() {
         System.out.println("\nCustomer Login:");
         System.out.println("1. Sign up Customer");
@@ -243,6 +287,10 @@ public class Main {
         }
     }
 
+    /**
+     * This method displays the customer actions menu which displays all the feature that can be utilized as a customer.
+     * @param customer this is the customer object that is passed after vendor sign-in was successful.
+     */
     private static void handleCustomerActions(Customer customer) {
         customer.setCustomerRetrievalRate((int) config.getCustomerRetrievalRate());
         customer.setTicketPool(ticketPool);
@@ -261,12 +309,19 @@ public class Main {
         }
     }
 
+    /**
+     * This method manages all the feature executions for customer action menu. It assists in delivering
+     * the functionalities of customers.
+     * @param choice This is used to find which option needs to be executed in the customer actions menu.
+     * @param customer This is used to determine to which customer the service is provided.
+     * @return This returns true if the customer selected to exit the customer actions menu, otherwise it is false.
+     */
     private static boolean handleCustomerChoice(int choice, Customer customer) {
         switch (choice) {
             case 1 -> {
                 System.out.println("Purchasing Tickets...\n");
                 if (customer.checkPurchaseStatus()) {
-                    Set<String> eventDetails = ticketPool.getEventDetails();  // Fetch valid event names
+                    Set<String> eventDetails = ticketPool.getEventDetails();
                     PurchaseRequest request = PurchaseRequest.requestTickets(eventDetails);
                     if (request != null) {
                         customer.setPurchaseRequest(request);
@@ -305,7 +360,13 @@ public class Main {
         return false;
     }
 
-    // Helper Methods
+    /**
+     * This is a helper method that reads and validates user input within a specified range.
+     *
+     * @param min the minimum valid option.
+     * @param max the maximum valid option.
+     * @return the user's validated choice.
+     */
     private static int getUserChoice(int min, int max) {
         while (true) {
             try {
