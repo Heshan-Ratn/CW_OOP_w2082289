@@ -43,10 +43,9 @@ This is a Real-Time Ticketing System built to simulate the purchase and release 
 
 ## Prerequisites
 
-- **Java**: The system is developed in Java and requires JDK 11 or later for compilation and execution.
-
+- **Java**: The system is developed in Java and requires JDK 22 or later for compilation and execution.
 - **IDE**: Any Java-compatible Integrated Development Environment (IDE) such as IntelliJ IDEA, Eclipse, or NetBeans.
-
+- **Git Bash**: For executing git commands effortlessly, [Video to install git Bash](https://youtu.be/7BOrUHFu44A?si=KdPgQ3YHGRl2_3kp)
 - **Gson** (for JSON parsing)
 - **log4j** (for logging)
 
@@ -56,10 +55,11 @@ Before running the application, make sure to have the following external librari
 
    - Download from: [Gson GitHub Repository](https://github.com/google/gson)
    - Alternatively, you can download the jar file from Maven Central: [Gson on Maven Central](https://search.maven.org/artifact/com.google.code.gson/gson)
-
+   - For Alternative support follow this video: [Click this](https://youtu.be/Qc9EfiepfWs?si=XeKcG9zxtKe7rlWp.)
 2. **Log4j**: A library for logging purposes.
    - Download from: [Log4j GitHub Repository](https://github.com/apache/logging-log4j2)
    - Alternatively, you can download the jar file from Maven Central: [Log4j on Maven Central](https://search.maven.org/artifact/org.apache.logging.log4j/log4j-api)
+   - For Alternative support follow this video: [Click this](https://youtu.be/gTG913LEzhY?si=m9zPsBHLDXfTBIGD)
 
 To add these libraries to your project, follow the steps below based on your IDE:
 

@@ -77,6 +77,14 @@ cd testfro
 npm install
 ```
 
+If an error occurs try doing this:
+
+- set your node.js folder path in environment variables by opening `Edit the system environment variables`. [watch video](https://youtu.be/uLPnqX9xnoA?si=4I-bdh2Sf5kNZ6Md)
+
+- `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` use this to Bypass execution policy.
+
+- Then try the command again.
+
 3. Start the application: Run the development server using Vite:
 
 ```

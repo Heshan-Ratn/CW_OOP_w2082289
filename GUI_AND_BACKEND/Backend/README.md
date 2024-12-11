@@ -38,7 +38,9 @@ Ensure the following are installed before setting up the backend:
 
 - Maven
 
-- MySQL for your device
+- MySQL for your device : [Watch video to get started](https://youtu.be/Sfvpgu9ID2Q?si=e7rH7kAGTBwRduGR)
+
+- Postman Desktop agent : This is needed for testing the REST API Endpoints: [postman agent download](https://www.postman.com/downloads/postman-agent/)
 
 ## Setup and Installation
 
@@ -54,6 +56,11 @@ cd ticketing_system
 2. Configure the MySQL database:
 
 - Create a MySQL database named `ticketing_system`.
+
+```
+CREATE DATABASE ticketing_system;
+```
+
 - Update the database credentials in `application.properties` located in the `src/main/resources` directory:
 
 ```
