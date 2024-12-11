@@ -1,3 +1,4 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React, { useEffect, useRef, useState } from "react";
 import AddTicketsPopup from "./AddTicketsPopup";
 import ViewAddedTicketsPopup from "./ViewAddedTicketsPopup";
@@ -9,11 +10,12 @@ import { Client } from "@stomp/stompjs";
 import { connectWebSocket } from "../websocket";
 
 interface VendorMenuProps {
-  vendorId: string;
-  onClose: () => void; // Callback to handle menu closure
-  showNotification: (message: string, isError?: boolean) => void;
+  vendorId: string; // Unique identifier for the vendor.
+  onClose: () => void; // Callback to handle menu closure.
+  showNotification: (message: string, isError?: boolean) => void; // Function to show notifications, optionally marking as an error.
 }
 
+//This is the interface defining the shape of a ticket object.
 interface Ticket {
   ticketId: number;
   eventName: string;
@@ -30,6 +32,7 @@ const VendorMenu: React.FC<VendorMenuProps> = ({
   onClose,
   showNotification,
 }) => {
+  // State for controlling popups and storing ticket data.
   const [showAddTicketsPopup, setShowAddTicketsPopup] = useState(false);
 
   const [showViewAddedTicketsPopup, setShowViewAddedTicketsPopup] =
@@ -42,8 +45,15 @@ const VendorMenu: React.FC<VendorMenuProps> = ({
     number
   > | null>(null);
 
+  // State for managing tickets and log.
+  const [tickets, setTickets] = useState<Ticket[]>([]);
+  const [logMessages, setLogMessages] = useState<string[]>([]);
+  const webSocketRef = useRef<Client | null>(null); // Ref to manage WebSocket connection.
+
+  // Fetch available tickets and open the respective popup.
   const handleViewAvailableTickets = async () => {
     try {
+      // Make an API request to view available.
       const response = await apiClient.get(
         `/ticket-pool/available-tickets/event`
       );
@@ -59,25 +69,24 @@ const VendorMenu: React.FC<VendorMenuProps> = ({
 
   const handleStopTicketRelease = async () => {
     try {
+      // Make an API request to start releasing tickets.
       const response = await apiClient.post(`/vendors/${vendorId}/stop-thread`);
       // Show success notification
-      showNotification(response.data, false); // Green background
+      showNotification(response.data, false); // Green background success message.
     } catch (error: any) {
       // Extract the error message if available
       const errorMessage =
         error.response?.data || "Failed to stop ticket release. Try again.";
       // Show error notification
-      showNotification(errorMessage, true); // Red background
+      showNotification(errorMessage, true); // Red background success message.
     }
   };
 
-  const [tickets, setTickets] = useState<Ticket[]>([]);
-  const [logMessages, setLogMessages] = useState<string[]>([]);
-  const webSocketRef = useRef<Client | null>(null);
-
+  // Fetch tickets and establish WebSocket connection on mount.
   useEffect(() => {
     const fetchTickets = async () => {
       try {
+        // Make an API request to fetch ticket updates.
         const response = await apiClient.get("/tickets/all");
         if (response.data.length === 0) {
           setTickets([]);
@@ -93,14 +102,14 @@ const VendorMenu: React.FC<VendorMenuProps> = ({
 
     fetchTickets();
 
-    // Connect WebSocket only if not already connected
+    // Connect WebSocket only if not already connected.
     if (!webSocketRef.current) {
       webSocketRef.current = connectWebSocket(
         (newTickets: Ticket[]) => {
-          setTickets(newTickets);
+          setTickets(newTickets); // Update tickets on receiving new data.
         },
         (logMessage: string) => {
-          console.log("Received log message:", logMessage); // Debug log
+          console.log("Received log message:", logMessage); // Debug log message.
           setLogMessages((prevMessages) => {
             if (!prevMessages.includes(logMessage)) {
               return [...prevMessages, logMessage];
@@ -151,6 +160,7 @@ const VendorMenu: React.FC<VendorMenuProps> = ({
           <TicketTable tickets={tickets}></TicketTable>
         </div>
       </div>
+      {/* Conditional rendering for popups */}
       {showAddTicketsPopup && (
         <AddTicketsPopup
           vendorId={vendorId}

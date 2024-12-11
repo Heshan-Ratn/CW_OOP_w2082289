@@ -1,11 +1,11 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React, { useState } from "react";
-import axios from "axios";
 import apiClient from "../api";
 
 interface PurchaseTicketsPopupProps {
-  customerId: string;
-  onClose: () => void;
-  showNotification: (message: string, isError?: boolean) => void;
+  customerId: string; // Customer Id is passed as a prop.
+  onClose: () => void; // Callback to handle popup closure.
+  showNotification: (message: string, isError?: boolean) => void; // Function to display notifications.
 }
 
 const PurchaseTicketsPopup: React.FC<PurchaseTicketsPopupProps> = ({
@@ -13,25 +13,29 @@ const PurchaseTicketsPopup: React.FC<PurchaseTicketsPopupProps> = ({
   onClose,
   showNotification,
 }) => {
-  const [eventName, setEventName] = useState("");
-  const [ticketsToBook, setTicketsToBook] = useState<number | "">("");
+  const [eventName, setEventName] = useState(""); // Holds the event name input.
+  const [ticketsToBook, setTicketsToBook] = useState<number | "">(""); // Holds the number of tickets to book.
 
+  // Reset function to clear form inputs.
   const handleReset = () => {
     setEventName("");
     setTicketsToBook("");
   };
 
+  // Submit function to send the booking request.
   const handleSubmit = async () => {
+    //Validates the event name.
     if (!eventName || ticketsToBook === "") {
       showNotification("Please fill in all fields before submitting.", true);
       return;
     }
-
+    //validates the number of tickets to book.
     if (ticketsToBook < 0 || ticketsToBook > 100) {
       showNotification("Tickets to book must be between 0 and 100.", true);
       return;
     }
 
+    //Map values to API payload to be submitted for request.
     const payload = {
       eventName,
       ticketToBook: ticketsToBook,
@@ -39,11 +43,11 @@ const PurchaseTicketsPopup: React.FC<PurchaseTicketsPopupProps> = ({
 
     try {
       const response = await apiClient.post(
-        `/customers/${customerId}/start-thread`,
+        `/customers/${customerId}/start-thread`, // Send data to backend API
         payload
       );
       showNotification(response.data, false); // Green notification for success
-      onClose(); // Close the popup
+      onClose(); // Close the popup on success
     } catch (error: any) {
       const errorMessage =
         error.response?.data || "Failed to purchase tickets. Please try again.";
@@ -75,6 +79,7 @@ const PurchaseTicketsPopup: React.FC<PurchaseTicketsPopupProps> = ({
             max="100"
           />
         </div>
+        {/* Buttons for submit, reset, and close actions */}
         <div className="popup-buttons">
           <button className="button" onClick={handleSubmit}>
             Submit

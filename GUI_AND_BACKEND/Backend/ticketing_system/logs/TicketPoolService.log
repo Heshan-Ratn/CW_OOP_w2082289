@@ -2910,3 +2910,406 @@
 2024-12-07 21:45:53 [Thread-35] INFO  c.h.t.service.TicketPoolService - Thread 340 signaled vendors for more capacity
 2024-12-07 21:45:53 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 347 booked ticket 299 for event: Event_VEND002 by customer: cust002
 2024-12-07 21:45:53 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 347 signaled vendors for more capacity
+2024-12-09 11:04:42 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:42 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:42 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:42 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:42 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 301 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:04:42 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:04:42 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 waiting for tickets to become available for event: Event_VEND001
+2024-12-09 11:04:42 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 waiting for tickets to become available for event: Event_VEND005
+2024-12-09 11:04:42 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:42 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:42 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 waiting for tickets to become available for event: Event_VEND002
+2024-12-09 11:04:42 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:42 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:42 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:42 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:42 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:42 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:42 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:42 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:42 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:42 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:42 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:42 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:42 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 308 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:04:42 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:04:42 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 307 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:04:42 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:04:42 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:42 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:42 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 309 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:04:42 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:04:42 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 300 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:04:42 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:04:42 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 306 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:04:42 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:04:43 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 302 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:04:43 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:04:43 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 303 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:04:43 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:04:43 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 304 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:04:43 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:04:43 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 305 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:04:43 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:04:44 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:44 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:44 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:44 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:44 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:44 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:44 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:44 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:44 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:44 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:44 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:44 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:44 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:44 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:44 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:44 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:44 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:44 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:45 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:45 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:45 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 311 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:04:45 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:04:45 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 318 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:04:45 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:04:45 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 317 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:04:45 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:04:45 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 319 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:04:45 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:04:45 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 310 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:04:45 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:04:46 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 316 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:04:46 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:04:46 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 312 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:04:46 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:04:46 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 313 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:04:46 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:04:46 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 314 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:04:46 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:04:46 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 315 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:04:46 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:04:46 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:46 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:46 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:46 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:46 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:46 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:46 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:46 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:46 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:46 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:46 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:46 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:46 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:46 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:46 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:46 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:47 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:47 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:47 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:47 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:48 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:48 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:48 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 321 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:04:48 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:04:48 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:48 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:48 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:48 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:48 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:48 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:48 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:48 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:48 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:48 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:48 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 328 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:04:48 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:04:48 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 327 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:04:48 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:04:48 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:48 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:49 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 329 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:04:49 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:04:49 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:49 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:49 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 320 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:04:49 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:04:49 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 326 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:04:49 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:04:49 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:49 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:49 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 322 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:04:49 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:04:49 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 323 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:04:49 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:04:49 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 324 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:04:49 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:04:49 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:49 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:49 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 325 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:04:49 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:04:50 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:50 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:50 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:50 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:50 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:50 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:50 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:50 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:50 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:50 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:51 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:51 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:51 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:51 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:51 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:51 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:51 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:51 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:51 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:51 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:51 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 331 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:04:51 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:04:51 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 338 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:04:51 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:04:51 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 337 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:04:51 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 339 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:04:52 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 330 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:04:52 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 336 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:04:52 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 332 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:04:52 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 333 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:04:52 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 334 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:04:52 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 335 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:04:52 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:04:52 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:52 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:52 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:52 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:52 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:52 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:52 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:52 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:52 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:52 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:53 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:53 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:53 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:53 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:53 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:53 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:53 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:53 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:53 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:53 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:54 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 341 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:04:54 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:04:54 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:54 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:54 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:54 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:54 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:54 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:54 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:54 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:54 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 348 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:04:54 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 347 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:04:55 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:55 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:55 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 349 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:04:55 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:55 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:55 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:55 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:55 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 340 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:04:55 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 346 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:04:55 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:55 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:55 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 342 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:04:55 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 343 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:04:55 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 344 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:04:55 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:55 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:55 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 345 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:04:55 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:04:55 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:55 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:56 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:56 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:56 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:56 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:56 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:56 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:57 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:57 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:57 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:57 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:57 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:57 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:57 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:57 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:57 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:57 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:57 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:57 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:57 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:57 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:04:57 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 351 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:04:57 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 358 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:04:58 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 357 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:04:58 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 359 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:04:58 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 350 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:04:58 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 356 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:04:58 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 352 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:04:58 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 353 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:04:58 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 354 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:04:58 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 355 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:04:58 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:04:58 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:04:58 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:04:58 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:04:58 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:04:59 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:04:59 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:04:59 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:04:59 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:04:59 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:04:59 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:04:59 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:04:59 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:04:59 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:04:59 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:04:59 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:04:59 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:04:59 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:04:59 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:04:59 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:04:59 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:05:00 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 361 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:05:00 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:05:00 [Thread-37] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND004
+2024-12-09 11:05:00 [Thread-37] INFO  c.h.t.service.TicketPoolService - Thread 172 notified consumers for event: Event_VEND004
+2024-12-09 11:05:00 [Thread-36] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND009
+2024-12-09 11:05:00 [Thread-36] INFO  c.h.t.service.TicketPoolService - Thread 171 notified consumers for event: Event_VEND009
+2024-12-09 11:05:01 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 368 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:05:01 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-45] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND008
+2024-12-09 11:05:01 [Thread-45] INFO  c.h.t.service.TicketPoolService - Thread 180 notified consumers for event: Event_VEND008
+2024-12-09 11:05:01 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 367 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:05:01 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-49] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND002
+2024-12-09 11:05:01 [Thread-49] INFO  c.h.t.service.TicketPoolService - Thread 184 notified consumers for event: Event_VEND002
+2024-12-09 11:05:01 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 369 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:05:01 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-38] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND005
+2024-12-09 11:05:01 [Thread-38] INFO  c.h.t.service.TicketPoolService - Thread 173 notified consumers for event: Event_VEND005
+2024-12-09 11:05:01 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 360 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:05:01 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 366 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:05:01 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-39] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND001
+2024-12-09 11:05:01 [Thread-39] INFO  c.h.t.service.TicketPoolService - Thread 174 notified consumers for event: Event_VEND001
+2024-12-09 11:05:01 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 362 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:05:01 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-43] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND010
+2024-12-09 11:05:01 [Thread-43] INFO  c.h.t.service.TicketPoolService - Thread 178 notified consumers for event: Event_VEND010
+2024-12-09 11:05:01 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 363 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:05:01 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 364 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:05:01 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-42] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND003
+2024-12-09 11:05:01 [Thread-42] INFO  c.h.t.service.TicketPoolService - Thread 177 notified consumers for event: Event_VEND003
+2024-12-09 11:05:01 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 365 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:05:01 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:05:01 [Thread-47] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND007
+2024-12-09 11:05:01 [Thread-47] INFO  c.h.t.service.TicketPoolService - Thread 182 notified consumers for event: Event_VEND007
+2024-12-09 11:05:01 [Thread-51] INFO  c.h.t.service.TicketPoolService - Added ticket for event: Event_VEND006
+2024-12-09 11:05:01 [Thread-51] INFO  c.h.t.service.TicketPoolService - Thread 186 notified consumers for event: Event_VEND006
+2024-12-09 11:05:03 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 371 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:05:03 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 378 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:05:04 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 377 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:05:04 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 379 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:05:04 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 370 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:05:04 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 376 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:05:04 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 372 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:05:04 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 373 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:05:04 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 374 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:05:04 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:05:04 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 375 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:05:04 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:05:06 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 381 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:05:06 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 388 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:05:07 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 387 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:05:07 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 389 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:05:07 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 380 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:05:07 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 386 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:05:07 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 382 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:05:07 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 384 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:05:07 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 383 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:05:07 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:05:07 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 385 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:05:07 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity
+2024-12-09 11:05:09 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 booked ticket 391 for event: Event_VEND009 by customer: cust009
+2024-12-09 11:05:09 [Thread-40] INFO  c.h.t.service.TicketPoolService - Thread 175 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 booked ticket 398 for event: Event_VEND007 by customer: cust007
+2024-12-09 11:05:10 [Thread-46] INFO  c.h.t.service.TicketPoolService - Thread 181 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 booked ticket 397 for event: Event_VEND003 by customer: cust003
+2024-12-09 11:05:10 [Thread-50] INFO  c.h.t.service.TicketPoolService - Thread 185 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 booked ticket 399 for event: Event_VEND006 by customer: cust006
+2024-12-09 11:05:10 [Thread-52] INFO  c.h.t.service.TicketPoolService - Thread 187 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 booked ticket 390 for event: Event_VEND004 by customer: cust004
+2024-12-09 11:05:10 [Thread-53] INFO  c.h.t.service.TicketPoolService - Thread 188 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 booked ticket 396 for event: Event_VEND010 by customer: cust010
+2024-12-09 11:05:10 [Thread-54] INFO  c.h.t.service.TicketPoolService - Thread 189 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 booked ticket 392 for event: Event_VEND008 by customer: cust008
+2024-12-09 11:05:10 [Thread-55] INFO  c.h.t.service.TicketPoolService - Thread 190 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 booked ticket 394 for event: Event_VEND005 by customer: cust005
+2024-12-09 11:05:10 [Thread-44] INFO  c.h.t.service.TicketPoolService - Thread 179 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 booked ticket 393 for event: Event_VEND002 by customer: cust002
+2024-12-09 11:05:10 [Thread-48] INFO  c.h.t.service.TicketPoolService - Thread 183 signaled vendors for more capacity
+2024-12-09 11:05:10 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 booked ticket 395 for event: Event_VEND001 by customer: cust001
+2024-12-09 11:05:10 [Thread-41] INFO  c.h.t.service.TicketPoolService - Thread 176 signaled vendors for more capacity

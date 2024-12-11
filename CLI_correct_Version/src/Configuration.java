@@ -1,3 +1,5 @@
+//Real-Time Ticketing System CLI by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.
+
 import com.google.gson.*;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -117,8 +119,7 @@ public class Configuration {
      */
     public String[] promptUserForCredentials(String usernamePrompt, String passwordPrompt) {
         Scanner scanner = new Scanner(System.in);
-        System.out.
-                print(usernamePrompt);
+        System.out.print(usernamePrompt);
         String username = scanner.nextLine();
         System.out.print(passwordPrompt);
         String password = scanner.nextLine();
@@ -204,8 +205,9 @@ public class Configuration {
     public void updateConfiguration(double ticketReleaseRate, double customerRetrievalRate, long maxTicketCapacity) {
         lock.lock();
         try {
-            if (ticketReleaseRate < 0 || customerRetrievalRate < 0 || maxTicketCapacity < totalAvailableTickets) {
-                System.out.println("Invalid input: Rates must be non-negative, and max capacity cannot be lower than total available tickets.");
+            if (ticketReleaseRate < 0 || customerRetrievalRate < 0 || maxTicketCapacity < loadTotalAvailableTickets()) {
+                System.out.println("Invalid input: Rates must be non-negative," +
+                        " and max capacity cannot be lower than total available tickets.");
                 return;
             }
             this.totalAvailableTickets = loadTotalAvailableTickets();

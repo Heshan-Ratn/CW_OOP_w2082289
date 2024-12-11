@@ -1,5 +1,7 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React from "react";
 
+//This is the interface defining the shape of a ticket object.
 interface Ticket {
   ticketId: number;
   eventName: string;
@@ -11,8 +13,9 @@ interface Ticket {
   customerId?: string | null;
 }
 
+//Props for the TicketTable component.
 interface TicketTableProps {
-  tickets: Ticket[];
+  tickets: Ticket[]; //List of tickets to be displayed in the table.
 }
 
 const TicketTable: React.FC<TicketTableProps> = ({ tickets }) => {

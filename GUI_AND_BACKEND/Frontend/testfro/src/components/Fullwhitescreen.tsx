@@ -1,7 +1,8 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React, { ReactNode } from "react";
 
 interface FullWhiteScreenProps {
-  children: ReactNode; // Defines the type for child elements
+  children: ReactNode; // Defines the type for child elements.
 }
 
 const FullWhiteScreen: React.FC<FullWhiteScreenProps> = ({ children }) => {

@@ -1,16 +1,18 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React, { useState } from "react";
 import SignUpVendorPopup from "./SignUpVendorPopup";
 import SignUpCustomerPopup from "./SignUpCustomerPopup";
 
 interface SignUpPopupProps {
   onClose: () => void; // Function to close the Sign-Up Popup.
-  showNotification: (message: string, isError?: boolean) => void; // Notification handler
+  showNotification: (message: string, isError?: boolean) => void; // Function to show notifications with optional error flag.
 }
 
 const SignUpPopup: React.FC<SignUpPopupProps> = ({
   onClose,
   showNotification,
 }) => {
+  // State variables to manage whether the Vendor or Customer sign-up popups are open.
   const [isVendorSignUpOpen, setIsVendorSignUpOpen] = useState(false);
   const [isCustomerSignUpOpen, setIsCustomerSignUpOpen] = useState(false);
 
@@ -38,6 +40,7 @@ const SignUpPopup: React.FC<SignUpPopupProps> = ({
           </div>
         </div>
       </div>
+      {/* Conditionally render the Vendor Sign-Up popup if the state is true */}
       {isVendorSignUpOpen && (
         <SignUpVendorPopup
           onClose={() => setIsVendorSignUpOpen(false)} // Close the vendor sign-up popup

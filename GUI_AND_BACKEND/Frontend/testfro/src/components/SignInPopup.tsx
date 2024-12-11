@@ -1,16 +1,19 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React, { useState } from "react";
 import CustomerSignInPopup from "./CustomerSignInPopup";
 import VendorSignInPopup from "./VendorSignInPopup";
 
+// Define the types of props that will be passed to this component.
 interface SignInPopupProps {
-  onClose: () => void;
-  showNotification: (message: string, isError?: boolean) => void;
+  onClose: () => void; // Callback function to close the sign-in popup.
+  showNotification: (message: string, isError?: boolean) => void; // Function to display notifications (with optional error flag)
 }
 
 const SignInPopup: React.FC<SignInPopupProps> = ({
   onClose,
   showNotification,
 }) => {
+  // State to manage whether to show the Customer or Vendor sign-in popup.
   const [showCustomerSignIn, setShowCustomerSignIn] = useState(false);
   const [showVendorSignIn, setShowVendorSignIn] = useState(false);
 
@@ -33,6 +36,7 @@ const SignInPopup: React.FC<SignInPopupProps> = ({
           </button>
         </div>
       </div>
+      {/* Conditionally render CustomerSignInPopup if the showCustomerSignIn state is true */}
 
       {showCustomerSignIn && (
         <CustomerSignInPopup

@@ -1,10 +1,13 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
+
 import React, { useState } from "react";
 import apiClient from "../api";
 
+// Props interface for the AddTicketsPopup component
 interface AddTicketsPopupProps {
-  vendorId: string;
-  onClose: () => void;
-  showNotification: (message: string, isError?: boolean) => void;
+  vendorId: string; // ID of the vendor
+  onClose: () => void; // Callback to close the popup
+  showNotification: (message: string, isError?: boolean) => void; // Function to display notifications
 }
 
 const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
@@ -12,12 +15,14 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
   onClose,
   showNotification,
 }) => {
+  // State variables to manage form inputs
   const [eventName, setEventName] = useState("");
   const [price, setPrice] = useState<number | "">("");
   const [timeDuration, setTimeDuration] = useState("");
   const [date, setDate] = useState("");
   const [batchSize, setBatchSize] = useState<number | "">("");
 
+  // A helper function to validate user inputs. Ensures all fields meet specific criteria before submission.
   const validateInputs = (): boolean => {
     if (!eventName || eventName.length > 50) {
       showNotification("Event Name must be between 1 and 50 characters.", true);
@@ -52,9 +57,11 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
     return true;
   };
 
+  // Handles form submission to create tickets by validating and sending data to the API
   const handleSubmit = async () => {
-    if (!validateInputs()) return;
+    if (!validateInputs()) return; // Abort if validation fails
 
+    //Map values to API payload to be submitted for request
     const payload = {
       event_Name: eventName,
       price: parseFloat(price.toString()), // Ensure it's a floating-point value
@@ -65,7 +72,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
 
     try {
       const response = await apiClient.post(
-        `/vendors/${vendorId}/start-thread`,
+        `/vendors/${vendorId}/start-thread`, // API endpoint for ticket creation and release of tickets.
         payload
       );
       showNotification(response.data, false); // Green notification
@@ -79,6 +86,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
     }
   };
 
+  // Resets all form fields to their initial stat
   const handleReset = () => {
     setEventName("");
     setPrice("");
@@ -91,6 +99,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
     <div className="popup-container">
       <div className="popup-tickets">
         <h3>Start Releasing Tickets To System</h3>
+        {/* Form input for event name */}
         <div className="form-group-tickets">
           <label>Event Name: </label>
           <input
@@ -100,6 +109,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
             onChange={(e) => setEventName(e.target.value)}
           />
         </div>
+        {/* Form input for price */}
         <div className="form-group-tickets">
           <label>Price: </label>
           <input
@@ -109,6 +119,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
             placeholder="Max 8 digits, 2 decimals"
           />
         </div>
+        {/* Form input for time duration */}
         <div className="form-group-tickets">
           <label>Time Duration: </label>
           <input
@@ -118,6 +129,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
             onChange={(e) => setTimeDuration(e.target.value)}
           />
         </div>
+        {/* Form input for date */}
         <div className="form-group-tickets">
           <label>Date: </label>
           <input
@@ -126,6 +138,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
+        {/* Form input for batch size */}
         <div className="form-group-tickets">
           <label>Ticket Batch Size: </label>
           <input
@@ -135,6 +148,7 @@ const AddTicketsPopup: React.FC<AddTicketsPopupProps> = ({
             placeholder="1-100"
           />
         </div>
+        {/* Buttons for submit, reset, and close actions */}
         <div className="popup-buttons">
           <button className="button" onClick={handleSubmit}>
             Submit

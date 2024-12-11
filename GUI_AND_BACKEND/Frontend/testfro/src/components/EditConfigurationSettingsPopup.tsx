@@ -1,14 +1,17 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React, { useState } from "react";
 import apiClient from "../api";
 
+// Interface defining the expected props for this component.
 interface EditConfigurationSettingsPopupProps {
-  onClose: () => void;
-  showNotification: (message: string, isError: boolean) => void; // Function to show notifications with error flag
+  onClose: () => void; // Callback function to close the popup.
+  showNotification: (message: string, isError: boolean) => void; // Function to show notifications with error flag.
 }
 
 const EditConfigurationSettingsPopup: React.FC<
   EditConfigurationSettingsPopupProps
 > = ({ onClose, showNotification }) => {
+  // State object to store the form data with fields for configuration settings.
   const [formData, setFormData] = useState({
     configAdminUser: "",
     configAdminPassword: "",
@@ -17,25 +20,28 @@ const EditConfigurationSettingsPopup: React.FC<
     maxTicketCapacity: "",
   });
 
+  // Handle change for form inputs, validates input values based on field type.
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    // Allow numbers with up to 14 digits and 2 decimals for rates
+    // Allow numbers with up to 14 digits and 2 decimals for rates.
     if (name === "ticketReleaseRate" || name === "customerRetrievalRate") {
-      const regex = /^[0-9]{1,12}(\.[0-9]{0,2})?$/; // Validates 14 digits and 2 decimals
+      const regex = /^[0-9]{1,12}(\.[0-9]{0,2})?$/; // Validates 14 digits and 2 decimals.
       if (regex.test(value) || value === "") {
         setFormData((prevData) => ({
           ...prevData,
-          [name]: value.slice(0, 16), // Limit input to 14 digits and 2 decimals
+          [name]: value.slice(0, 16), // Limit input to 14 digits and 2 decimals.
         }));
       }
     } else {
+      // For all other fields, limit input to 50 characters.
       setFormData((prevData) => ({
         ...prevData,
-        [name]: value.slice(0, 50), // Limit input to 50 characters
+        [name]: value.slice(0, 50), // Limit input to 50 characters.
       }));
     }
   };
 
+  // Reset form data to its initial state.
   const handleReset = () => {
     setFormData({
       configAdminUser: "",
@@ -46,9 +52,11 @@ const EditConfigurationSettingsPopup: React.FC<
     });
   };
 
+  // Handle form submission: validate inputs and make the API request to update the settings.
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Check if all required fields are filled.
     if (
       !formData.configAdminUser ||
       !formData.configAdminPassword ||
@@ -56,10 +64,11 @@ const EditConfigurationSettingsPopup: React.FC<
       !formData.customerRetrievalRate ||
       !formData.maxTicketCapacity
     ) {
-      showNotification("All fields are required.", true); // Show error notification
+      showNotification("All fields are required.", true); // Show error notification if any field is empty.
       return;
     }
 
+    // Prepare the payload with the form data.
     const payload = {
       configAdminUser: formData.configAdminUser,
       configAdminPassword: formData.configAdminPassword,
@@ -69,17 +78,18 @@ const EditConfigurationSettingsPopup: React.FC<
     };
 
     try {
+      // Send PUT request to the API to update the ticketing configuration settings.
       const response = await apiClient.put(
         "/configuration/update-ticket-settings",
         payload
       );
-      showNotification(`Success: ${response.data}`, false); // Success notification
-      onClose(); // Close the pop-up on success
+      showNotification(`Success: ${response.data}`, false); // Show success notification.
+      onClose(); // Close the popup after successful update.
     } catch (error: any) {
       console.error("Error updating configuration settings:", error);
       const errorMessage =
-        error.response?.data || "Failed to update configuration settings";
-      showNotification(errorMessage, true); // Show error notification
+        error.response?.data || "Failed to update configuration settings"; // Error message from the backend or default message.
+      showNotification(errorMessage, true); // Show error notification.
     }
   };
 
@@ -145,6 +155,7 @@ const EditConfigurationSettingsPopup: React.FC<
               min="0"
             />
           </div>
+          {/* Form action buttons: Submit, Reset, and Close */}
           <div className="form-actions">
             <button className="button" type="submit">
               Submit

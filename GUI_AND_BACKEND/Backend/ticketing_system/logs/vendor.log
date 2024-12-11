@@ -1889,3 +1889,233 @@
 2024-12-07 21:45:46 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND003 (Thread ID: 345)
 2024-12-07 21:45:47 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Thread:349 for vendor with ID:VEND002 finished executing
 2024-12-07 21:45:47 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND002 (Thread ID: 349)
+2024-12-09 11:04:42 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND009 with ticket batch size: 10 (Thread ID: 171)
+2024-12-09 11:04:42 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND004 with ticket batch size: 10 (Thread ID: 172)
+2024-12-09 11:04:42 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:42 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:42 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND008 with ticket batch size: 10 (Thread ID: 180)
+2024-12-09 11:04:42 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:42 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND002 with ticket batch size: 10 (Thread ID: 184)
+2024-12-09 11:04:42 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND005 with ticket batch size: 10 (Thread ID: 173)
+2024-12-09 11:04:42 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:42 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:42 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND001 with ticket batch size: 10 (Thread ID: 174)
+2024-12-09 11:04:42 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:42 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND010 with ticket batch size: 10 (Thread ID: 178)
+2024-12-09 11:04:42 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:42 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND003 with ticket batch size: 10 (Thread ID: 177)
+2024-12-09 11:04:42 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:42 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND007 with ticket batch size: 10 (Thread ID: 182)
+2024-12-09 11:04:42 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:42 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Thread started for Vendor ID: VEND006 with ticket batch size: 10 (Thread ID: 186)
+2024-12-09 11:04:42 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:42 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 300 of event: Event_VEND004 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 301 of event: Event_VEND009 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 302 of event: Event_VEND008 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 303 of event: Event_VEND002 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 304 of event: Event_VEND005 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 305 of event: Event_VEND001 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 306 of event: Event_VEND010 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 307 of event: Event_VEND003 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 308 of event: Event_VEND007 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:42 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 309 of event: Event_VEND006 to the pool. Ticket number in the batch: 1
+2024-12-09 11:04:44 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:44 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 310 of event: Event_VEND004 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:44 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 311 of event: Event_VEND009 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:44 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 312 of event: Event_VEND008 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:44 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:44 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 313 of event: Event_VEND002 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:44 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 314 of event: Event_VEND005 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:44 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 315 of event: Event_VEND001 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:44 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:44 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 316 of event: Event_VEND010 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 317 of event: Event_VEND003 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:44 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:44 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 318 of event: Event_VEND007 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:45 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 319 of event: Event_VEND006 to the pool. Ticket number in the batch: 2
+2024-12-09 11:04:46 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:46 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 320 of event: Event_VEND004 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:46 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:46 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 321 of event: Event_VEND009 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:46 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:46 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 322 of event: Event_VEND008 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:46 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:46 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 323 of event: Event_VEND002 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:46 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:46 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:46 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 324 of event: Event_VEND005 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:46 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 325 of event: Event_VEND001 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:46 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:46 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 326 of event: Event_VEND010 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:46 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:46 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:46 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 327 of event: Event_VEND003 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:47 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 328 of event: Event_VEND007 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:47 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:47 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 329 of event: Event_VEND006 to the pool. Ticket number in the batch: 3
+2024-12-09 11:04:48 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:48 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 330 of event: Event_VEND004 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:48 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:48 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 331 of event: Event_VEND009 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:48 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:48 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 332 of event: Event_VEND008 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:48 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:48 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:48 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 333 of event: Event_VEND002 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:48 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:48 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 334 of event: Event_VEND005 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:48 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 335 of event: Event_VEND001 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:48 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:48 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:48 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 336 of event: Event_VEND010 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:49 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:49 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 337 of event: Event_VEND003 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:49 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:49 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 338 of event: Event_VEND007 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:49 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 339 of event: Event_VEND006 to the pool. Ticket number in the batch: 4
+2024-12-09 11:04:50 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:50 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 340 of event: Event_VEND004 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:50 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:50 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 341 of event: Event_VEND009 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:50 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:50 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 342 of event: Event_VEND008 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:50 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:50 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 343 of event: Event_VEND002 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:50 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:50 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 344 of event: Event_VEND005 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:50 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:51 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 345 of event: Event_VEND001 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:51 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:51 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 346 of event: Event_VEND010 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:51 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:51 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 347 of event: Event_VEND003 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:51 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:51 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 348 of event: Event_VEND007 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:51 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:51 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 349 of event: Event_VEND006 to the pool. Ticket number in the batch: 5
+2024-12-09 11:04:52 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:52 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 350 of event: Event_VEND004 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:52 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:52 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 351 of event: Event_VEND009 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:52 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:52 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 352 of event: Event_VEND008 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:52 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:52 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 353 of event: Event_VEND002 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:52 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:52 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 354 of event: Event_VEND005 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:53 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:53 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:53 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 355 of event: Event_VEND001 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:53 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 356 of event: Event_VEND010 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:53 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:53 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 357 of event: Event_VEND003 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:53 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:53 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 358 of event: Event_VEND007 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:53 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:53 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 359 of event: Event_VEND006 to the pool. Ticket number in the batch: 6
+2024-12-09 11:04:54 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:54 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 360 of event: Event_VEND004 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:54 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:54 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 361 of event: Event_VEND009 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:54 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:54 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 362 of event: Event_VEND008 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:54 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:54 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 363 of event: Event_VEND002 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:54 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:55 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 364 of event: Event_VEND005 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:55 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:55 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 365 of event: Event_VEND001 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:55 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:55 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 366 of event: Event_VEND010 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:55 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:55 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 367 of event: Event_VEND003 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:55 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:55 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:55 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 368 of event: Event_VEND007 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:55 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 369 of event: Event_VEND006 to the pool. Ticket number in the batch: 7
+2024-12-09 11:04:56 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:56 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 370 of event: Event_VEND004 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:56 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:56 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 371 of event: Event_VEND009 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:56 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:56 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 372 of event: Event_VEND008 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:56 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:57 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 373 of event: Event_VEND002 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:57 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:57 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 374 of event: Event_VEND005 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:57 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:57 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:57 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 375 of event: Event_VEND001 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:57 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 376 of event: Event_VEND010 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:57 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:57 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 377 of event: Event_VEND003 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:57 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:57 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 378 of event: Event_VEND007 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:57 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:57 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 379 of event: Event_VEND006 to the pool. Ticket number in the batch: 8
+2024-12-09 11:04:58 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:04:58 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 380 of event: Event_VEND004 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:58 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:04:58 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 381 of event: Event_VEND009 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:58 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:04:59 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 382 of event: Event_VEND008 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:59 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:04:59 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 383 of event: Event_VEND002 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:59 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:04:59 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 384 of event: Event_VEND005 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:59 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:04:59 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:04:59 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 385 of event: Event_VEND001 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:59 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 386 of event: Event_VEND010 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:59 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:04:59 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 387 of event: Event_VEND003 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:59 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:04:59 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 388 of event: Event_VEND007 to the pool. Ticket number in the batch: 9
+2024-12-09 11:04:59 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:04:59 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 389 of event: Event_VEND006 to the pool. Ticket number in the batch: 9
+2024-12-09 11:05:00 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND004 for Vendor: VEND004
+2024-12-09 11:05:00 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 390 of event: Event_VEND004 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:00 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND009 for Vendor: VEND009
+2024-12-09 11:05:00 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 391 of event: Event_VEND009 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND008 for Vendor: VEND008
+2024-12-09 11:05:01 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 392 of event: Event_VEND008 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND002 for Vendor: VEND002
+2024-12-09 11:05:01 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND005 for Vendor: VEND005
+2024-12-09 11:05:01 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 393 of event: Event_VEND002 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 394 of event: Event_VEND005 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND001 for Vendor: VEND001
+2024-12-09 11:05:01 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 395 of event: Event_VEND001 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND010 for Vendor: VEND010
+2024-12-09 11:05:01 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND003 for Vendor: VEND003
+2024-12-09 11:05:01 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 396 of event: Event_VEND010 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 397 of event: Event_VEND003 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND007 for Vendor: VEND007
+2024-12-09 11:05:01 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 398 of event: Event_VEND007 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:01 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Processing ticket with event name: Event_VEND006 for Vendor: VEND006
+2024-12-09 11:05:01 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Successfully added ticket ID: 399 of event: Event_VEND006 to the pool. Ticket number in the batch: 10
+2024-12-09 11:05:02 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Thread:172 for vendor with ID:VEND004 finished executing
+2024-12-09 11:05:02 [Thread-37] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND004 (Thread ID: 172)
+2024-12-09 11:05:02 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Thread:171 for vendor with ID:VEND009 finished executing
+2024-12-09 11:05:02 [Thread-36] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND009 (Thread ID: 171)
+2024-12-09 11:05:03 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Thread:180 for vendor with ID:VEND008 finished executing
+2024-12-09 11:05:03 [Thread-45] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND008 (Thread ID: 180)
+2024-12-09 11:05:03 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Thread:184 for vendor with ID:VEND002 finished executing
+2024-12-09 11:05:03 [Thread-49] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND002 (Thread ID: 184)
+2024-12-09 11:05:03 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Thread:173 for vendor with ID:VEND005 finished executing
+2024-12-09 11:05:03 [Thread-38] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND005 (Thread ID: 173)
+2024-12-09 11:05:03 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Thread:174 for vendor with ID:VEND001 finished executing
+2024-12-09 11:05:03 [Thread-39] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND001 (Thread ID: 174)
+2024-12-09 11:05:03 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Thread:178 for vendor with ID:VEND010 finished executing
+2024-12-09 11:05:03 [Thread-43] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND010 (Thread ID: 178)
+2024-12-09 11:05:03 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Thread:177 for vendor with ID:VEND003 finished executing
+2024-12-09 11:05:03 [Thread-42] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND003 (Thread ID: 177)
+2024-12-09 11:05:03 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Thread:182 for vendor with ID:VEND007 finished executing
+2024-12-09 11:05:03 [Thread-47] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND007 (Thread ID: 182)
+2024-12-09 11:05:03 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Thread:186 for vendor with ID:VEND006 finished executing
+2024-12-09 11:05:03 [Thread-51] INFO  c.h.ticketing_system.model.Vendor - Thread completed for Vendor ID: VEND006 (Thread ID: 186)

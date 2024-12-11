@@ -946,3 +946,133 @@
 2024-12-07 21:45:56 [Thread-35] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust005 (Thread ID: 340)
 2024-12-07 21:45:56 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Thread:347 for customer with ID:cust002 finished executing
 2024-12-07 21:45:56 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust002 (Thread ID: 347)
+2024-12-09 11:04:42 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust009 with purchase batch size: 10 (Thread ID: 175)
+2024-12-09 11:04:42 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust001 with purchase batch size: 10 (Thread ID: 176)
+2024-12-09 11:04:42 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust005 with purchase batch size: 10 (Thread ID: 179)
+2024-12-09 11:04:42 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust002 with purchase batch size: 10 (Thread ID: 183)
+2024-12-09 11:04:42 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust007 with purchase batch size: 10 (Thread ID: 181)
+2024-12-09 11:04:42 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust003 with purchase batch size: 10 (Thread ID: 185)
+2024-12-09 11:04:42 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust006 with purchase batch size: 10 (Thread ID: 187)
+2024-12-09 11:04:42 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust004 with purchase batch size: 10 (Thread ID: 188)
+2024-12-09 11:04:42 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust010 with purchase batch size: 10 (Thread ID: 189)
+2024-12-09 11:04:42 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Thread started for Customer ID: cust008 with purchase batch size: 10 (Thread ID: 190)
+2024-12-09 11:04:42 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 301 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:42 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 308 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:42 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 307 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:42 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 309 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:42 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 300 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:42 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 306 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:43 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 302 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:43 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 303 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:43 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 304 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:43 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 305 to the pool.Ticket No. of ticked booked in batch:1 
+2024-12-09 11:04:45 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 311 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:45 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 318 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:45 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 317 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:45 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 319 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:45 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 310 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:46 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 316 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:46 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 312 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:46 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 313 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:46 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 314 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:46 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 315 to the pool.Ticket No. of ticked booked in batch:2 
+2024-12-09 11:04:48 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 321 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:48 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 328 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:48 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 327 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:49 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 329 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:49 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 320 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:49 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 326 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:49 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 322 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:49 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 323 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:49 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 324 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:49 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 325 to the pool.Ticket No. of ticked booked in batch:3 
+2024-12-09 11:04:51 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 331 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:51 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 338 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:51 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 337 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:52 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 339 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:52 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 330 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:52 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 336 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:52 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 332 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:52 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 333 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:52 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 334 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:52 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 335 to the pool.Ticket No. of ticked booked in batch:4 
+2024-12-09 11:04:54 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 341 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:54 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 348 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 347 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 349 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 340 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 346 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 342 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 343 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 344 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:55 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 345 to the pool.Ticket No. of ticked booked in batch:5 
+2024-12-09 11:04:57 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 351 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 358 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 357 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 359 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 350 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 356 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 352 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 353 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 354 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:04:58 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 355 to the pool.Ticket No. of ticked booked in batch:6 
+2024-12-09 11:05:00 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 361 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 368 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 367 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 369 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 360 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 366 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 362 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 363 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 364 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:01 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 365 to the pool.Ticket No. of ticked booked in batch:7 
+2024-12-09 11:05:03 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 371 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 378 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 377 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 379 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 370 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 376 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 372 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 373 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 374 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:04 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 375 to the pool.Ticket No. of ticked booked in batch:8 
+2024-12-09 11:05:06 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 381 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 388 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 387 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 389 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 380 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 386 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 382 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 384 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 383 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:07 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 385 to the pool.Ticket No. of ticked booked in batch:9 
+2024-12-09 11:05:09 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 391 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 398 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 397 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 399 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 390 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 396 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 392 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 394 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 393 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:10 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Successfully booked ticket ID: 395 to the pool.Ticket No. of ticked booked in batch:10 
+2024-12-09 11:05:12 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Thread:175 for customer with ID:cust009 finished executing
+2024-12-09 11:05:12 [Thread-40] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust009 (Thread ID: 175)
+2024-12-09 11:05:13 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Thread:181 for customer with ID:cust007 finished executing
+2024-12-09 11:05:13 [Thread-46] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust007 (Thread ID: 181)
+2024-12-09 11:05:13 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Thread:185 for customer with ID:cust003 finished executing
+2024-12-09 11:05:13 [Thread-50] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust003 (Thread ID: 185)
+2024-12-09 11:05:13 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Thread:187 for customer with ID:cust006 finished executing
+2024-12-09 11:05:13 [Thread-52] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust006 (Thread ID: 187)
+2024-12-09 11:05:13 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Thread:188 for customer with ID:cust004 finished executing
+2024-12-09 11:05:13 [Thread-53] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust004 (Thread ID: 188)
+2024-12-09 11:05:13 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Thread:189 for customer with ID:cust010 finished executing
+2024-12-09 11:05:13 [Thread-54] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust010 (Thread ID: 189)
+2024-12-09 11:05:13 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Thread:190 for customer with ID:cust008 finished executing
+2024-12-09 11:05:13 [Thread-55] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust008 (Thread ID: 190)
+2024-12-09 11:05:13 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Thread:179 for customer with ID:cust005 finished executing
+2024-12-09 11:05:13 [Thread-44] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust005 (Thread ID: 179)
+2024-12-09 11:05:13 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Thread:183 for customer with ID:cust002 finished executing
+2024-12-09 11:05:13 [Thread-48] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust002 (Thread ID: 183)
+2024-12-09 11:05:13 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Thread:176 for customer with ID:cust001 finished executing
+2024-12-09 11:05:13 [Thread-41] INFO  c.h.ticketing_system.model.Customer - Thread completed for Vendor ID: cust001 (Thread ID: 176)

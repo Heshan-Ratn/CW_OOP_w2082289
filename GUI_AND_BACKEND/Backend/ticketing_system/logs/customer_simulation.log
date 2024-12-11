@@ -132,3 +132,25 @@
 2024-12-07 21:45:25 [Thread-31] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust003: Success: Thread started for CustomerID: cust003 with event 'Event_VEND003' and purchase request batch size 10. 
 2024-12-07 21:45:25 [Thread-30] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust002: Success: Thread started for CustomerID: cust002 with event 'Event_VEND002' and purchase request batch size 10. 
 2024-12-07 21:45:25 [Thread-29] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust001: Success: Thread started for CustomerID: cust001 with event 'Event_VEND001' and purchase request batch size 10. 
+2024-12-09 11:04:41 [http-nio-8080-exec-1] INFO  c.h.t.utils.CustomerSimulation - Starting customer simulation with 10 customers.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust001: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust002: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust003: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust004: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust005: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust006: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust007: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust008: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust009: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] DEBUG c.h.t.utils.CustomerSimulation - Sign-up result for cust010: Error: Customer ID already exists.
+2024-12-09 11:04:42 [http-nio-8080-exec-1] INFO  c.h.t.utils.CustomerSimulation - Simulation started. Customer threads are running concurrently.
+2024-12-09 11:04:42 [Thread-34] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust009: Success: Thread started for CustomerID: cust009 with event 'Event_VEND009' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-26] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust001: Success: Thread started for CustomerID: cust001 with event 'Event_VEND001' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-30] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust005: Success: Thread started for CustomerID: cust005 with event 'Event_VEND005' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-32] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust007: Success: Thread started for CustomerID: cust007 with event 'Event_VEND007' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-27] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust002: Success: Thread started for CustomerID: cust002 with event 'Event_VEND002' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-28] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust003: Success: Thread started for CustomerID: cust003 with event 'Event_VEND003' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-31] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust006: Success: Thread started for CustomerID: cust006 with event 'Event_VEND006' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-29] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust004: Success: Thread started for CustomerID: cust004 with event 'Event_VEND004' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-35] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust010: Success: Thread started for CustomerID: cust010 with event 'Event_VEND010' and purchase request batch size 10. 
+2024-12-09 11:04:42 [Thread-33] DEBUG c.h.t.utils.CustomerSimulation - Thread result for cust008: Success: Thread started for CustomerID: cust008 with event 'Event_VEND008' and purchase request batch size 10. 

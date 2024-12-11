@@ -14,6 +14,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -100,12 +102,18 @@ public class TicketPoolService {
     }
 
     /**
-     * This method sends a log message to the frontend via WebSocket.
+     * This method sends a log message to the frontend via WebSocket, including the current date and time.
      *
      * @param message the message to be sent.
      */
     private void sendLogMessage(String message) {
-        messagingTemplate.convertAndSend("/topic/logs", message);
+        // Get the current date and time.
+        LocalDateTime now = LocalDateTime.now();
+        // Format the date and time.
+        String formattedDateTime = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        // Message with date and time added.
+        String messageWithTimestamp = "[" + formattedDateTime + "] " + message;
+        messagingTemplate.convertAndSend("/topic/logs", messageWithTimestamp);
     }
 
     /**

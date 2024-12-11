@@ -1,3 +1,5 @@
+//Real-Time Ticketing System CLI by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -162,12 +164,15 @@ public class Vendor implements Runnable {
             // This Checks if vendorId is already taken
             for (VendorData vendor : vendors) {
                 if (vendor.getVendorId().equals(newVendorCredentials[0])) {
+                    logger.info("Vendor ID already taken : "+ newVendorCredentials[0]+ " .");
                     System.out.println("Vendor ID already taken.");
                     return false;
                 }
             }
             vendors.add(new VendorData(newVendorCredentials[0], newVendorCredentials[1]));
             // Write updated vendor list back to file
+            logger.info("Vendor sign up successful, vendor was registered under Vendor ID  : "+
+                    newVendorCredentials[0]+ " .");
             return saveVendors(vendors);
         } finally {
             vendorLock.unlock();
@@ -189,6 +194,7 @@ public class Vendor implements Runnable {
             }
             List<VendorData> vendors = loadVendors();
             if (vendors.isEmpty()) {
+                logger.error("Vendors database is empty!");
                 System.out.println("Vendors database is empty!.\n");
                 return null;
             }
@@ -196,11 +202,13 @@ public class Vendor implements Runnable {
                 if (vendor.getVendorId().equals(vendorCredentials[0]) &&
                         vendor.getPassword().equals(vendorCredentials[1])) {
                     System.out.println("Vendor signed in successfully!\n");
+                    logger.info("Vendor signed in successfully! with vendor ID: "+ vendorCredentials[0]);
                     // Initialize only credentials for sign-in
                     return new Vendor(vendorCredentials[0], vendorCredentials[1]);
                 }
             }
             System.out.println("Sign in failed: Incorrect ID or password.\n");
+            logger.error("Sign in failed: Incorrect ID or password.");
             return null;
         } finally {
             vendorLock.unlock();

@@ -1,3 +1,5 @@
+//Real-Time Ticketing System CLI by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.
+
 import java.util.Scanner;
 import java.util.Set;
 
@@ -43,13 +45,14 @@ public class PurchaseRequest {
 
         String eventName = promptForEventName(scanner, eventDetails);
         if (eventName == null) {
-            System.out.println("Too many invalid attempts for event name. Request cancelled.");
+            System.out.println("Too many invalid attempts for event name, request canceled.");
             return null;
+
         }
 
         int ticketsToBook = promptForTicketQuantity(scanner);
         if (ticketsToBook == -1) {
-            System.out.println("Too many invalid attempts for ticket quantity. Request cancelled.");
+            System.out.println("Too many invalid attempts for ticket quantity, request canceled.");
             return null;
         }
 

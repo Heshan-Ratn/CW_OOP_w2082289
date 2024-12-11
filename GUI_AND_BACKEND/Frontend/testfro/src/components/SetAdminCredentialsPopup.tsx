@@ -1,15 +1,17 @@
+// Real-time ticketing system application : Heshan Ratnaweera | UOW: w2082289 | IIT: 20222094
 import React, { useState } from "react";
 import apiClient from "../api";
 
 interface SetAdminCredentialsPopupProps {
-  onClose: () => void;
-  showNotification: (message: string, isError: boolean) => void; // Function to show notifications with error flag
+  onClose: () => void; // Callback function to close the popup.
+  showNotification: (message: string, isError: boolean) => void; // Function to show notifications with error flag.
 }
 
 const SetAdminCredentialsPopup: React.FC<SetAdminCredentialsPopupProps> = ({
   onClose,
   showNotification,
 }) => {
+  // State to store form data for admin credentials, including old and new admin credentials.
   const [formData, setFormData] = useState({
     oldConfigAdminUser: "",
     oldConfigAdminPassword: "",
@@ -17,6 +19,7 @@ const SetAdminCredentialsPopup: React.FC<SetAdminCredentialsPopupProps> = ({
     newConfigAdminPassword: "",
   });
 
+  // Handle form input changes and update state based on input field.
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -25,6 +28,7 @@ const SetAdminCredentialsPopup: React.FC<SetAdminCredentialsPopupProps> = ({
     }));
   };
 
+  // Reset the form data to initial empty state.
   const handleReset = () => {
     setFormData({
       oldConfigAdminUser: "",
@@ -34,30 +38,34 @@ const SetAdminCredentialsPopup: React.FC<SetAdminCredentialsPopupProps> = ({
     });
   };
 
+  // Handle form submission to send the updated admin credentials to the backend.
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent default form submission behavior.
+    // Check if all form fields are filled.
     if (
       !formData.oldConfigAdminUser ||
       !formData.oldConfigAdminPassword ||
       !formData.newConfigAdminUser ||
       !formData.newConfigAdminPassword
     ) {
-      showNotification("All fields are required.", true); // Show error notification
+      showNotification("All fields are required.", true); // Show error notification if fields are empty.
       return;
     }
 
+    // Send a PUT request to update the admin credentials in the backend.
     try {
       const response = await apiClient.put(
-        "/configuration/update-admin-credentials",
-        formData
+        "/configuration/update-admin-credentials", // API endpoint to update credentials.
+        formData // Send the form data as the payload.
       );
-      showNotification(`Success: ${response.data}`, false); // Success message
+      showNotification(`Success: ${response.data}`, false); // Show success notification on successful update.
       onClose(); // Close the pop-up on success
     } catch (error: any) {
-      console.error("Error updating admin credentials:", error);
+      console.error("Error updating admin credentials:", error); // Log the error to console.
+      // Show an error notification if the update fails.
       showNotification(
         error.response?.data || "Failed to update admin credentials",
-        true // Error message
+        true // Flag the notification as an error.
       );
     }
   };
@@ -107,6 +115,7 @@ const SetAdminCredentialsPopup: React.FC<SetAdminCredentialsPopupProps> = ({
               required
             />
           </div>
+          {/* Form action buttons */}
           <div className="form-actions">
             <button className="button" type="submit">
               Submit

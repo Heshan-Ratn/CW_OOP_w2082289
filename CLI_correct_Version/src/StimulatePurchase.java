@@ -1,3 +1,4 @@
+//Real-Time Ticketing System CLI by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.
 
 /**
  * The StimulatePurchase class simulates ticket purchases by multiple customers.
@@ -5,7 +6,6 @@
  * in separate threads.
  */
 public class StimulatePurchase {
-
 
     /**
      * Reference to the shared TicketPool class instance used for ticket management.

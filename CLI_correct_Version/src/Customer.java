@@ -1,3 +1,5 @@
+//Real-Time Ticketing System CLI by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -159,11 +161,14 @@ public class Customer implements Runnable {
             // Check if customerId is already taken
             for (CustomerData customer : customers) {
                 if (customer.getCustomerId().equals(newCustomerCredentials[0])) {
+                    logger.info("Customer ID already taken : "+newCustomerCredentials[0]+" .");
                     System.out.println("Customer ID already taken.");
                     return false;
                 }
             }
             customers.add(new CustomerData(newCustomerCredentials[0], newCustomerCredentials[1]));
+            logger.info("Vendor sign up successful, vendor was registered under Vendor ID  : "+
+                    newCustomerCredentials[0]+ " .");
             return saveCustomers(customers);
         } finally {
             customerLock.unlock();
@@ -185,16 +190,19 @@ public class Customer implements Runnable {
             }
             List<CustomerData> customers = loadCustomers();
             if (customers.isEmpty()) {
+                logger.error("Customer database is empty!");
                 System.out.println("Customer database is empty!");
                 return null;
             }
             for (CustomerData customer : customers) {
                 if (customer.getCustomerId().equals(credentials[0]) && customer.getPassword().equals(credentials[1])) {
+                    logger.info("Customer signed in successfully! with vendor ID: "+ credentials[0]);
                     System.out.println("Customer signed in successfully.");
                     return new Customer(credentials[0], credentials[1]);
                 }
             }
             System.out.println("Sign-in failed: Incorrect ID or password.");
+            logger.error("Sign in failed: Incorrect ID or password.");
             return null;
         } finally {
             customerLock.unlock();
@@ -274,7 +282,6 @@ public class Customer implements Runnable {
         int ticketsToBook = purchaseRequest.getTicketsToBook();
 
         for (int i = 0; i < ticketsToBook; i++) {
-
             if (shouldStop(1, eventName)) return; // Case 1: general sleep
 
             boolean purchased = ticketPool.removeTicket(eventName, customerId);
