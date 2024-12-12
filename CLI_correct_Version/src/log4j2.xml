@@ -1,6 +1,6 @@
-<!--Real-Time Ticketing System CLI by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.-->
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
+    <!--Real-Time Ticketing System CLI by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.-->
     <Appenders>
         <!-- General vendor log file -->
         <File name="VendorLogger" fileName="logs/vendor.log" append="true">

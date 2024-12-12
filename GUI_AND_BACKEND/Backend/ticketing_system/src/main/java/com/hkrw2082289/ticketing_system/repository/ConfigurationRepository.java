@@ -1,5 +1,5 @@
+//Real-Time Ticketing System Backend by Heshan Ratnaweera, Student ID UOW: W2082289 IIT: 20222094.
 package com.hkrw2082289.ticketing_system.repository;
-
 import com.hkrw2082289.ticketing_system.model.Configuration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

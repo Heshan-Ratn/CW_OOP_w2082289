@@ -76,6 +76,11 @@ Clone the repository to your local machine using the following command:
 git clone https://github.com/Heshan-Ratn/CW_OOP_w2082289.git
 ```
 
+### Step 2: Add all dependencies
+Make sure all required libraries are added to your libraries in the project structure
+
+you will need to add the `GSON` and `Log4j` libraries. In the [Prerequisites](#prerequisites) section follow the alternative support instructions to download and use both libraries.
+
 ### Step 2: Compile the Code
 
 Navigate to the project directory and compile the Java files using your preferred method (via IDE or command line). If using the command line, you can use the javac command:
